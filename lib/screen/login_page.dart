@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/cupertino.dart';
-import 'package:sporting_app/screen/login.dart';
 import 'package:sporting_app/screen/sign_up.dart';
+import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/pages/main/main_page.dart';
 
 class MyLogin extends StatefulWidget {
@@ -76,7 +76,7 @@ class _MyLoginState extends State<MyLogin> {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (_) => loginpage()));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_) => LoginHomePage()));
                             },
                             child: Text(
                               '이메일 로그인',
