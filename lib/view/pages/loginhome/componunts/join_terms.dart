@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/screen/sign_up.dart';
 import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/view/pages/join/join_page.dart';
 
 class JoinTerms extends StatelessWidget {
   const JoinTerms({Key? key}) : super(key: key);
@@ -69,7 +69,7 @@ class JoinTerms extends StatelessWidget {
     return ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const sign()));
+                        MaterialPageRoute(builder: (_) => const JoinPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     fixedSize: const Size(220, 40),

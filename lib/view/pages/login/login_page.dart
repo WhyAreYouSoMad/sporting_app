@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/common/constants.dart';
-import 'package:sporting_app/view/componunts/button.dart';
+import 'package:sporting_app/view/componunts/my_button.dart';
 import 'package:sporting_app/view/componunts/input_form.dart';
 
 class LoginPage extends StatelessWidget {
@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
               const InputForm(hintText: "E-mail"),
               const InputForm(hintText: "Password"),
               const SizedBox(height: 20),
-              const Button(text: "로그인"),
+              const MyButton(text: "로그인"),
               _buildLoginUnderBar()
             ],
           ),

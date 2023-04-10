@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/cupertino.dart';
-import 'package:sporting_app/screen/sign_up.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/login/login_page.dart';
 import 'package:sporting_app/view/pages/loginhome/componunts/join_terms.dart';
