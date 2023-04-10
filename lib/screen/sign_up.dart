@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'login_page.dart';
+import '../view/pages/loginhome/login_home_page.dart';
 
 class sign extends StatelessWidget {
   const sign({Key? key}) : super(key: key);

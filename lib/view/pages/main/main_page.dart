@@ -1,6 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:sporting_app/screen/login_page.dart';
+import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/common/constants.dart';
 
 class MainPage extends StatelessWidget {
