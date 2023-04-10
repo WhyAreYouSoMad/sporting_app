@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:sporting_app/screen/login.dart';
-import 'package:sporting_app/screen/mian_screen.dart';
 import 'package:sporting_app/screen/sign_up.dart';
+import 'package:sporting_app/view/pages/main/main_page.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -174,7 +174,7 @@ class _MyLoginState extends State<MyLogin> {
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: IconButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => Mainpage()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => MainPage()));
                   },
                   icon: Icon(
                     Icons.arrow_back,

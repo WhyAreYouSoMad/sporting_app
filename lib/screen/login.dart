@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/screen/login_page.dart';
 
-
 class loginpage extends StatelessWidget {
   const loginpage({Key? key}) : super(key: key);
 
@@ -56,12 +55,13 @@ class loginpage extends StatelessWidget {
                     padding: EdgeInsets.only(top: 20, right: 40, left: 40),
                     child: TextField(
                       decoration: InputDecoration(
-                          fillColor: Colors.green,
-                          hintText: 'E-mail',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(width: 0.5),
-                          )),
+                        fillColor: Colors.green,
+                        hintText: 'E-mail',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          borderSide: BorderSide(width: 0.5),
+                        ),
+                      ),
                     ),
                   ),
                 ],

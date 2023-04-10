@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/screen/mian_screen.dart';
+import 'package:sporting_app/view/pages/main/main_page.dart';
 
 
 void main() {
@@ -7,6 +7,6 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: 'main_page',
     routes: {
-      'main_page' : (context) => Mainpage()},
+      'main_page' : (context) => MainPage()},
   ));
 }
