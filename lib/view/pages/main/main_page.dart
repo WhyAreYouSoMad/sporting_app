@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/main/componunts/event_category.dart';
-import 'package:sporting_app/view/pages/main/componunts/image_button.dart';
+import 'package:sporting_app/view/pages/main/componunts/sliver_divider.dart';
 import 'package:sporting_app/view/pages/main/componunts/sports_category.dart';
 
 class MainPage extends StatefulWidget {
@@ -87,13 +87,14 @@ class _MainPageState extends State<MainPage> {
           const SportsCategory(),
           _ImgSliverToBoxAdapter(),
           const EventCategory(),
+          const SliverDivider(),
           _DividersliverList(),
           _centerText(),
           _sportare(),
-          _DividersliverList2(),
+          const SliverDivider(topPadding: 20),
           _news(),
           _news2(),
-          _DividersliverList2(),
+          const SliverDivider(topPadding: 20),
           _news0(),
           _news3(),
         ],
@@ -986,27 +987,6 @@ class _MainPageState extends State<MainPage> {
                 height: 1,
               ),
             ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  SliverList _DividersliverList2() {
-    return SliverList(
-      delegate: SliverChildListDelegate(
-        [
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Column(
-              children: [
-                Divider(
-                  color: Colors.grey[300],
-                  thickness: 11,
-                  height: 1,
-                ),
-              ],
-            ),
           ),
         ],
       ),
