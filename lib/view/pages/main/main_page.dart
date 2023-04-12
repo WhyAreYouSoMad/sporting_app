@@ -3,6 +3,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/view/pages/main/componunts/event_category.dart';
 import 'package:sporting_app/view/pages/main/componunts/image_button.dart';
 import 'package:sporting_app/view/pages/main/componunts/sports_category.dart';
 
@@ -85,7 +86,7 @@ class _MainPageState extends State<MainPage> {
         slivers: [
           const SportsCategory(),
           _ImgSliverToBoxAdapter(),
-          _CenterSliverPadding(),
+          const EventCategory(),
           _DividersliverList(),
           _centerText(),
           _sportare(),
@@ -1008,74 +1009,6 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  SliverPadding _CenterSliverPadding() {
-    return SliverPadding(
-      padding: EdgeInsets.symmetric(vertical: 10),
-      sliver: SliverGrid(
-        delegate: SliverChildListDelegate([
-          Column(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset("assets/google.png"),
-                iconSize: 40,
-              ),
-              Text("몰루?",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                  )),
-            ],
-          ),
-          Column(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset("assets/google.png"),
-                iconSize: 40,
-              ),
-              Text("몰루?",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                  )),
-            ],
-          ),
-          Column(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset("assets/google.png"),
-                iconSize: 40,
-              ),
-              Text("몰루?",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                  )),
-            ],
-          ),
-          Column(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset("assets/google.png"),
-                iconSize: 40,
-              ),
-              Text("몰루?",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                  )),
-            ],
-          ),
-        ]),
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
       ),
     );
   }
