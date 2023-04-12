@@ -3,6 +3,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/view/pages/main/componunts/image_button.dart';
+import 'package:sporting_app/view/pages/main/componunts/sports_category.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);
@@ -81,7 +83,7 @@ class _MainPageState extends State<MainPage> {
       onRefresh: _refreshData,
       child: CustomScrollView(
         slivers: [
-          _TopIconSliverGrid(),
+          const SportsCategory(),
           _ImgSliverToBoxAdapter(),
           _CenterSliverPadding(),
           _DividersliverList(),
@@ -1114,146 +1116,6 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
-
-  SliverGrid _TopIconSliverGrid() {
-    return SliverGrid(
-      delegate: SliverChildListDelegate([
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/Tennis.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "테니스",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/Baseball.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "야구",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/Bowling.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "볼링",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/daon.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "당구",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/Golf.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "골프",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/Soccer.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "축구",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/Tabletennis.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "탁구",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset("assets/Basketball.png"),
-              iconSize: 40,
-            ),
-            Text(
-              "농구",
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ]),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4, mainAxisSpacing: 0, crossAxisSpacing: 15),
-    );
-  }
-
-
-
 
   Widget _buildNavigationBar() {
     return CurvedNavigationBar(

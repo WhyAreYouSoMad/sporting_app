@@ -7,6 +7,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: 'main_page',
     routes: {
-      'main_page' : (context) => MainPage()},
+      'main_page' : (context) => MainPage()
+    },
   ));
 }
