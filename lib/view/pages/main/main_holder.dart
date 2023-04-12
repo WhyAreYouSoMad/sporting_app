@@ -42,8 +42,9 @@ class _MainHolderState extends State<MainHolder> {
     );
   }
 
-  Widget _page(index) => Placeholder();
-  MainPage _mainPage(index) => MainPage();
+  Widget _page(index) => const Placeholder();
+
+  MainPage _mainPage(index) => const MainPage();
 
   CurvedNavigationBar _buildNavigationBar() {
     return CurvedNavigationBar(
@@ -54,7 +55,8 @@ class _MainHolderState extends State<MainHolder> {
       onTap: (index) {
         setState(() {
           currentIndex = index;
-          _pageController.animateToPage(index, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
+          _pageController.animateToPage(index,
+              duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
         });
       },
       items: [
@@ -89,8 +91,7 @@ class _MainHolderState extends State<MainHolder> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon:
-                              const Icon(Icons.close, color: kDarkIconColor),
+                          icon: const Icon(Icons.close, color: kDarkIconColor),
                         ),
                       ],
                     ),

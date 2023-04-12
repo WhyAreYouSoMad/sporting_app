@@ -10,6 +10,7 @@ class ImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         _buildIcon(),
         _buildSportName(),
@@ -17,14 +18,14 @@ class ImageButton extends StatelessWidget {
     );
   }
 
-  Text _buildSportName() {
+  Widget _buildSportName() {
     return Text(
       text,
       style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
     );
   }
 
-  IconButton _buildIcon() {
+  Widget _buildIcon() {
     return IconButton(
       onPressed: () {},
       icon: Image.asset(image),
