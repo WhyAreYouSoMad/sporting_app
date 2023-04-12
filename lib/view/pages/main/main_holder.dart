@@ -18,87 +18,99 @@ class _MainHolderState extends State<MainHolder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: kDarkIconColor, size: 30),
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (context) {
-                return SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height,
-                      width: double.infinity,
-                      child: Column(
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon:
-                                const Icon(Icons.close, color: kDarkIconColor),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                );
-              },
-              isScrollControlled: true,
-            );
-          },
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => MyLogin()));
-            },
-            icon: const Icon(Icons.bookmark, color: kDarkIconColor, size: 30),
-          ),
-        ],
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.greenAccent,
-        color: kWhiteColor,
-        animationDuration: const Duration(milliseconds: 300),
-        index: currentIndex,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-            _pageController.animateToPage(index, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
-          });
-        },
-        items: [
-          const Icon(Icons.map, color: kDarkIconColor),
-          const Icon(Icons.sports_baseball, color: kDarkIconColor),
-          Image.asset('assets/sporting.png', color: kLogoColor),
-          const Icon(Icons.mail, color: kDarkIconColor),
-          const Icon(Icons.person, color: kDarkIconColor),
-        ],
-      ),
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-        children: [
-          _page(0),
-          _page(1),
-          _mainPage(2),
-          _page(3),
-          _page(4),
-        ],
-      ),
+      appBar: _buildAppBar(context),
+      bottomNavigationBar: _buildNavigationBar(),
+      body: _buildPages(),
+    );
+  }
+
+  PageView _buildPages() {
+    return PageView(
+      controller: _pageController,
+      onPageChanged: (index) {
+        setState(() {
+          currentIndex = index;
+        });
+      },
+      children: [
+        _page(0),
+        _page(1),
+        _mainPage(2),
+        _page(3),
+        _page(4),
+      ],
     );
   }
 
   Widget _page(index) => Placeholder();
   MainPage _mainPage(index) => MainPage();
+
+  CurvedNavigationBar _buildNavigationBar() {
+    return CurvedNavigationBar(
+      backgroundColor: Colors.greenAccent,
+      color: kWhiteColor,
+      animationDuration: const Duration(milliseconds: 300),
+      index: currentIndex,
+      onTap: (index) {
+        setState(() {
+          currentIndex = index;
+          _pageController.animateToPage(index, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
+        });
+      },
+      items: [
+        const Icon(Icons.map, color: kDarkIconColor),
+        const Icon(Icons.sports_baseball, color: kDarkIconColor),
+        Image.asset('assets/sporting.png', color: kLogoColor),
+        const Icon(Icons.mail, color: kDarkIconColor),
+        const Icon(Icons.person, color: kDarkIconColor),
+      ],
+    );
+  }
+
+  AppBar _buildAppBar(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      shadowColor: Colors.transparent,
+      leading: IconButton(
+        icon: const Icon(Icons.menu, color: kDarkIconColor, size: 30),
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon:
+                              const Icon(Icons.close, color: kDarkIconColor),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+            isScrollControlled: true,
+          );
+        },
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (_) => MyLogin()));
+          },
+          icon: const Icon(Icons.bookmark, color: kDarkIconColor, size: 30),
+        ),
+      ],
+    );
+  }
 }
