@@ -13,28 +13,35 @@ class RecommendStadiumTitle extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const Text(
-                  "최근 본 경기와 연관된 경기",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
+                _buildTitle(),
                 const SizedBox(width: 23),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    minimumSize: Size.zero,
-                    padding: EdgeInsets.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    splashFactory: NoSplash.splashFactory,
-                  ),
-                  child: const Text("전체보기",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                )
+                _buildListButton()
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  TextButton _buildListButton() {
+    return TextButton(
+      onPressed: () {},
+      style: TextButton.styleFrom(
+        minimumSize: Size.zero,
+        padding: EdgeInsets.zero,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        splashFactory: NoSplash.splashFactory,
+      ),
+      child: const Text("전체보기",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+    );
+  }
+
+  Text _buildTitle() {
+    return const Text(
+      "최근 본 경기와 연관된 경기",
+      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     );
   }
 }

@@ -11,16 +11,24 @@ class ImageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        IconButton(
-          onPressed: () {},
-          icon: Image.asset(image),
-          iconSize: 40,
-        ),
-        Text(
-          text,
-          style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-        ),
+        _buildIcon(),
+        _buildSportName(),
       ],
+    );
+  }
+
+  Text _buildSportName() {
+    return Text(
+      text,
+      style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+    );
+  }
+
+  IconButton _buildIcon() {
+    return IconButton(
+      onPressed: () {},
+      icon: Image.asset(image),
+      iconSize: 40,
     );
   }
 }

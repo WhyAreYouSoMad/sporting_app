@@ -4,10 +4,7 @@ class MiniNewsTab extends StatelessWidget {
   final String title;
   final String image;
 
-  const MiniNewsTab(
-      {required this.title,
-      required this.image,
-      Key? key})
+  const MiniNewsTab({required this.title, required this.image, Key? key})
       : super(key: key);
 
   @override
@@ -19,24 +16,32 @@ class MiniNewsTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: SizedBox(
-                width: 175,
-                height: 100,
-                child: Image.asset(image, fit: BoxFit.cover),
-              ),
-            ),
+            _buildNewsImage(),
             const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 13,
-              ),
-            )
+            _buildNewsTitle()
           ],
         ),
+      ),
+    );
+  }
+
+  ClipRRect _buildNewsImage() {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8.0),
+      child: SizedBox(
+        width: 175,
+        height: 100,
+        child: Image.asset(image, fit: BoxFit.cover),
+      ),
+    );
+  }
+
+  Text _buildNewsTitle() {
+    return Text(
+      title,
+      style: const TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 13,
       ),
     );
   }

@@ -21,19 +21,23 @@ class BigNewsTab extends StatelessWidget {
           const SizedBox(height: 10),
           _buildTitle(),
           const SizedBox(height: 15),
-          GestureDetector(
-            onTap: () {},
-            child: Stack(
-              alignment: Alignment.bottomLeft,
-              children: [
-                _buildNewsImage(),
-                _buildSubtitle(),
-              ],
-            ),
-          ),
+          _buildNewsBanner(),
         ],
       )
     ]));
+  }
+
+  GestureDetector _buildNewsBanner() {
+    return GestureDetector(
+      onTap: () {},
+      child: Stack(
+        alignment: Alignment.bottomLeft,
+        children: [
+          _buildNewsImage(),
+          _buildSubtitle(),
+        ],
+      ),
+    );
   }
 
   Text _buildTitle() {
