@@ -3,7 +3,10 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/view/pages/main/componunts/big_news_tab.dart';
 import 'package:sporting_app/view/pages/main/componunts/event_category.dart';
+import 'package:sporting_app/view/pages/main/componunts/mini_news_list.dart';
+import 'package:sporting_app/view/pages/main/componunts/mini_news_tab.dart';
 import 'package:sporting_app/view/pages/main/componunts/recommend_stadium_list.dart';
 import 'package:sporting_app/view/pages/main/componunts/recommend_stadium_title.dart';
 import 'package:sporting_app/view/pages/main/componunts/sliver_divider.dart';
@@ -63,23 +66,22 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget _buildPageWidget0(int pageIndex) {
-    return RefreshIndicator(onRefresh: _refreshData,
-    child: CustomScrollView(
-      slivers: [
-
-      ],
-    ),);
+    return RefreshIndicator(
+      onRefresh: _refreshData,
+      child: CustomScrollView(
+        slivers: [],
+      ),
+    );
   }
 
   Widget _buildPageWidget1(int pageIndex) {
-    return RefreshIndicator(onRefresh: _refreshData,
+    return RefreshIndicator(
+      onRefresh: _refreshData,
       child: CustomScrollView(
-        slivers: [
-
-        ],
-      ),);
+        slivers: [],
+      ),
+    );
   }
-
 
   Widget _buildPageWidget2(int pageIndex) {
     return RefreshIndicator(
@@ -93,99 +95,49 @@ class _MainPageState extends State<MainPage> {
           const RecommendStadiumTitle(),
           const RecommendStadiumList(),
           const SliverDivider(topPadding: 20),
-          _news(),
-          _news2(),
-          const SliverDivider(topPadding: 20),
-          _news0(),
-          _news3(),
+          const BigNewsTab(
+            title: "UCL 8강에서 만난 우승 후보 팀들 간의 맞대결!",
+            subtitle: "'펩과 투헬 격돌'...맨시티vs뮌헨 \n 선발 공개[UCL 라인업]",
+            image: "assets/news1.jpg",
+          ),
+          const MiniNewsList(),
         ],
       ),
     );
   }
 
-
   Widget _buildPageWidget3(int pageIndex) {
-    return RefreshIndicator(onRefresh: _refreshData,
+    return RefreshIndicator(
+      onRefresh: _refreshData,
       child: CustomScrollView(
-        slivers: [
-
-        ],
-      ),);
+        slivers: [],
+      ),
+    );
   }
-
 
   Widget _buildPageWidget4(int pageIndex) {
-    return RefreshIndicator(onRefresh: _refreshData,
+    return RefreshIndicator(
+      onRefresh: _refreshData,
       child: CustomScrollView(
-        slivers: [
-
-        ],
-      ),);
+        slivers: [],
+      ),
+    );
   }
-
 
   SliverToBoxAdapter _news2() {
     return SliverToBoxAdapter(
-          child: Container(
-            width: 140,
-            height: 170,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 20),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Container(
-                            width: 175,
-                            height: 100,
-                            child: Image.asset("assets/wbc.jpg",fit: BoxFit.cover),
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Text("6년 만의 WBC, 한국대표팀 \n일정은? 한일전은..", style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13,
-                        ),)
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
-                  child: Container(
-                    child: InkWell(
-                      onTap: () {},
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Container(
-                              width: 175,
-                              height: 100,
-                              child: Image.asset("assets/Netherland.jpg", fit: BoxFit.cover),
-                            ),
-
-                          ),
-                          Text("네덜란드 축구 대표팀 \n  카타르 월드컵 명단.", style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                          ),)
-                        ],
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-        );
+      child: SizedBox(
+        width: 140,
+        height: 170,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: const [
+            MiniNewsTab(title: "6년 만의 WBC, 한국대표팀 \n일정은? 한일전은..", image: "assets/wbc.jpg"),
+            MiniNewsTab(title: "네덜란드 축구 대표팀 \n  카타르 월드컵 명단.", image: "assets/Netherland.jpg"),
+          ],
+        ),
+      ),
+    );
   }
 
   SliverToBoxAdapter _news3() {
@@ -208,14 +160,18 @@ class _MainPageState extends State<MainPage> {
                       child: Container(
                         width: 175,
                         height: 100,
-                        child: Image.asset("assets/news4.jpg",fit: BoxFit.cover),
+                        child:
+                            Image.asset("assets/news4.jpg", fit: BoxFit.cover),
                       ),
                     ),
                     SizedBox(height: 10),
-                    Text("17년 만의 금메달을 위해.. \n탁구 대표팀 '실전연습'", style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13,
-                    ),)
+                    Text(
+                      "17년 만의 금메달을 위해.. \n탁구 대표팀 '실전연습'",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -233,14 +189,17 @@ class _MainPageState extends State<MainPage> {
                         child: Container(
                           width: 175,
                           height: 100,
-                          child: Image.asset("assets/news3.jpg", fit: BoxFit.cover),
+                          child: Image.asset("assets/news3.jpg",
+                              fit: BoxFit.cover),
                         ),
-
                       ),
-                      Text("여자 배구 김연경 20득점 \n도미니카 꺾고 '8강'", style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                      ),)
+                      Text(
+                        "여자 배구 김연경 20득점 \n도미니카 꺾고 '8강'",
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -250,109 +209,6 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
     );
-  }
-
-  SliverList _news() {
-    return SliverList(
-        delegate: SliverChildListDelegate([
-      Column(
-        children: [
-          SizedBox(height: 10),
-          Text(
-            "UCL 8강에서 만난 우승 후보 팀들 간의 맞대결!",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
-          ),
-          SizedBox(height: 15),
-          GestureDetector(
-            onTap: () {},
-            child: Stack(
-              alignment: Alignment.bottomLeft,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                      width: double.infinity,
-                      height: 200,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          "assets/news1.jpg",
-                          fit: BoxFit.fitWidth,
-                        ),
-                      )),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "'펩과 투헬 격돌'...맨시티vs뭰헨 \n 선발 공개[UCL 라인업]",
-                      style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      )
-    ]));
-  }
-
-  SliverList _news0() {
-    return SliverList(
-        delegate: SliverChildListDelegate([
-          Column(
-            children: [
-              SizedBox(height: 10),
-              Text(
-                "나달 '페더러는 완벽한 선수' : 스포츠뉴스",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
-              ),
-              SizedBox(height: 15),
-              GestureDetector(
-                onTap: () {},
-                child: Stack(
-                  alignment: Alignment.bottomLeft,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Container(
-                          width: double.infinity,
-                          height: 200,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset(
-                              "assets/news6.jpg",
-                              fit: BoxFit.cover,
-                            ),
-                          )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left:22),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "'황제' 페더러 나달, 첫 '환상 복식조'",
-                            style: TextStyle(
-                              fontSize: 19,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )
-        ]));
   }
 
   Future<void> _refreshData() async {
