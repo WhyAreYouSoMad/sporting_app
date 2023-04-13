@@ -3,7 +3,7 @@ import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/componunts/sliver_divider.dart';
 import 'package:sporting_app/view/pages/playerinfo/componunts/player_info_inquiry.dart';
 import 'package:sporting_app/view/pages/playerinfo/componunts/player_info_main_content.dart';
-import 'package:sporting_app/view/pages/playerinfo/componunts/player_info_reservation_tab.dart';
+import 'package:sporting_app/view/componunts/info_reservation_tab.dart';
 
 class PlayerInfoPage extends StatelessWidget {
   const PlayerInfoPage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class PlayerInfoPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           PlayerInfoMainContent(),
-          PlayerInfoReservationTab(),
+          InfoReservationTab(),
           SliverDivider(topPadding: 20),
           PlayerInfoInquiry(),
           SliverDivider(),
