@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/common/constants.dart';
 
-class PlayerInfoReservationTab extends StatelessWidget {
-  const PlayerInfoReservationTab({Key? key}) : super(key: key);
+class InfoReservationTab extends StatelessWidget {
+  const InfoReservationTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
