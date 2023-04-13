@@ -36,7 +36,7 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       children: [
-        _companyInfoPage(0),
+        _page(0),
         _page(1),
         _mainPage(2),
         _page(3),
@@ -48,7 +48,6 @@ class _MainHolderState extends State<MainHolder> {
   Widget _page(index) => const Placeholder();
 
   PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
-  CompanyInfoPage _companyInfoPage(index) => const CompanyInfoPage();
 
   MainPage _mainPage(index) => const MainPage();
 
