@@ -4,16 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/login/login_page.dart';
 import 'package:sporting_app/view/pages/loginhome/componunts/join_terms.dart';
+import 'package:sporting_app/view/pages/main/main_holder.dart';
 import 'package:sporting_app/view/pages/main/main_page.dart';
 
-class MyLogin extends StatefulWidget {
+class MyLogin extends StatelessWidget {
   const MyLogin({Key? key}) : super(key: key);
 
-  @override
-  State<MyLogin> createState() => _MyLoginState();
-}
-
-class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -135,7 +131,7 @@ class _MyLoginState extends State<MyLogin> {
       child: IconButton(
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => MainPage()));
+              .push(MaterialPageRoute(builder: (_) => MainHolder()));
         },
         icon: const Icon(
           Icons.arrow_back,
