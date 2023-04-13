@@ -9,3 +9,5 @@ const kBoarderColor = Color(0xFFDDDDDD);
 const kLogoColor = Color(0xFF000000);
 const kDarkIconColor = Color(0xFF000000);
 const kWhiteIconColor = Color(0xFFFFFFFF);
+const kBluewColor = Color(0xFF0000FF);
+const kGrayColor = Color(0xFFCCCCCC);

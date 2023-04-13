@@ -37,7 +37,7 @@ class MainPage extends StatelessWidget {
       ),
     );
   }
-
+  
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
@@ -84,5 +84,5 @@ class MainPage extends StatelessWidget {
       ],
     );
   }
-
+  
 }
