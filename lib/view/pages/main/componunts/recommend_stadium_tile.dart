@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sporting_app/view/componunts/rating_star.dart';
 
 class RecommendStadiumTile extends StatelessWidget {
   final String image;
@@ -21,7 +22,7 @@ class RecommendStadiumTile extends StatelessWidget {
             const Spacer(),
             _buildStadiumName(),
             const Spacer(),
-            _buildRatingStar(),
+            RatingStar(rating: rating, reviewCount: reviewCount),
             const SizedBox(height: 8),
             _buildRatingNum()
           ],
@@ -40,40 +41,6 @@ class RecommendStadiumTile extends StatelessWidget {
                 style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
               const Text("원")
-            ],
-          );
-  }
-
-  Row _buildRatingStar() {
-    return Row(
-            children: [
-              Icon(
-                Icons.star,
-                color: rating >= 1 ? Colors.yellow : Colors.grey,
-                size: 14,
-              ),
-              Icon(
-                Icons.star,
-                color: rating >= 2 ? Colors.yellow : Colors.grey,
-                size: 14,
-              ),
-              Icon(
-                Icons.star,
-                color: rating >= 3 ? Colors.yellow : Colors.grey,
-                size: 14,
-              ),
-              Icon(
-                Icons.star,
-                color: rating >= 4 ? Colors.yellow : Colors.grey,
-                size: 14,
-              ),
-              Icon(
-                Icons.star,
-                color: rating >= 5 ? Colors.yellow : Colors.grey,
-                size: 14,
-              ),
-              Text(rating.toString()),
-              Text("($reviewCount)"),
             ],
           );
   }

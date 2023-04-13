@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sporting_app/view/pages/main/main_holder.dart';
+import 'package:sporting_app/view/pages/sportlist/sport_game_list.dart';
 
 class ImageButton extends StatelessWidget {
   final String text;
@@ -12,7 +14,7 @@ class ImageButton extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        _buildIcon(),
+        _buildIcon(context),
         _buildSportName(),
       ],
     );
@@ -25,9 +27,11 @@ class ImageButton extends StatelessWidget {
     );
   }
 
-  Widget _buildIcon() {
+  Widget _buildIcon(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () {Navigator
+          .of(context)
+          .push(MaterialPageRoute(builder: (_) => SportGameList(text)));},
       icon: Image.asset(image),
       iconSize: 40,
     );
