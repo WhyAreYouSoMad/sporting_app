@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/view/pages/companyinfo/company_info_page.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/pages/main/main_page.dart';
 import 'package:sporting_app/view/pages/playerinfo/player_info_page.dart';
@@ -35,7 +36,7 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       children: [
-        _page(0),
+        _companyInfoPage(0),
         _page(1),
         _mainPage(2),
         _page(3),
@@ -47,6 +48,7 @@ class _MainHolderState extends State<MainHolder> {
   Widget _page(index) => const Placeholder();
 
   PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
+  CompanyInfoPage _companyInfoPage(index) => const CompanyInfoPage();
 
   MainPage _mainPage(index) => const MainPage();
 
