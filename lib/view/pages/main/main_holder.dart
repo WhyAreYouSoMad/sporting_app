@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/pages/main/main_page.dart';
+import 'package:sporting_app/view/pages/playerinfo/player_info_page.dart';
 import 'package:sporting_app/view/pages/stadiumenroll/stadium_enroll_page.dart';
 
 class MainHolder extends StatefulWidget {
@@ -35,17 +36,17 @@ class _MainHolderState extends State<MainHolder> {
       },
       children: [
         _page(0),
-        _stadiumEnrollPage(1),
+        _page(1),
         _mainPage(2),
         _page(3),
-        _page(4),
+        _playerInfoPage(4),
       ],
     );
   }
 
   Widget _page(index) => const Placeholder();
 
-  StadiumEnrollPage _stadiumEnrollPage(index) => const StadiumEnrollPage();
+  PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
 
   MainPage _mainPage(index) => const MainPage();
 
