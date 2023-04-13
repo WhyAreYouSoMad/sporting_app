@@ -10,13 +10,13 @@ class PlayerInfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: [
           PlayerInfoMainContent(),
           InfoReservationTab(),
           SliverDivider(topPadding: 20),
-          PlayerInfoInquiry(),
+          InfoInquiry(),
           SliverDivider(),
         ],
       ),
