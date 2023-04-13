@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/login/login_page.dart';
 import 'package:sporting_app/view/pages/loginhome/componunts/join_terms.dart';
+import 'package:sporting_app/view/pages/loginhome/componunts/login_logo.dart';
 import 'package:sporting_app/view/pages/main/main_holder.dart';
-import 'package:sporting_app/view/pages/main/main_page.dart';
 
 class MyLogin extends StatelessWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -17,12 +17,15 @@ class MyLogin extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
           body: Stack(
             children: [
               _buildLogo(),
               _buildOAuthButtons(),
               _buildLoginAndJoinButtons(context),
-              _buildHeader(context),
             ],
           ),
         ),
@@ -112,16 +115,9 @@ class MyLogin extends StatelessWidget {
   }
 
   Widget _buildLogo() {
-    return Positioned(
+    return const Positioned(
       top: 20,
-      child: Container(
-        alignment: Alignment.center,
-        child: Image.asset(
-          'assets/sporting.png',
-          width: 400,
-          height: 400,
-        ),
-      ),
+      child: LoginLogo()
     );
   }
 
