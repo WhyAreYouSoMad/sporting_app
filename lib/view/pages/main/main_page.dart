@@ -8,7 +8,7 @@ import 'package:sporting_app/view/pages/main/componunts/event_category.dart';
 import 'package:sporting_app/view/pages/main/componunts/mini_news_list.dart';
 import 'package:sporting_app/view/pages/main/componunts/recommend_stadium_list.dart';
 import 'package:sporting_app/view/pages/main/componunts/recommend_stadium_title.dart';
-import 'package:sporting_app/view/pages/main/componunts/sliver_divider.dart';
+import 'package:sporting_app/view/componunts/sliver_divider.dart';
 import 'package:sporting_app/view/pages/main/componunts/sports_category.dart';
 
 class MainPage extends StatelessWidget {
@@ -37,7 +37,7 @@ class MainPage extends StatelessWidget {
       ),
     );
   }
-
+  
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
@@ -84,5 +84,5 @@ class MainPage extends StatelessWidget {
       ],
     );
   }
-
+  
 }
