@@ -5,6 +5,7 @@ import 'package:sporting_app/view/pages/companyinfo/company_info_page.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/pages/main/main_page.dart';
 import 'package:sporting_app/view/pages/playerinfo/player_info_page.dart';
+import 'package:sporting_app/view/pages/resionlist/resion_list_page.dart';
 import 'package:sporting_app/view/pages/stadiumenroll/stadium_enroll_page.dart';
 
 class MainHolder extends StatefulWidget {
@@ -39,7 +40,7 @@ class _MainHolderState extends State<MainHolder> {
       },
       children: [
         _page(0),
-        _page(1),
+        _resionListPage(1),
         _mainPage(2),
         _page(3),
         _playerInfoPage(4),
@@ -48,6 +49,8 @@ class _MainHolderState extends State<MainHolder> {
   }
 
   Widget _page(index) => const Placeholder();
+
+  ResionListPage _resionListPage(index) => const ResionListPage();
 
   PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
 

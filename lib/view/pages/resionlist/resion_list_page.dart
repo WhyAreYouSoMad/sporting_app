@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/resionlist/resion_dummy.dart';
@@ -6,8 +7,6 @@ import 'package:sporting_app/view/pages/resionlist/resion_dummy.dart';
 import 'resion_dummy.dart';
 
 class ResionListPage extends StatefulWidget {
-
-
   const ResionListPage({Key? key}) : super(key: key);
 
   @override
@@ -16,6 +15,7 @@ class ResionListPage extends StatefulWidget {
 
 class _ResionListPageState extends State<ResionListPage> {
   List<Area> areas = seoul;
+
   // Map<Area, bool> selectedAreas = {
   //   seoul[0]: false,
   //   gyeonggi[0]: false,
@@ -31,6 +31,7 @@ class _ResionListPageState extends State<ResionListPage> {
     '부산': false,
     '울산': false,
   };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,250 +44,24 @@ class _ResionListPageState extends State<ResionListPage> {
               children: [
                 Column(
                   children: [
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = seoul;
-                          selectedAreas['서울'] = true;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['서울']! ? Colors.white : Colors.grey[300],
-                        height: 50,
-                        child: Center(
-                          child: Text("서울", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 2, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = gyeonggi;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = true;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['경기']! ? Colors.white : Colors.grey[300],
-                        height: 50,
-                        child: Center(
-                          child: Text("경기", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 1, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = Incheon;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = true;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['인천']! ? Colors.white : Colors.grey[300],
-                        height: 50,
-                        child: Center(
-                          child: Text("인천", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 1, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = Gangwon;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = true;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        height: 50,
-                        color: selectedAreas['강원']! ? Colors.white : Colors.grey[300],
-                        child: Center(
-                          child: Text("강원", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 1, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = gwangju;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = true;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['광주']! ? Colors.white : Colors.grey[300],
-                        height: 50,
-                        child: Center(
-                          child: Text("광주", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 1, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = Jeju;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = true;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['제주']! ? Colors.white : Colors.grey[300],
-                        height: 50,
-                        child: Center(
-                          child: Text("제주", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 1, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = Daegu;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = true;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['대구']! ? Colors.white : Colors.grey[300],
-                        height: 50,
-                        child: Center(
-                          child: Text("대구", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 1, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = busan;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = true;
-                          selectedAreas['울산'] = false;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['부산']! ? Colors.white : Colors.grey[300],
-
-                        height: 50,
-                        child: Center(
-                          child: Text("부산", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),Divider(thickness: 1, height: 0),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          areas = Ulsan;
-                          selectedAreas['서울'] = false;
-                          selectedAreas['경기'] = false;
-                          selectedAreas['인천'] = false;
-                          selectedAreas['강원'] = false;
-                          selectedAreas['광주'] = false;
-                          selectedAreas['제주'] = false;
-                          selectedAreas['대구'] = false;
-                          selectedAreas['부산'] = false;
-                          selectedAreas['울산'] = true;
-                        });
-                      },
-                      child: Container(
-                        color: selectedAreas['울산']! ? Colors.white : Colors.grey[300],
-                        height: 50,
-                        child: Center(
-                          child: Text("울산", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                          ),),
-                        ),
-                      ),
-                    ),
-                    Divider(thickness: 1, height: 0),
+                    _buildChooseResion('서울', seoul),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('경기', gyeonggi),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('인천', incheon),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('강원', Gangwon),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('제주', Jeju),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('광주', gwangju),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('대구', Daegu),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('부산', busan),
+                    const Divider(thickness: 2, height: 0),
+                    _buildChooseResion('울산', Ulsan),
+                    const Divider(thickness: 2, height: 0),
                   ],
                 )
               ],
@@ -304,6 +79,31 @@ class _ResionListPageState extends State<ResionListPage> {
     );
   }
 
+  InkWell _buildChooseResion(String resion, List<Area> area) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          areas = area;
+          selectedAreas = selectedAreas.map((e, v) => MapEntry(e, v = false));
+          selectedAreas[resion] = true;
+        });
+      },
+      child: Container(
+        color: selectedAreas[resion]! ? Colors.white : Colors.grey[300],
+        height: 50,
+        child: Center(
+          child: Text(
+            resion,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   InkWell _gu(int index, List<Area> areas) {
     return InkWell(
       onTap: () {},
@@ -311,21 +111,21 @@ class _ResionListPageState extends State<ResionListPage> {
         padding: const EdgeInsets.only(left: 40),
         child: Container(
           height: 50,
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: Color(0xFFCCCCCC),
-                width: 1.0,
-              )
-            )
-          ),
+          decoration: const BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(
+            color: Color(0xFFCCCCCC),
+            width: 1.0,
+          ))),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(areas[index].area, style: TextStyle(
-                fontSize: 14,
-              ),
+              Text(
+                areas[index].area,
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
               ),
             ],
           ),
@@ -351,7 +151,7 @@ class _ResionListPageState extends State<ResionListPage> {
                     color: Colors.white,
                     child: InkWell(
                       onTap: () {},
-                      child: Container(
+                      child: const SizedBox(
                         height: 30,
                         child: Center(
                           child: Text(
@@ -372,7 +172,7 @@ class _ResionListPageState extends State<ResionListPage> {
                     color: Colors.white,
                     child: InkWell(
                       onTap: () {},
-                      child: Container(
+                      child: const SizedBox(
                         height: 30,
                         child: Center(
                           child: Text(
@@ -395,14 +195,10 @@ class _ResionListPageState extends State<ResionListPage> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                _AreaCard(),
-                _AreaCard(),
-                _AreaCard(),
-                _AreaCard(),
-                _AreaCard(),
-                _AreaCard(),
-                _AreaCard(),
-                _AreaCard(),
+                _AreaCard("해운대구", Icons.home),
+                _AreaCard("동래구 / 사하구", Icons.home),
+                _AreaCard("연제구", Icons.home),
+                _AreaCard("사상구", Icons.home),
               ],
             ),
           ),
@@ -411,37 +207,37 @@ class _ResionListPageState extends State<ResionListPage> {
     );
   }
 
-  Card _AreaCard() {
+  Card _AreaCard(String resion, IconData icon) {
     return Card(
       elevation: 1,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
-          side: BorderSide(
+          side: const BorderSide(
             color: Color(0xFFCCCCCC),
           )),
       child: InkWell(
         onTap: () {},
         child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 10),
           height: 30,
-          width: 75,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.blue[800],
+                  color: icon == Icons.home ? Colors.blue[800] : Colors.redAccent,
                   borderRadius: BorderRadius.circular(3),
                 ),
                 child: Icon(
-                  Icons.home,
+                  icon,
                   size: 15,
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Text(
-                "강원도",
-                style: TextStyle(
+                resion,
+                style: const TextStyle(
                   fontSize: 13,
                 ),
               ),
