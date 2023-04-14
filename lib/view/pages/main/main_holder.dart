@@ -8,6 +8,8 @@ import 'package:sporting_app/view/pages/playerinfo/player_info_page.dart';
 import 'package:sporting_app/view/pages/stadiumenroll/stadium_enroll_page.dart';
 
 class MainHolder extends StatefulWidget {
+
+
   const MainHolder({Key? key}) : super(key: key);
 
   @override
@@ -45,7 +47,7 @@ class _MainHolderState extends State<MainHolder> {
     );
   }
 
-  Widget _page(index) => const Placeholder();
+  ResionListPage _resionListPage(index) => ResionListPage();
 
   PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
 
@@ -65,11 +67,26 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       items: [
-        const Icon(Icons.map, color: kDarkIconColor),
-        const Icon(Icons.sports_baseball, color: kDarkIconColor),
-        Image.asset('assets/sporting.png', color: kLogoColor),
-        const Icon(Icons.mail, color: kDarkIconColor),
-        const Icon(Icons.person, color: kDarkIconColor),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: const Icon(Icons.map, color: kDarkIconColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: const Icon(Icons.sports_baseball, color: kDarkIconColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Image.asset('assets/sporting.png', color: kLogoColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Icon(Icons.mail, color: kDarkIconColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Icon(Icons.person, color: kDarkIconColor),
+        ),
       ],
     );
   }
