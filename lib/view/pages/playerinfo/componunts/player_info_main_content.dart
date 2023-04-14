@@ -3,8 +3,8 @@ import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/playerinfo/componunts/player_info_card.dart';
 
 class PlayerInfoMainContent extends StatelessWidget {
-  const PlayerInfoMainContent({Key? key}) : super(key: key);
-
+  final String username;
+  const PlayerInfoMainContent({required this.username, Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -17,7 +17,7 @@ class PlayerInfoMainContent extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 10),
-                _buildListTile(),
+                _buildListTile(username),
                 _buildPointCardButton(),
                 _buildCoinCardButton(),
                 _buildCouponCardButton(),
@@ -111,7 +111,7 @@ class PlayerInfoMainContent extends StatelessWidget {
     );
   }
 
-  Widget _buildListTile() {
+  Widget _buildListTile(String nickname) {
     return Container(
       decoration: BoxDecoration(
           border: Border(
@@ -119,7 +119,7 @@ class PlayerInfoMainContent extends StatelessWidget {
       )),
       child: ListTile(
         leading: _avatar(),
-        title: _username(),
+        title: _username(nickname),
         subtitle: _updateButton(),
         trailing: _myPromotion(),
       ),
@@ -161,8 +161,8 @@ class PlayerInfoMainContent extends StatelessWidget {
     );
   }
 
-  Widget _username() {
-    return const Text("바티칸함수명",
+  Widget _username(String nickname) {
+    return Text(nickname,
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19));
   }
 
