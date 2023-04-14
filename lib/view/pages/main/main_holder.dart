@@ -47,7 +47,7 @@ class _MainHolderState extends State<MainHolder> {
     );
   }
 
-  ResionListPage _resionListPage(index) => ResionListPage();
+  Widget _page(index) => const Placeholder();
 
   PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
 
