@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/pages/main/main_page.dart';
+import 'package:sporting_app/view/pages/resionlist/resion_list_page.dart';
 import 'package:sporting_app/view/pages/stadiumenroll/stadium_enroll_page.dart';
 
 class MainHolder extends StatefulWidget {
+
+
   const MainHolder({Key? key}) : super(key: key);
 
   @override
@@ -34,16 +37,16 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       children: [
-        _page(0),
+        _resionListPage(0),
         _stadiumEnrollPage(1),
         _mainPage(2),
-        _page(3),
-        _page(4),
+        _resionListPage(3),
+        _resionListPage(4),
       ],
     );
   }
 
-  Widget _page(index) => const Placeholder();
+  ResionListPage _resionListPage(index) => ResionListPage();
 
   StadiumEnrollPage _stadiumEnrollPage(index) => const StadiumEnrollPage();
 
@@ -63,11 +66,26 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       items: [
-        const Icon(Icons.map, color: kDarkIconColor),
-        const Icon(Icons.sports_baseball, color: kDarkIconColor),
-        Image.asset('assets/sporting.png', color: kLogoColor),
-        const Icon(Icons.mail, color: kDarkIconColor),
-        const Icon(Icons.person, color: kDarkIconColor),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: const Icon(Icons.map, color: kDarkIconColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: const Icon(Icons.sports_baseball, color: kDarkIconColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Image.asset('assets/sporting.png', color: kLogoColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Icon(Icons.mail, color: kDarkIconColor),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Icon(Icons.person, color: kDarkIconColor),
+        ),
       ],
     );
   }
