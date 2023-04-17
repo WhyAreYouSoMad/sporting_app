@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sporting_app/view/pages/main/main_holder.dart';
-import 'package:sporting_app/view/pages/main/main_page.dart';
+import 'package:sporting_app/common/route.dart';
 
 
 void main() {
@@ -15,10 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'main_page',
-      routes: {
-        'main_page' : (context) => const MainHolder()
-      },
+      initialRoute: '/main',
+      routes: getRouter(),
     );
   }
 }
