@@ -26,17 +26,17 @@ class StadiumEnrollPage extends StatelessWidget {
   }
 
   Padding _buildButton() {
-    return const Padding(
-          padding: EdgeInsets.only(left: 35, right: 35, top: 30, bottom: 30),
-          child: MyButton(text: "경기장 등록하기"),
-        );
+    return Padding(
+      padding: const EdgeInsets.only(left: 35, right: 35, top: 30, bottom: 30),
+      child: MyButton(text: "경기장 등록하기", funButton: () {}),
+    );
   }
 
   Padding _buildCheckBox(String text) {
     return Padding(
-          padding: EdgeInsets.only(left: 30, top: 10),
-          child: TermCheckBox(text: text),
-        );
+      padding: const EdgeInsets.only(left: 30, top: 10),
+      child: TermCheckBox(text: text),
+    );
   }
 
   AppBar _buildAppBar(BuildContext context) {
@@ -52,5 +52,4 @@ class StadiumEnrollPage extends StatelessWidget {
       title: const Text("경기장 등록", style: TextStyle(color: kBlackColor)),
     );
   }
-
 }

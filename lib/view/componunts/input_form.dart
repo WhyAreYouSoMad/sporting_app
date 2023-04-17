@@ -8,16 +8,13 @@ class InputForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20, right: 40, left: 40),
-      child: TextField(
-        decoration: InputDecoration(
-          fillColor: kPrimaryColor,
-          hintText: hintText,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5),
-            borderSide: const BorderSide(width: 0.5),
-          ),
+    return TextField(
+      decoration: InputDecoration(
+        fillColor: kPrimaryColor,
+        hintText: hintText,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: const BorderSide(width: 0.5),
         ),
       ),
     );

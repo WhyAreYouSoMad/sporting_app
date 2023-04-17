@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
               const InputForm(hintText: "E-mail"),
               const InputForm(hintText: "Password"),
               const SizedBox(height: 20),
-              const MyButton(text: "로그인"),
+              MyButton(text: "로그인", funButton: () {}),
               _buildLoginUnderBar()
             ],
           ),
