@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/common/constants.dart';
 import 'package:sporting_app/view/pages/playerinfo/componunts/player_info_card.dart';
 
 class PlayerInfoMainContent extends StatelessWidget {

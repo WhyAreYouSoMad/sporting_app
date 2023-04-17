@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/common/constants.dart';
 import 'package:sporting_app/view/componunts/rating_star.dart';
 
 class StadiumListCard extends StatelessWidget {

@@ -1,12 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/common/constants.dart';
-import 'package:sporting_app/view/pages/companyinfo/company_info_page.dart';
+import 'package:sporting_app/common/constants.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/pages/main/main_page.dart';
 import 'package:sporting_app/view/pages/playerinfo/player_info_page.dart';
 import 'package:sporting_app/view/pages/resionlist/resion_list_page.dart';
-import 'package:sporting_app/view/pages/stadiumenroll/stadium_enroll_page.dart';
 
 class MainHolder extends StatefulWidget {
 
