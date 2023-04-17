@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/common/constants.dart';
-import 'package:sporting_app/view/componunts/input_form.dart';
-import 'package:sporting_app/view/componunts/my_button.dart';
 import 'package:sporting_app/view/pages/join/components/join_body.dart';
-
-import '../loginhome/login_home_page.dart';
 
 class JoinPage extends StatelessWidget {
   const JoinPage({Key? key}) : super(key: key);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sporting_app/controller/player_info_controller.dart';
-import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/componunts/sliver_divider.dart';
 import 'package:sporting_app/view/componunts/info_inquiry.dart';
 import 'package:sporting_app/view/pages/playerinfo/componunts/player_info_main_content.dart';

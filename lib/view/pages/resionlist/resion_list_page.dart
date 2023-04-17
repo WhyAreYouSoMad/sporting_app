@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/pages/resionlist/resion_dummy.dart';
 import 'package:sporting_app/view/pages/resionlist/resion_dummy.dart';
 

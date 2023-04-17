@@ -1,6 +1,5 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/common/constants.dart';
 import 'package:sporting_app/view/pages/loginhome/login_home_page.dart';
 import 'package:sporting_app/view/pages/main/componunts/banner_listview.dart';
 import 'package:sporting_app/view/pages/main/componunts/big_news_tab.dart';

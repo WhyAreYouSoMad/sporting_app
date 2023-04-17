@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/common/constants.dart';
+import 'package:sporting_app/common/constants.dart';
 import 'package:sporting_app/view/componunts/input_form.dart';
 import 'package:sporting_app/view/componunts/my_button.dart';
 import 'package:sporting_app/view/componunts/term_check_box.dart';
