@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/common/componunts/input_form.dart';
 import 'package:sporting_app/common/componunts/my_button.dart';
+import 'package:sporting_app/common/componunts/my_text_form_field.dart';
 import 'package:sporting_app/view/pages/auth/join/components/join_header.dart';
 
 class JoinBody extends StatelessWidget {
@@ -17,15 +17,15 @@ class JoinBody extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(top: 20, right: 40, left: 40),
-            child: InputForm(hintText: "E-mail"),
+            child: MyTextFormField(hintText: "E-mail"),
           ),
           const Padding(
             padding: EdgeInsets.only(top: 20, right: 40, left: 40),
-            child: InputForm(hintText: "Password"),
+            child: MyTextFormField(hintText: "Password"),
           ),
           const Padding(
             padding: EdgeInsets.only(top: 20, right: 40, left: 40),
-            child: InputForm(hintText: "Confirm Password"),
+            child: MyTextFormField(hintText: "Confirm Password"),
           ),
           Expanded(
             child: Container(

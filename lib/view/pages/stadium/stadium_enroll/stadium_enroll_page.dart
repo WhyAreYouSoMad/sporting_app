@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/common/componunts/input_form.dart';
 import 'package:sporting_app/common/componunts/my_button.dart';
+import 'package:sporting_app/common/componunts/my_text_form_field.dart';
 import 'package:sporting_app/common/componunts/term_check_box.dart';
 import 'package:sporting_app/common/constants.dart';
 
@@ -13,8 +13,8 @@ class StadiumEnrollPage extends StatelessWidget {
       appBar: _buildAppBar(context),
       body: ListView(
         children: [
-          const InputForm(hintText: "경기장 이름"),
-          const InputForm(hintText: "경기장 주소"),
+          const MyTextFormField(hintText: "경기장 이름"),
+          const MyTextFormField(hintText: "경기장 주소"),
           _buildCheckBox("개인정보 공유 동의"),
           _buildCheckBox("사업자 등록 동의"),
           _buildCheckBox("결제 내역 공유 동의"),

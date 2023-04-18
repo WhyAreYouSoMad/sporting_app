@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/pages/auth/login/componunts/login_body.dart';
+import 'package:sporting_app/view/pages/auth/login/components/login_body.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);

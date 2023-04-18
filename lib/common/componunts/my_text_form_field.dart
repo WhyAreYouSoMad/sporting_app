@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/common/constants.dart';
 
-class InputForm extends StatelessWidget {
+class MyTextFormField extends StatelessWidget {
   final String hintText;
 
-  const InputForm({Key? key, required this.hintText}) : super(key: key);
+  const MyTextFormField({Key? key, required this.hintText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
