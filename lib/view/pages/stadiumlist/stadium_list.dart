@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sporting_app/view/common/constants.dart';
 import 'package:sporting_app/view/componunts/rating_star.dart';
 import 'package:sporting_app/view/pages/stadiumlist/componunts/stadium_list_card.dart';
+import 'package:sporting_app/view/pages/stadiumlist/componunts/stadium_list_detail.dart';
 
 class StadiumList extends StatelessWidget {
   final String sportName;
@@ -16,11 +17,16 @@ class StadiumList extends StatelessWidget {
         width: double.infinity,
         color: kPrimaryColor,
         child: ListView(
-          children: const [
-            StadiumListCard(
-              image: "assets/billiardhall.jpg",
-              price: "60,000",
-              stadiumName: "테니스장",
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_)=> StadiumListDetail()));
+              },
+              child: StadiumListCard(
+                image: "assets/billiardhall.jpg",
+                price: "60,000",
+                stadiumName: "테니스장",
+              ),
             ),
             StadiumListCard(
               image: "assets/billiardhall.jpg",

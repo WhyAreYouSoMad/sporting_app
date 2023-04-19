@@ -26,7 +26,8 @@ class RecommendStadiumTitle extends StatelessWidget {
 
   TextButton _buildListButton() {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+      },
       style: TextButton.styleFrom(
         minimumSize: Size.zero,
         padding: EdgeInsets.zero,

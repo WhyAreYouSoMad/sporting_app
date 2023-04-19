@@ -33,7 +33,7 @@ class ImageButton extends StatelessWidget {
           .of(context)
           .push(MaterialPageRoute(builder: (_) => StadiumList(text)));},
       icon: Image.asset(image),
-      iconSize: 40,
+      iconSize: 60,
     );
   }
 }
