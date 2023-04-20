@@ -4,10 +4,20 @@ import 'package:sporting_app/view/componunts/rating_star.dart';
 import 'package:sporting_app/view/pages/stadiumlist/componunts/stadium_list_card.dart';
 import 'package:sporting_app/view/pages/stadiumlist/componunts/stadium_list_detail.dart';
 
-class StadiumList extends StatelessWidget {
+import '../../componunts/rating_star.dart';
+
+class StadiumList extends StatefulWidget {
   final String sportName;
 
   const StadiumList(this.sportName, {Key? key}) : super(key: key);
+
+  @override
+  State<StadiumList> createState() => _StadiumListState();
+}
+
+class _StadiumListState extends State<StadiumList> {
+  DateTime selectedDate =
+      DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +50,7 @@ class StadiumList extends StatelessWidget {
             ),
           ],
         ),
+        centerTitle: true,
       ),
     );
   }
@@ -52,17 +63,23 @@ class StadiumList extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).pop(context);
         },
-        icon: const Icon(Icons.arrow_back, color: kDarkIconColor),
+        icon: const Icon(Icons.arrow_back_ios_new, color: kDarkIconColor),
       ),
-      title: Text(sportName, style: const TextStyle(color: kBlackColor)),
+      title: Text(
+        widget.sportName,
+        style: const TextStyle(color: kBlackColor, fontWeight: FontWeight.bold),
+      ),
       actions: [
         IconButton(
           onPressed: () {
             Navigator.of(context).pushNamed('main_page');
           },
           icon: const Icon(Icons.home, color: kDarkIconColor),
-        )
+        ),
       ],
+    );
+    AppBar(
+      backgroundColor: kBlackColor,
     );
   }
 }

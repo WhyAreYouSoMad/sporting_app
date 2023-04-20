@@ -75,7 +75,7 @@ List<Area> gyeonggi = [
 ];
 
 
-List<Area> Incheon = [
+List<Area> incheon = [
   Area(area: "강화군"),
   Area(area: "웅진군"),
   Area(area: "중구"),
