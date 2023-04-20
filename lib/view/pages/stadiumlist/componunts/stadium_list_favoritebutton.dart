@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+
+class FavoriteButton extends StatefulWidget {
+  const FavoriteButton({Key? key}) : super(key: key);
+
+  @override
+  _FavoriteButtonState createState() => _FavoriteButtonState();
+}
+
+class _FavoriteButtonState extends State<FavoriteButton> {
+  bool _isFavorite = false;
+
+  void _toggleFavorite() {
+    setState(() {
+      _isFavorite = !_isFavorite;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: _toggleFavorite,
+      icon: _isFavorite ? Icon(Icons.favorite) : Icon(Icons.favorite_border_outlined),
+      color: _isFavorite ? Colors.red : null,
+    );
+  }
+}
