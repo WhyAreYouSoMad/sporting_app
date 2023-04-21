@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/pages/company/company_info/company_info_page.dart';
 import 'package:sporting_app/view/pages/main/main_holder/components/main_holder_menu.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
@@ -43,14 +44,14 @@ class _MainHolderState extends State<MainHolder> {
         _regionListPage(1),
         _mainPage(2),
         _page(3),
-        _playerInfoPage(4),
+        _companyInfo(4),
       ],
     );
   }
 
   Widget _page(index) => const Placeholder();
   MainPage _mainPage(index) => const MainPage();
-  PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
+  CompanyInfoPage _companyInfo(index) => const CompanyInfoPage();
   RegionListPage _regionListPage(index) => const RegionListPage();
 
   CurvedNavigationBar _buildNavigationBar() {

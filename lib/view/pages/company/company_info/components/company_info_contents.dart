@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
 
 class CompanyInfoContents extends StatelessWidget {
   const CompanyInfoContents({Key? key}) : super(key: key);
@@ -70,18 +71,25 @@ class CompanyInfoContents extends StatelessWidget {
                 title: "가게 후기",
               ),
             ),
-            Container(
-              padding: const EdgeInsets.only(bottom: 5),
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: kBlackColor.withOpacity(0.1),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => CompanyStadiumListPage(),
+                ),);
+              },
+              child: Container(
+                padding: const EdgeInsets.only(bottom: 5),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: kBlackColor.withOpacity(0.1),
+                    ),
                   ),
                 ),
-              ),
-              child: const MyListTile(
-                image: "assets/images/icons/sns.png",
-                title: "내 경기장 관리하기",
+                child: const MyListTile(
+                  image: "assets/images/icons/sns.png",
+                  title: "내 경기장 관리하기",
+                ),
               ),
             ),
             Container(
