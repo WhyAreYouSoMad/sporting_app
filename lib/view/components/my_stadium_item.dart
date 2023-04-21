@@ -5,23 +5,27 @@ import 'package:sporting_app/view/components/my_rating_star.dart';
 
 class MyStadiumItem extends StatelessWidget {
   final String stadiumName;
-  final String price;
+  final String? price;
   final String location;
   final String stadiumPic;
   final bool hasEvent;
   final bool hasSticky;
   final GestureTapCallback? onTab;
   final bool iscard;
+  final bool hasRating;
+  final double stadiumNameTextSize;
 
   const MyStadiumItem({
-    required this.price,
+    this.price,
     required this.stadiumName,
     required this.location,
     required this.stadiumPic,
     this.onTab,
     this.hasEvent = false,
-    this.hasSticky = true,
+    this.hasSticky = false,
     this.iscard = false,
+    this.hasRating = true,
+    this.stadiumNameTextSize = 18,
     Key? key,
   }) : super(key: key);
 
@@ -45,7 +49,7 @@ class MyStadiumItem extends StatelessWidget {
               location: location,
             ),
             _buildContent(),
-            _buildPriceTab(),
+            price != null ? _buildPriceTab() : const SizedBox(),
           ],
         ),
       ),
@@ -64,7 +68,7 @@ class MyStadiumItem extends StatelessWidget {
           location: location,
         ),
         _buildContent(),
-        _buildPriceTab(),
+        price != null ? _buildPriceTab() : const SizedBox(),
       ],
     );
   }
@@ -110,21 +114,25 @@ class MyStadiumItem extends StatelessWidget {
         children: [
           Text(
             stadiumName,
-            style: const TextStyle(
-              fontSize: 18,
+            style: TextStyle(
+              fontSize: stadiumNameTextSize,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.start,
           ),
-          const MyRatingStar(
-            rating: 4.5,
-            reviewCount: 4800,
-          ),
+          hasRating ? _buildRatingStar() : const SizedBox(),
           const SizedBox(height: 7),
           hasEvent ? _buildEventTab() : const SizedBox(),
         ],
       ),
     );
+  }
+
+  MyRatingStar _buildRatingStar() {
+    return const MyRatingStar(
+          rating: 4.5,
+          reviewCount: 4800,
+        );
   }
 
   Widget _buildEventTab() {
