@@ -5,13 +5,10 @@ class LoginLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: Image.asset(
-        'assets/sporting.png',
-        width: 400,
-        height: 400,
-      ),
+    return Image.asset(
+      'assets/images/logo/sporting.png',
+      width: 400,
+      height: 400,
     );
   }
 }

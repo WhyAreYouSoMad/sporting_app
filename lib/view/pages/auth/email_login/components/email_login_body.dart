@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/view/pages/auth/join/components/join_form.dart';
+import 'package:flutter_final_project_practice/view/pages/auth/email_login/components/email_login_form.dart';
 
-class JoinBody extends StatelessWidget {
-  const JoinBody({Key? key}) : super(key: key);
+class EmailLoginBody extends StatelessWidget {
+
+
+  EmailLoginBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class JoinBody extends StatelessWidget {
       child: ListView(
         children: [
           const SizedBox(height: 100),
-          JoinForm(),
+          EmailLoginForm(),
         ],
       ),
     );
