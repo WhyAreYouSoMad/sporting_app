@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
-import 'package:flutter_final_project_practice/view/components/my_button.dart';
-import 'package:flutter_final_project_practice/view/pages/auth/email_login/components/email_login_body.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/pages/auth/email_login/components/email_login_body.dart';
 
 class EmailLoginPage extends StatelessWidget {
   const EmailLoginPage({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class EmailLoginPage extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/reguster.png'),
+          image: AssetImage('assets/images/back_grounds/login.png'),
           fit: BoxFit.cover,
         ),
       ),

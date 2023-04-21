@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
-import 'package:flutter_final_project_practice/view/components/my_list_tile.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/components/my_list_tile.dart';
 
 class PlayerInfoContents extends StatelessWidget {
   const PlayerInfoContents({Key? key}) : super(key: key);

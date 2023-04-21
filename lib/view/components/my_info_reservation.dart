@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/view/components/my_card_button.dart';
+import 'package:sporting_app/view/components/my_card_button.dart';
 
 class MyInfoReservation extends StatelessWidget {
   const MyInfoReservation({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/view/components/my_button.dart';
+import 'package:sporting_app/view/components/my_button.dart';
 
 class MainEventCategories extends StatelessWidget {
   const MainEventCategories({Key? key}) : super(key: key);

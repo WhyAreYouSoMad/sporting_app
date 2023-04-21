@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/view/pages/auth/login/components/login_buttons.dart';
-import 'package:flutter_final_project_practice/view/pages/auth/login/components/login_logo.dart';
-import 'package:flutter_final_project_practice/view/pages/auth/login/components/oauth_buttons.dart';
+import 'package:sporting_app/view/pages/auth/login/components/login_buttons.dart';
+import 'package:sporting_app/view/pages/auth/login/components/login_logo.dart';
+import 'package:sporting_app/view/pages/auth/login/components/oauth_buttons.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({Key? key}) : super(key: key);

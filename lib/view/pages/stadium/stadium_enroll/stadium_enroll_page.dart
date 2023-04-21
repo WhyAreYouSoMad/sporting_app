@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
-import 'package:flutter_final_project_practice/view/pages/stadium/stadium_enroll/components/stadium_enroll_body.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_enroll/components/stadium_enroll_body.dart';
 
 class StadiumEnrollPage extends StatelessWidget {
   const StadiumEnrollPage({Key? key}) : super(key: key);

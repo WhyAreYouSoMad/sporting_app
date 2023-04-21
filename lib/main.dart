@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sporting_app/common/my_route.dart';
+import 'package:sporting_app/core/constants/my_routes.dart';
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +17,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoute.mainPage,
       routes: getRouter(),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0,
+        ),
+      ),
     );
   }
+
 }

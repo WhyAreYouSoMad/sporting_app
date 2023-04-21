@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
 
 class MyButton extends StatelessWidget {
   final double width;
