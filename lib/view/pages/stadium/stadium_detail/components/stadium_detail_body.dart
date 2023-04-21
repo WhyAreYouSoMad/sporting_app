@@ -18,6 +18,7 @@ class StadiumDetailBody extends StatelessWidget {
             stadiumPic: "assets/images/stadiums/baseballpark.jpg",
             location: "부산 광역시 동래구 사직로 45",
             price: "~2,200,000",
+            hasSticky: false,
           ),
         ),
         const MySliverDivider(topPadding: 10, thickness: 10),
