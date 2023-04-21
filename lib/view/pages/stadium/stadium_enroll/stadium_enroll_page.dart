@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/common/componunts/my_button.dart';
-import 'package:sporting_app/common/componunts/my_text_form_field.dart';
-import 'package:sporting_app/common/componunts/term_check_box.dart';
-import 'package:sporting_app/common/constants.dart';
+import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
+import 'package:flutter_final_project_practice/view/pages/stadium/stadium_enroll/components/stadium_enroll_body.dart';
 
 class StadiumEnrollPage extends StatelessWidget {
   const StadiumEnrollPage({Key? key}) : super(key: key);
@@ -10,46 +8,16 @@ class StadiumEnrollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(context),
-      body: ListView(
-        children: [
-          const MyTextFormField(hintText: "경기장 이름"),
-          const MyTextFormField(hintText: "경기장 주소"),
-          _buildCheckBox("개인정보 공유 동의"),
-          _buildCheckBox("사업자 등록 동의"),
-          _buildCheckBox("결제 내역 공유 동의"),
-          const SizedBox(height: 100),
-          _buildButton(),
-        ],
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios_new, color: kDarkIconColor),
+        ),
+        title: const Text("경기장 등록", style: TextStyle(color: kTextColor)),
       ),
-    );
-  }
-
-  Padding _buildButton() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 35, right: 35, top: 30, bottom: 30),
-      child: MyButton(text: "경기장 등록하기", funButton: () {}),
-    );
-  }
-
-  Padding _buildCheckBox(String text) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 30, top: 10),
-      child: TermCheckBox(text: text),
-    );
-  }
-
-  AppBar _buildAppBar(BuildContext context) {
-    return AppBar(
-      backgroundColor: kWhiteColor,
-      elevation: 0,
-      leading: IconButton(
-        onPressed: () {
-          Navigator.of(context).pop(context);
-        },
-        icon: const Icon(Icons.arrow_back, color: kDarkIconColor),
-      ),
-      title: const Text("경기장 등록", style: TextStyle(color: kBlackColor)),
+      body: StadiumEnrollBody(),
     );
   }
 }
