@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/components/my_stadium_item.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_detail/company_stadium_detail_page.dart';
 
 class CompanyStadiumListBody extends StatelessWidget {
   const CompanyStadiumListBody({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class CompanyStadiumListBody extends StatelessWidget {
       slivers: [
         SliverList(
           delegate: SliverChildBuilderDelegate(
-                (context, index) {
+            (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(5),
                 child: MyStadiumItem(
@@ -22,6 +23,12 @@ class CompanyStadiumListBody extends StatelessWidget {
                   iscard: true,
                   hasSticky: false,
                   onTab: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CompanyStadiumDetailPage(),
+                      ),
+                    );
                   },
                 ),
               );
