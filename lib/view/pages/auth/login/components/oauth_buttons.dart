@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/common/componunts/my_button.dart';
+import 'package:flutter_final_project_practice/view/components/my_button.dart';
 
 class OauthButtons extends StatelessWidget {
   const OauthButtons({Key? key}) : super(key: key);
@@ -11,19 +11,19 @@ class OauthButtons extends StatelessWidget {
       children: [
         MyButton(
           funButton: () {},
-          image: 'assets/google.png',
+          image: 'assets/images/oauth/google.png',
           imageSize: 50,
         ),
         const SizedBox(width: 20),
         MyButton(
           funButton: () {},
-          image: 'assets/kak.png',
+          image: 'assets/images/oauth/kakao.png',
           imageSize: 50,
         ),
         const SizedBox(width: 20),
         MyButton(
           funButton: () {},
-          image: 'assets/naver.png',
+          image: 'assets/images/oauth/naver.png',
           imageSize: 50,
         ),
       ],

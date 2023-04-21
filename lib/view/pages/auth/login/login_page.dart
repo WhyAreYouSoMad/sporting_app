@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/view/pages/auth/login/components/login_body.dart';
+import 'package:flutter_final_project_practice/view/pages/auth/login/components/login_body.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -7,21 +7,15 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: _buildBackground(),
-      child: const SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: LoginBody(),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/back_grounds/login.png'),
+          fit: BoxFit.cover,
         ),
       ),
-    );
-  }
-
-  BoxDecoration _buildBackground() {
-    return const BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage('assets/reguster.png'),
-        fit: BoxFit.cover,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: LoginBody(),
       ),
     );
   }
