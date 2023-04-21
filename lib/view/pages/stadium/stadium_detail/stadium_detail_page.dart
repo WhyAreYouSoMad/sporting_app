@@ -2,16 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_detail/components/stadium_detail_body.dart';
 
-class StadiumDetailPage extends StatefulWidget {
+class StadiumDetailPage extends StatelessWidget {
   StadiumDetailPage({Key? key}) : super(key: key);
-
-  @override
-  State<StadiumDetailPage> createState() => _StadiumDetailPageState();
-}
-
-class _StadiumDetailPageState extends State<StadiumDetailPage> {
-  final bool _isChecked = true;
-  DateTime selectedDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
