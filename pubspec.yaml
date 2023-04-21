@@ -67,6 +67,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/courts/
     - assets/images/sport_categories/
     - assets/images/news/
     - assets/images/oauth/
