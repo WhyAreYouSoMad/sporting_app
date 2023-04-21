@@ -14,22 +14,18 @@ class MySliverDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildListDelegate(
-        [
-          Padding(
-            padding: EdgeInsets.only(top: topPadding),
-            child: Column(
-              children: [
-                Divider(
-                  color: Colors.grey[300],
-                  thickness: thickness,
-                  height: height,
-                ),
-              ],
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.only(top: topPadding),
+        child: Column(
+          children: [
+            Divider(
+              color: Colors.grey[300],
+              thickness: thickness,
+              height: height,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
