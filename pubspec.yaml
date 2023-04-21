@@ -39,6 +39,8 @@ dependencies:
   dio: ^5.1.1
   cached_network_image: ^3.2.3
   flutter_riverpod: ^2.3.4
+  validators: ^3.0.0
+  logger: ^1.1.0
 
 
 
@@ -65,7 +67,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
     - assets/images/sport_categories/
     - assets/images/news/
     - assets/images/oauth/

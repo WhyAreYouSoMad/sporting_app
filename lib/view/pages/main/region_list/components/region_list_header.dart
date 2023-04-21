@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
-import 'package:flutter_final_project_practice/view/pages/main/region_list/components/region_list_favor_button.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/pages/main/region_list/components/region_list_favor_button.dart';
 
 class RegionListHeader extends StatelessWidget {
   const RegionListHeader({Key? key}) : super(key: key);

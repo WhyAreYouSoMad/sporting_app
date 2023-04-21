@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/view/pages/stadium/stadium_list/components/stadium_list_header.dart';
-import 'package:flutter_final_project_practice/view/pages/stadium/stadium_list/components/stadium_list_item.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_list/components/stadium_list_header.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_list/components/stadium_list_item.dart';
 
 class StadiumListBody extends StatelessWidget {
   const StadiumListBody({Key? key}) : super(key: key);

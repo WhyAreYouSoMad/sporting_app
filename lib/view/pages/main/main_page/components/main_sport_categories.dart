@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/view/components/my_button.dart';
-import 'package:flutter_final_project_practice/view/pages/stadium/stadium_list/stadium_list_page.dart';
+import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page.dart';
 
 class MainSportCategories extends StatelessWidget {
   const MainSportCategories({Key? key}) : super(key: key);

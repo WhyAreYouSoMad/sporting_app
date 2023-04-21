@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/view/pages/auth/join/components/join_form.dart';
+import 'package:sporting_app/view/pages/auth/join/components/join_form.dart';
 
 class JoinBody extends StatelessWidget {
   const JoinBody({Key? key}) : super(key: key);

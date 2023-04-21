@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/utils/my_validate_util.dart';
-import 'package:flutter_final_project_practice/view/components/my_button.dart';
-import 'package:flutter_final_project_practice/view/components/my_text_form_field.dart';
+import 'package:sporting_app/core/utils/my_validate_util.dart';
+import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/components/my_text_form_field.dart';
 
 const double _kItemExtent = 32.0;
 const List<String> _sportCategories = <String>[

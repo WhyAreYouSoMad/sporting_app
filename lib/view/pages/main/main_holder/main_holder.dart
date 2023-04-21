@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
-import 'package:flutter_final_project_practice/core/constants/my_routes.dart';
-import 'package:flutter_final_project_practice/view/components/my_button.dart';
-import 'package:flutter_final_project_practice/view/pages/main/main_holder/components/main_holder_menu.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/core/constants/my_routes.dart';
+import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/pages/main/main_holder/components/main_holder_menu.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter_final_project_practice/view/pages/main/main_page/main_page.dart';
-import 'package:flutter_final_project_practice/view/pages/main/player_info/player_info_page.dart';
-import 'package:flutter_final_project_practice/view/pages/main/region_list/region_list_page.dart';
+import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
+import 'package:sporting_app/view/pages/main/player_info/player_info_page.dart';
+import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
 
 class MainHolder extends StatefulWidget {
   const MainHolder({Key? key}) : super(key: key);
@@ -77,7 +77,7 @@ class _MainHolderState extends State<MainHolder> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10),
-          child: Image.asset('assets/images/sporting.png', color: kLogoColor),
+          child: Image.asset('assets/images/logo/sporting.png', color: kLogoColor),
         ),
         const Padding(
           padding: EdgeInsets.only(top: 10),

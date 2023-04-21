@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
-import 'package:flutter_final_project_practice/view/components/my_info_inquiry.dart';
-import 'package:flutter_final_project_practice/view/components/my_info_reservation.dart';
-import 'package:flutter_final_project_practice/view/pages/company/company_info/components/company_info_contents.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/components/my_info_inquiry.dart';
+import 'package:sporting_app/view/components/my_info_reservation.dart';
+import 'package:sporting_app/view/pages/company/company_info/components/company_info_contents.dart';
 
 class CompanyInfoBody extends StatelessWidget {
   const CompanyInfoBody({Key? key}) : super(key: key);

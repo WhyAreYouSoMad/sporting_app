@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_final_project_practice/core/constants/my_colors.dart';
-import 'package:flutter_final_project_practice/view/components/my_rating_star.dart';
+import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/components/my_rating_star.dart';
 
 class MainRecommendStadium extends StatelessWidget {
   const MainRecommendStadium({Key? key}) : super(key: key);
