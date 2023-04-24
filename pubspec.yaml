@@ -41,6 +41,8 @@ dependencies:
   flutter_riverpod: ^2.3.4
   validators: ^3.0.0
   logger: ^1.1.0
+  image_picker: ^0.8.7+4
+  remedi_kopo: ^0.0.1
 
 
 

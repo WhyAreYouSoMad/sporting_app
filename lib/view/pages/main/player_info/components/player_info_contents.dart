@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
+import 'package:sporting_app/view/pages/main/player_info/player_info_update_page.dart';
 
 class PlayerInfoContents extends StatelessWidget {
   const PlayerInfoContents({Key? key}) : super(key: key);
@@ -37,7 +38,9 @@ class PlayerInfoContents extends StatelessWidget {
                 trailingText: "My 혜택",
                 title: "유저네임",
                 subtitle: "내정보 관리 >",
-                funSubtitle: () {},
+                funSubtitle: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=> PlayerInfoUpdatePage()));
+                },
               ),
             ),
             Container(
