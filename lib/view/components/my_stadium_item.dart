@@ -13,6 +13,7 @@ class MyStadiumItem extends StatelessWidget {
   final GestureTapCallback? onTab;
   final bool iscard;
   final bool hasRating;
+  final bool hasUnderBlock;
   final double stadiumNameTextSize;
 
   const MyStadiumItem({
@@ -25,6 +26,7 @@ class MyStadiumItem extends StatelessWidget {
     this.hasSticky = false,
     this.iscard = false,
     this.hasRating = true,
+    this.hasUnderBlock = true,
     this.stadiumNameTextSize = 18,
     Key? key,
   }) : super(key: key);
@@ -43,7 +45,7 @@ class MyStadiumItem extends StatelessWidget {
             MyImageContainer(
               image: stadiumPic,
               hasSticky: hasSticky,
-              hasUnderBlock: true,
+              hasUnderBlock: hasUnderBlock,
               imageHeight: 250,
               empty: 0,
               location: location,
@@ -62,7 +64,7 @@ class MyStadiumItem extends StatelessWidget {
         MyImageContainer(
           image: stadiumPic,
           hasSticky: hasSticky,
-          hasUnderBlock: true,
+          hasUnderBlock: hasUnderBlock,
           imageHeight: 250,
           empty: 0,
           location: location,

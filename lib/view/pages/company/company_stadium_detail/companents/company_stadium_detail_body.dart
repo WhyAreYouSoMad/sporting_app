@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/components/my_sliver_divider.dart';
 import 'package:sporting_app/view/components/my_stadium_item.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_detail/companents/company_stadium_detail_court_detail.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_detail/companents/company_stadium_detail_form.dart';
-import 'package:sporting_app/view/pages/company/company_stadium_detail/companents/company_stadium_detail_info.dart';
 
 class CompanyStadiumDetailBody extends StatelessWidget {
   const CompanyStadiumDetailBody({Key? key}) : super(key: key);
@@ -17,12 +18,35 @@ class CompanyStadiumDetailBody extends StatelessWidget {
             stadiumPic: 'assets/images/stadiums/baseballpark.jpg',
             stadiumName: '사직 야구장',
             hasRating: false,
+            hasUnderBlock: false,
             stadiumNameTextSize: 25,
+          ),
+        ),
+        SliverToBoxAdapter(child: const SizedBox(height: 30)),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: CompanyStadiumDetailForm(),
           ),
         ),
         MySliverDivider(topPadding: 20),
         SliverToBoxAdapter(child: const SizedBox(height: 30)),
-        SliverToBoxAdapter(child: CompanyStadiumDetailForm()),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: CompanyStadiumDetailCourtDetail(),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: MyButton(
+              funButton: () {},
+              text: '코트 추가',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        )
       ],
     );
   }

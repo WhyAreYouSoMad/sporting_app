@@ -31,6 +31,18 @@ Function validatePassword() {
   };
 }
 
+Function validatePrice() {
+  return (String? value) {
+    if (value!.isEmpty) {
+      return "가격에 공백이 들어갈 수 없습니다.";
+    } else if (!isInt(value)) {
+      return "가격에 숫자를 제외한 문자는 들어갈 수 없습니다.";
+    } else {
+      return null;
+    }
+  };
+}
+
 Function validateEmail() {
   return (String? value) {
     if (value!.isEmpty) {
