@@ -43,6 +43,8 @@ dependencies:
   logger: ^1.1.0
   image_picker: ^0.8.7+4
   remedi_kopo: ^0.0.1
+  flutter_secure_storage: ^7.0.0
+  intl: ^0.17.0
 
 
 
