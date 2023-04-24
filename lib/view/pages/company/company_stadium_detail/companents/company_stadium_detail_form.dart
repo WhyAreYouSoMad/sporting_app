@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/core/utils/my_number_editing_controller.dart';
-import 'package:sporting_app/core/utils/my_validate_util.dart';
-import 'package:sporting_app/view/pages/company/company_stadium_detail/companents/company_stadium_detail_text_form_field.dart';
-import 'package:sporting_app/view/pages/company/company_stadium_detail/companents/my_dropdown_button_form_field.dart';
+import 'package:sporting_app/view/components/my_dropdown_button_form_field.dart';
 
 class CompanyStadiumDetailForm extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -42,7 +40,6 @@ class CompanyStadiumDetailForm extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Row(
-
             children: [
               Text(
                 '영업 시간',
@@ -50,10 +47,97 @@ class CompanyStadiumDetailForm extends StatelessWidget {
               ),
               SizedBox(width: 37),
               SizedBox(
-                width: 150,
+                width: 100,
                 height: 60,
-                child: MyDropdownButtonFormField(),
+                child: MyDropdownButtonFormField(items: [
+                  '1시',
+                  '2시',
+                  '3시',
+                  '4시',
+                  '5시',
+                  '6시',
+                  '7시',
+                  '8시',
+                  '9시',
+                  '10시',
+                  '11시',
+                  '12시',
+                  '13시',
+                  '14시',
+                  '15시',
+                  '16시',
+                  '17시',
+                  '18시',
+                  '19시',
+                  '20시',
+                  '21시',
+                  '22시',
+                  '23시',
+                  '24시'
+                ], initValue: '1시'),
+              ),
+              SizedBox(width: 37),
+              SizedBox(
+                width: 100,
+                height: 60,
+                child: MyDropdownButtonFormField(items: [
+                  '1시',
+                  '2시',
+                  '3시',
+                  '4시',
+                  '5시',
+                  '6시',
+                  '7시',
+                  '8시',
+                  '9시',
+                  '10시',
+                  '11시',
+                  '12시',
+                  '13시',
+                  '14시',
+                  '15시',
+                  '16시',
+                  '17시',
+                  '18시',
+                  '19시',
+                  '20시',
+                  '21시',
+                  '22시',
+                  '23시',
+                  '24시'
+                ], initValue: '21시'),
               )
+            ],
+          ),
+          Row(
+            children: [
+              Text(
+                '영업 상태',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(width: 37),
+              SizedBox(
+                width: 236,
+                height: 60,
+                child: MyDropdownButtonFormField(
+                    items: ['영업중', '휴업중'], initValue: '영업중'),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text(
+                '경기 종목',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(width: 37),
+              SizedBox(
+                width: 236,
+                height: 60,
+                child: MyDropdownButtonFormField(
+                    items: ['축구', '야구', '농구', '골프', '테니스', '탁구', '골프', '볼링'],
+                    initValue: '야구'),
+              ),
             ],
           ),
         ],
