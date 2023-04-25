@@ -80,6 +80,8 @@ flutter:
     - assets/images/back_grounds/
     - assets/images/icons/
     - assets/images/logo/
+    - assets/
+    - assets/images/notice/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
