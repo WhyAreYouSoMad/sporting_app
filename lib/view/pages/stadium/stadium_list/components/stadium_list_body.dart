@@ -20,7 +20,7 @@ class StadiumListBody extends StatelessWidget {
                   price: "2,200,000",
                   stadiumName: "사직 야구장",
                   location: "광안리해수욕장 도보 10분",
-                  stadiumPic: "assets/images/stadiums/baseballpark.jpg",
+                  stadiumPic: "https://3-sporting.s3.ap-northeast-2.amazonaws.com/Stadium/%EC%95%BC%EA%B5%AC_Stadium.png",
                   hasEvent: true,
                   iscard: true,
                   onTab: () {

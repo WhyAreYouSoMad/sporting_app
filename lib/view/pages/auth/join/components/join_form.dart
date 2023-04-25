@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sporting_app/controller/user_controller.dart';
+import 'package:sporting_app/controller/auth_controller.dart';
 import 'package:sporting_app/core/utils/my_validate_util.dart';
 import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/components/my_text_form_field.dart';
@@ -34,7 +34,7 @@ class JoinForm extends ConsumerWidget {
           const SizedBox(height: 300),
           MyButton(
             funButton: () {
-              ref.read(userControllerProvider).join(
+              ref.read(authControllerProvider).join(
                   _email.text.trim(),
                   _password.text.trim()
               );
