@@ -7,8 +7,9 @@ import 'package:sporting_app/view/pages/company/company_info/company_info_page.d
 import 'package:sporting_app/view/pages/main/main_holder/components/main_holder_menu.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
-import 'package:sporting_app/view/pages/main/player_info/player_info_page.dart';
 import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
+import 'package:sporting_app/view/pages/player/player_info/player_info_page.dart';
+import 'package:validators/validators.dart';
 
 class MainHolder extends StatefulWidget {
   const MainHolder({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _MainHolderState extends State<MainHolder> {
         _regionListPage(1),
         _mainPage(2),
         _page(3),
-        userRole == 'COMPANY' ? _companyInfo(4) : _playerInfoPage(4),
+        equals(userRole, 'COMPANY') ? _companyInfo(4) : _playerInfoPage(4),
       ],
     );
   }

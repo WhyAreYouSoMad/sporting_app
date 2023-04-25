@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/player_info_update_page.dart';
 
-class PlayerInfoContents extends StatelessWidget {
+class PlayerInfoContents extends ConsumerWidget {
   const PlayerInfoContents({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Card(
       elevation: 3,
       child: Container(
@@ -36,7 +38,7 @@ class PlayerInfoContents extends StatelessWidget {
                 rect: true,
                 funTrailing: () {},
                 trailingText: "My 혜택",
-                title: "유저네임",
+                title: ref.watch(sessionProvider).user!.nickname,
                 subtitle: "내정보 관리 >",
                 funSubtitle: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=> PlayerInfoUpdatePage()));
