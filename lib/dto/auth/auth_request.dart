@@ -18,3 +18,23 @@ class JoinReqDTO {
         password = json["password"];
 
 }
+
+class LoginReqDTO {
+  final String email;
+  final String password;
+
+  LoginReqDTO({
+    required this.email,
+    required this.password
+  });
+
+  Map<String, dynamic> toJson() => {
+    "email": email,
+    "password": password,
+  };
+
+  LoginReqDTO.fromJson(Map<String, dynamic> json)
+      : email = json["email"],
+        password = json["password"];
+
+}

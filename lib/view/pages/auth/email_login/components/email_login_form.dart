@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/controller/auth_controller.dart';
 import 'package:sporting_app/core/utils/my_validate_util.dart';
 import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/components/my_text_form_field.dart';
 
-class EmailLoginForm extends StatelessWidget {
+class EmailLoginForm extends ConsumerWidget {
   final _formKey = GlobalKey<FormState>();
   final _email = TextEditingController();
   final _password = TextEditingController();
@@ -11,7 +13,7 @@ class EmailLoginForm extends StatelessWidget {
   EmailLoginForm({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Form(
       key: _formKey,
       child: Column(
@@ -33,7 +35,10 @@ class EmailLoginForm extends StatelessWidget {
           MyButton(
             funButton: () {
               if (_formKey.currentState!.validate()) {
-
+                ref.read(authControllerProvider).login(
+                    _email.text.trim(),
+                    _password.text.trim()
+                );
               }
             },
             text: '로그인',
