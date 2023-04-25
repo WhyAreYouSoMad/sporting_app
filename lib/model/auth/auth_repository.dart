@@ -4,6 +4,7 @@ import 'package:sporting_app/core/constants/my_dio.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/dto/auth/auth_request.dart';
 import 'package:sporting_app/model/auth/auth_user.dart';
+import 'package:sporting_app/provider/session_provider.dart';
 
 class AuthUserRepository {
   static final AuthUserRepository _instance = AuthUserRepository._single();
@@ -11,6 +12,37 @@ class AuthUserRepository {
     return _instance;
   }
   AuthUserRepository._single();
+
+  Future<SessionUser> fetchJwtVerify() async {
+    SessionUser sessionUser = SessionUser();
+    String? deviceJwt = await secureStorage.read(key: "jwt");
+    if(deviceJwt != null){
+      try{
+        Response response = await dio.get("/api/a", options: Options(
+            headers: {
+              "Authorization" : "$deviceJwt"
+            }
+        ));
+        ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+        responseDTO.token = deviceJwt;
+        responseDTO.data = AuthUser.fromJson(responseDTO.data);
+
+        if(responseDTO.status == 200){
+          sessionUser.loginSuccess(responseDTO.data, responseDTO.token!);
+        }else{
+          sessionUser.logoutSuccess();
+        }
+        return sessionUser;
+      }catch(e){
+        Logger().d("에러 이유 : "+e.toString());
+        sessionUser.logoutSuccess();
+        return sessionUser;
+      }
+    }else{
+      sessionUser.logoutSuccess();
+      return sessionUser;
+    }
+  }
 
 
   Future<ResponseDTO> fetchJoin(JoinReqDTO joinReqDTO) async {
