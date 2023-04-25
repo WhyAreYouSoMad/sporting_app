@@ -19,6 +19,15 @@ class AuthController {
   final Ref ref;
   AuthController(this.ref);
 
+  Future<void> logout() async{
+    try{
+      await ref.read(sessionProvider).logoutSuccess();
+      Navigator.pushNamedAndRemoveUntil(mContext!, MyRoute.loginPage, (route) => false);
+    }catch(e){
+      ScaffoldMessenger.of(mContext!).showSnackBar(SnackBar(content: Text("로그아웃 실패")));
+    }
+  }
+
   Future<void> join(String email, String password) async{
     Logger().d("Conroller Join 메소드 호출됨");
     JoinReqDTO joinReqDTO = JoinReqDTO(email: email, password: password);
