@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/pages/bootpay/bootpay.dart';
 
 class StadiumDetailCourtItemButton extends StatelessWidget {
   const StadiumDetailCourtItemButton({Key? key}) : super(key: key);
@@ -16,7 +17,9 @@ class StadiumDetailCourtItemButton extends StatelessWidget {
           ),
           elevation: 0,
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_)=> bootpay()));
+            },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,

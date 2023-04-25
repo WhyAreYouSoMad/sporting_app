@@ -5,6 +5,7 @@ import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/pages/company/company_info/company_info_page.dart';
 import 'package:sporting_app/view/pages/main/main_holder/components/main_holder_menu.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:sporting_app/view/pages/main/main_page/google_map.dart';
 import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
 import 'package:sporting_app/view/pages/main/player_info/player_info_page.dart';
 import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
@@ -33,6 +34,7 @@ class _MainHolderState extends State<MainHolder> {
 
   PageView _buildPages() {
     return PageView(
+      physics: currentIndex == 0 ? NeverScrollableScrollPhysics() : AlwaysScrollableScrollPhysics(),
       controller: _pageController,
       onPageChanged: (index) {
         setState(() {
@@ -40,7 +42,7 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       children: [
-        _page(0),
+        _GoogleMap(0),
         _regionListPage(1),
         _mainPage(2),
         _page(3),
@@ -53,6 +55,7 @@ class _MainHolderState extends State<MainHolder> {
   MainPage _mainPage(index) => const MainPage();
   CompanyInfoPage _companyInfo(index) => const CompanyInfoPage();
   RegionListPage _regionListPage(index) => const RegionListPage();
+  MyGoogleMap _GoogleMap(index) => MyGoogleMap();
 
   CurvedNavigationBar _buildNavigationBar() {
     return CurvedNavigationBar(
