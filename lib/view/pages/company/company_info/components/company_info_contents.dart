@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
 import 'package:sporting_app/view/pages/company/company_info/company_info_update_page.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
 
-class CompanyInfoContents extends StatelessWidget {
+class CompanyInfoContents extends ConsumerWidget {
   const CompanyInfoContents({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Card(
       elevation: 3,
       child: Container(
@@ -37,7 +39,7 @@ class CompanyInfoContents extends StatelessWidget {
                 rect: true,
                 funTrailing: () {},
                 trailingText: "My 혜택",
-                title: "유저네임",
+                title: ref.watch(sessionProvider).user!.nickname,
                 subtitle: "내정보 관리 >",
                 funSubtitle: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (_) => CompanyInfoUpdatePage()));

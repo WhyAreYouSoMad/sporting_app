@@ -29,7 +29,9 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     SessionUser sessionUser = ref.read(sessionProvider);
-    userRole = sessionUser.user!.role;
+    if(sessionUser.user != null) {
+      userRole = sessionUser.user!.role;
+    }
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
