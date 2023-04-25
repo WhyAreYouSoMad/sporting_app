@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/core/constants/my_dio.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/pages/company/company_info/company_info_page.dart';
@@ -44,7 +45,7 @@ class _MainHolderState extends State<MainHolder> {
         _regionListPage(1),
         _mainPage(2),
         _page(3),
-        _companyInfo(4),
+        userRole == 'COMPANY' ? _companyInfo(4) : _playerInfoPage(4),
       ],
     );
   }
@@ -52,6 +53,7 @@ class _MainHolderState extends State<MainHolder> {
   Widget _page(index) => const Placeholder();
   MainPage _mainPage(index) => const MainPage();
   CompanyInfoPage _companyInfo(index) => const CompanyInfoPage();
+  PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
   RegionListPage _regionListPage(index) => const RegionListPage();
 
   CurvedNavigationBar _buildNavigationBar() {
