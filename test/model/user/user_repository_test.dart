@@ -10,7 +10,7 @@ void main() async {
 }
 
 Future<void> fetchJoin_test() async {
-    JoinRequestDTO joinReqDTO = JoinRequestDTO(email: 'ssar23@nate.com', password: "1234");
+    JoinReqDTO joinReqDTO = JoinReqDTO(email: 'ssar23333@nate.com', password: "1234");
     Response response = await dio.post("/api/joinPlayer", data: joinReqDTO.toJson());
     Logger().d(response.data);
     ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
@@ -18,4 +18,5 @@ Future<void> fetchJoin_test() async {
     Logger().d(responseDTO.msg);
     Logger().d(responseDTO.data);
     responseDTO.data = User.fromJson(responseDTO.data);
+    Logger().d(responseDTO.data);
 }
