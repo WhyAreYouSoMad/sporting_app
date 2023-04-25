@@ -9,3 +9,5 @@ final dio = Dio(
 );
 
 const secureStorage = FlutterSecureStorage();
+
+String userRole = '';

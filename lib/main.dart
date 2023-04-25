@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/core/constants/my_dio.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/model/auth/auth_repository.dart';
 import 'package:sporting_app/provider/session_provider.dart';
@@ -28,6 +29,9 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     SessionUser sessionUser = ref.read(sessionProvider);
+    if(sessionUser.user != null) {
+      userRole = sessionUser.user!.role;
+    }
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,

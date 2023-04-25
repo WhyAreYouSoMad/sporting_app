@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remedi_kopo/remedi_kopo.dart';
-import 'package:sporting_app/view/pages/main/player_info/player_info_update/player_info_update_contents.dart';
+import 'package:sporting_app/view/pages/company/company_info/company_info_udate/company_info_update_contents.dart';
 
 class PlayerInfoUpdateBody extends StatefulWidget {
    PlayerInfoUpdateBody({Key? key}) : super(key: key);

@@ -15,8 +15,10 @@ class AuthUserRepository {
 
   Future<SessionUser> fetchJwtVerify() async {
     SessionUser sessionUser = SessionUser();
+    Logger().d("테스트1");
     String? deviceJwt = await secureStorage.read(key: "jwt");
     if(deviceJwt != null){
+      Logger().d("테스트2");
       try{
         Response response = await dio.get("/api/a", options: Options(
             headers: {
@@ -24,9 +26,14 @@ class AuthUserRepository {
             }
         ));
         ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+        Logger().d(responseDTO.status);
+        Logger().d(responseDTO.msg);
+        Logger().d(responseDTO.data);
+        Logger().d(responseDTO.token);
         responseDTO.token = deviceJwt;
         responseDTO.data = AuthUser.fromJson(responseDTO.data);
 
+        Logger().d("테스트4");
         if(responseDTO.status == 200){
           sessionUser.loginSuccess(responseDTO.data, responseDTO.token!);
         }else{

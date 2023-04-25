@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
-import 'package:sporting_app/view/pages/main/player_info/components/player_info_contents.dart';
 import 'package:sporting_app/view/components/my_info_inquiry.dart';
 import 'package:sporting_app/view/components/my_info_reservation.dart';
+import 'package:sporting_app/view/pages/player/player_info/components/player_info_contents.dart';
 
 class PlayerInfoBody extends StatelessWidget {
   const PlayerInfoBody({Key? key}) : super(key: key);

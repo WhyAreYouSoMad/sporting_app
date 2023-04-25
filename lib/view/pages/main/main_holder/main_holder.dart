@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/core/constants/my_dio.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/pages/company/company_info/company_info_page.dart';
@@ -9,6 +10,8 @@ import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
 import 'package:sporting_app/view/pages/main/notice/notice.dart';
 import 'package:sporting_app/view/pages/main/player_info/player_info_page.dart';
 import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
+import 'package:sporting_app/view/pages/player/player_info/player_info_page.dart';
+import 'package:validators/validators.dart';
 
 class MainHolder extends StatefulWidget {
   const MainHolder({Key? key}) : super(key: key);
@@ -45,7 +48,7 @@ class _MainHolderState extends State<MainHolder> {
         _regionListPage(1),
         _mainPage(2),
         _notice(3),
-        _companyInfo(4),
+        equals(userRole, 'COMPANY') ? _companyInfo(4) : _playerInfoPage(4),
       ],
     );
   }
@@ -53,6 +56,7 @@ class _MainHolderState extends State<MainHolder> {
   Notice _notice(index) => const Notice();
   MainPage _mainPage(index) => const MainPage();
   CompanyInfoPage _companyInfo(index) => const CompanyInfoPage();
+  PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
   RegionListPage _regionListPage(index) => const RegionListPage();
 
   CurvedNavigationBar _buildNavigationBar() {
