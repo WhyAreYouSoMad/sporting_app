@@ -7,6 +7,8 @@ import 'package:sporting_app/view/pages/company/company_info/company_info_page.d
 import 'package:sporting_app/view/pages/main/main_holder/components/main_holder_menu.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
+import 'package:sporting_app/view/pages/main/notice/notice.dart';
+import 'package:sporting_app/view/pages/main/player_info/player_info_page.dart';
 import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
 import 'package:sporting_app/view/pages/player/player_info/player_info_page.dart';
 import 'package:validators/validators.dart';
@@ -42,16 +44,16 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       children: [
-        _page(0),
+        _notice(0),
         _regionListPage(1),
         _mainPage(2),
-        _page(3),
+        _notice(3),
         equals(userRole, 'COMPANY') ? _companyInfo(4) : _playerInfoPage(4),
       ],
     );
   }
 
-  Widget _page(index) => const Placeholder();
+  Notice _notice(index) => const Notice();
   MainPage _mainPage(index) => const MainPage();
   CompanyInfoPage _companyInfo(index) => const CompanyInfoPage();
   PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
@@ -71,25 +73,26 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       items: [
-        const Padding(
+         Padding(
           padding: EdgeInsets.only(top: 10),
-          child: Icon(Icons.map, color: kDarkIconColor),
+          child: Image.asset('assets/images/icons/maps.png',
+              color: kLogoColor, height: 30, width: 30,),
         ),
-        const Padding(
+         Padding(
           padding: EdgeInsets.only(top: 10),
-          child: Icon(Icons.sports_baseball, color: kDarkIconColor),
+           child: Image.asset('assets/images/icons/homeq.png', color: kLogoColor, height: 30, width: 30,),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10),
           child: Image.asset('assets/images/logo/sporting.png', color: kLogoColor),
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(top: 10),
-          child: Icon(Icons.mail, color: kDarkIconColor),
+          child: Image.asset('assets/images/icons/notification.png', color: kLogoColor, height: 30, width: 30,),
         ),
-        const Padding(
+         Padding(
           padding: EdgeInsets.only(top: 10),
-          child: Icon(Icons.person, color: kDarkIconColor),
+          child: Icon(Icons.person, color: kDarkIconColor, size: 35),
         ),
       ],
     );

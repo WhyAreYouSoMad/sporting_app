@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/pages/main/main_holder/main_holder.dart';
 
 class OauthButtons extends StatelessWidget {
   const OauthButtons({Key? key}) : super(key: key);
@@ -22,7 +23,9 @@ class OauthButtons extends StatelessWidget {
         ),
         const SizedBox(width: 20),
         MyButton(
-          funButton: () {},
+          funButton: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (_)=> MainHolder()));
+          },
           image: 'assets/images/oauth/naver.png',
           imageSize: 50,
         ),

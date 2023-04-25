@@ -51,7 +51,7 @@ class _MainBannerState extends State<MainBanner> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
                   child: Image.asset(
-                    'assets/images/banners/banner_${index + 1}.jpg',
+                    'assets/images/banners/Banner${index + 1}.jpg',
                     fit: BoxFit.cover,
                   ),
                 ),
