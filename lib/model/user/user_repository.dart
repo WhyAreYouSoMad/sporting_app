@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:logger/logger.dart';
 import 'package:sporting_app/core/constants/my_dio.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/dto/user_request.dart';
@@ -12,15 +13,15 @@ class UserRepository {
   UserRepository._single();
 
 
-  Future<ResponseDTO> fetchJoin(JoinRequestDTO joinReqDTO) async {
-    try {
-      Response response = await dio.post("/join", data: joinReqDTO.toJson());
+  Future<ResponseDTO> fetchJoin(JoinReqDTO joinReqDTO) async {
+      Logger().d("Repository fetchJoin 메소드 호출됨");
+      Response response = await dio.post("/api/joinPlayer", data: joinReqDTO.toJson());
+      Logger().d("테스트1");
       ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+      Logger().d("테스트2");
       responseDTO.data = User.fromJson(responseDTO.data);
+      Logger().d("테스트3");
       return responseDTO;
-    } catch(e) {
-      return ResponseDTO(status: 400, msg: "유저네임중복");
-    }
   }
 
 }

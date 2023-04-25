@@ -1,8 +1,8 @@
-class JoinRequestDTO {
+class JoinReqDTO {
   final String email;
   final String password;
 
-  JoinRequestDTO({
+  JoinReqDTO({
     required this.email,
     required this.password,
   });
@@ -13,7 +13,7 @@ class JoinRequestDTO {
     "password": password,
   };
 
-  JoinRequestDTO.fromJson(Map<String, dynamic> json)
+  JoinReqDTO.fromJson(Map<String, dynamic> json)
       : email = json["email"],
         password = json["password"];
 
