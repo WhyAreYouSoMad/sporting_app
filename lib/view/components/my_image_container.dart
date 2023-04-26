@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 
 class MyImageContainer extends StatelessWidget {
@@ -30,7 +32,7 @@ class MyImageContainer extends StatelessWidget {
           height: imageHeight,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(image),
+              image: CachedNetworkImageProvider(image),
               fit: BoxFit.cover
             ),
           ),

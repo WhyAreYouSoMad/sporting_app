@@ -5,7 +5,7 @@ import 'package:sporting_app/view/components/my_rating_star.dart';
 
 class MyStadiumItem extends StatelessWidget {
   final String stadiumName;
-  final String? price;
+  final int? price;
   final String location;
   final String stadiumPic;
   final bool hasEvent;
