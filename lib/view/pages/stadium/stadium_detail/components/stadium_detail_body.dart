@@ -17,7 +17,7 @@ class StadiumDetailBody extends StatelessWidget {
             stadiumName: "사직 야구장",
             stadiumPic: "assets/images/stadiums/baseballpark.jpg",
             location: "부산 광역시 동래구 사직로 45",
-            price: "~2,200,000",
+            price: 2000,
             hasSticky: false,
           ),
         ),

@@ -15,7 +15,7 @@ class CompanyStadiumListBody extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.all(5),
                 child: MyStadiumItem(
-                  price: "2,200,000",
+                  price: 2000,
                   stadiumName: "사직 야구장",
                   location: "광안리해수욕장 도보 10분",
                   stadiumPic: "assets/images/stadiums/baseballpark.jpg",
