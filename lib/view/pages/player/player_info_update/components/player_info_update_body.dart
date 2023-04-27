@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/utils/my_number_editing_controller.dart';
+import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/components/player_info_update_address_form.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/components/player_info_update_form.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/components/player_info_update_header.dart';
@@ -45,11 +46,13 @@ class PlayerInfoUpdateBody extends StatelessWidget {
                   addressCon: _address,
                 ),
                 const SizedBox(height: 90),
-                ElevatedButton(
-                  onPressed: () {
+                MyButton(
+                  funButton: () {
                     Navigator.pop(context);
                   },
-                  child: const Text("수정하기"),
+                  text: '수정',
+                  fontWeight: FontWeight.bold,
+                  width: 200,
                 ),
               ],
             ),
