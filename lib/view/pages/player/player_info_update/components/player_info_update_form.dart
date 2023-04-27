@@ -31,6 +31,7 @@ class PlayerInfoUpdateForm extends StatelessWidget {
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.only(right: 10, left: 10),
             ),
+            style: TextStyle(fontSize: 14),
           ),
         ),
       ],
@@ -49,6 +50,7 @@ class PlayerInfoUpdateForm extends StatelessWidget {
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.only(right: 10, left: 10),
             ),
+            style: TextStyle(fontSize: 14),
           ),
         ),
       ],
@@ -67,6 +69,7 @@ class PlayerInfoUpdateForm extends StatelessWidget {
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(horizontal: 10),
             ),
+            style: TextStyle(fontSize: 14),
           ),
         ),
       ],
@@ -75,7 +78,7 @@ class PlayerInfoUpdateForm extends StatelessWidget {
 
   Row _email() {
     return const Row(
-      children: [Text("이메일"), SizedBox(width: 78), Text("a0211a@naver.com")],
+      children: [Text("이메일"), SizedBox(width: 88), Text("a0211a@naver.com")],
     );
   }
 }
