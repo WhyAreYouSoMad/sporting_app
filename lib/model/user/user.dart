@@ -7,7 +7,7 @@ class User {
   final String nickname;
   final String email;
   final PlayerInfo playerInfo;
-  final PlayerFavoriteSport playerFavoriteSport;
+  final List<PlayerFavoriteSport> playerFavoriteSport;
 
 
   User({
@@ -36,7 +36,9 @@ class User {
       nickname: json['nickname'],
       email: json['email'],
       playerInfo: PlayerInfo.fromJson(json['playerInfo']),
-      playerFavoriteSport: PlayerFavoriteSport.fromJson(json['playerFavoriteSport']),
+      playerFavoriteSport: (json['playerFavoriteSport'] as List<dynamic>)
+          .map((item) => PlayerFavoriteSport.fromJson(item))
+          .toList(),
     );
   }
 }
