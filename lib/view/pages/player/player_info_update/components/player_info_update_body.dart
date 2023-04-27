@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/core/utils/my_number_editing_controller.dart';
 import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/components/player_info_update_address_form.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/components/player_info_update_form.dart';
@@ -8,7 +7,7 @@ import 'package:sporting_app/view/pages/player/player_info_update/components/pla
 class PlayerInfoUpdateBody extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nickname = TextEditingController();
-  final MyNumberEditingController _tel = MyNumberEditingController();
+  final TextEditingController _tel = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _checkPassword = TextEditingController();
   final TextEditingController _address = TextEditingController();
