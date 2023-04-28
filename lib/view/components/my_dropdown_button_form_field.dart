@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class MyDropdownButtonFormField extends StatelessWidget {
   final List<String> items;
-  final String initValue;
+  String initValue;
 
 
-  const MyDropdownButtonFormField({Key? key, required this.items, required this.initValue}) : super(key: key);
+  MyDropdownButtonFormField({Key? key, required this.items, this.initValue = ''}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +14,14 @@ class MyDropdownButtonFormField extends StatelessWidget {
       items: items
           .map(
             (label) => DropdownMenuItem(
-              child: Text(label),
               value: label,
+              child: Text(label),
             ),
           )
           .toList(),
-      onChanged: (value) {},
+      onChanged: (value) {
+        initValue = value!;
+      },
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sporting_app/controller/company_controller.dart';
 import 'package:sporting_app/controller/company_stadium_list_controller.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
@@ -96,18 +97,23 @@ class CompanyInfoContents extends ConsumerWidget {
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.only(bottom: 5),
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: kBlackColor.withOpacity(0.1),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoute.stadiumEnrollPage);
+              },
+              child: Container(
+                padding: const EdgeInsets.only(bottom: 5),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: kBlackColor.withOpacity(0.1),
+                    ),
                   ),
                 ),
-              ),
-              child: const MyListTile(
-                image: "assets/images/icons/sns.png",
-                title: "경기장 등록하기",
+                child: const MyListTile(
+                  image: "assets/images/icons/sns.png",
+                  title: "경기장 등록하기",
+                ),
               ),
             ),
           ],
