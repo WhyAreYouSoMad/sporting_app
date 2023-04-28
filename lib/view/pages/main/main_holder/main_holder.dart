@@ -7,6 +7,7 @@ import 'package:sporting_app/view/pages/company/company_info/company_info_page.d
 import 'package:sporting_app/view/pages/main/main_holder/components/main_holder_menu.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
+import 'package:sporting_app/view/pages/main/map/map_page.dart';
 import 'package:sporting_app/view/pages/main/notice/notice.dart';
 import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
 import 'package:sporting_app/view/pages/player/player_info/player_info_page.dart';
@@ -36,6 +37,7 @@ class _MainHolderState extends State<MainHolder> {
 
   PageView _buildPages() {
     return PageView(
+      physics: currentIndex == 0 ? const NeverScrollableScrollPhysics() : const AlwaysScrollableScrollPhysics(),
       controller: _pageController,
       onPageChanged: (index) {
         setState(() {
@@ -43,7 +45,7 @@ class _MainHolderState extends State<MainHolder> {
         });
       },
       children: [
-        _notice(0),
+        _mapPage(0),
         _regionListPage(1),
         _mainPage(2),
         _notice(3),
@@ -57,6 +59,7 @@ class _MainHolderState extends State<MainHolder> {
   CompanyInfoPage _companyInfo(index) => const CompanyInfoPage();
   PlayerInfoPage _playerInfoPage(index) => const PlayerInfoPage();
   RegionListPage _regionListPage(index) => const RegionListPage();
+  MapPage _mapPage(index) => MapPage();
 
   CurvedNavigationBar _buildNavigationBar() {
     return CurvedNavigationBar(
@@ -73,12 +76,12 @@ class _MainHolderState extends State<MainHolder> {
       },
       items: [
          Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10),
           child: Image.asset('assets/images/icons/maps.png',
               color: kLogoColor, height: 30, width: 30,),
         ),
          Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10),
            child: Image.asset('assets/images/icons/homeq.png', color: kLogoColor, height: 30, width: 30,),
         ),
         Padding(
@@ -86,10 +89,10 @@ class _MainHolderState extends State<MainHolder> {
           child: Image.asset('assets/images/logo/sporting.png', color: kLogoColor),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10),
           child: Image.asset('assets/images/icons/notification.png', color: kLogoColor, height: 30, width: 30,),
         ),
-         Padding(
+         const Padding(
           padding: EdgeInsets.only(top: 10),
           child: Icon(Icons.person, color: kDarkIconColor, size: 35),
         ),
