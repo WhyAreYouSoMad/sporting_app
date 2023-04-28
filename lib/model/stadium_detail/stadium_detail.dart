@@ -1,6 +1,6 @@
 import 'package:sporting_app/model/file/source_file.dart';
-import 'package:sporting_app/model/stadium_detail/stadium_category.dart';
-import 'package:sporting_app/model/stadium_detail/stadium_court.dart';
+import 'package:sporting_app/model/category/category.dart';
+import 'package:sporting_app/model/court/court.dart';
 
 class StadiumDetail {
   final String startTime;
@@ -9,9 +9,9 @@ class StadiumDetail {
   final double lat;
   final double lon;
   final String address;
-  final CateGory  category;
+  final Category category;
   final SourceFile sourceFile;
-  final List<StadiumCourt> stadiumCourt;
+  final List<Court> stadiumCourt;
 
 
   StadiumDetail({
@@ -36,7 +36,7 @@ class StadiumDetail {
     data['lon'] = lon;
     data['address'] = address;
     data['cateGory'] = category;
-    data['stadiumFile'] = sourceFile;
+    data['sourceFile'] = sourceFile;
     data['stadiumCourt'] = stadiumCourt;
     return data;
   }
@@ -50,10 +50,10 @@ class StadiumDetail {
       lat: json['lat'],
       lon: json['lon'],
       address: json['address'],
-      category: CateGory.fromJson(json['category']),
-      sourceFile: SourceFile.fromJson(json['stadiumFile']),
+      category: Category.fromJson(json['category']),
+      sourceFile: SourceFile.fromJson(json['sourceFile']),
       stadiumCourt: (json['stadiumCourt'] as List<dynamic>)
-          .map((courtJson) => StadiumCourt.fromJson(courtJson))
+          .map((courtJson) => Court.fromJson(courtJson))
           .toList(),
     );
   }

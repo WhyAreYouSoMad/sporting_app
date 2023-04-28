@@ -1,8 +1,8 @@
-class CateGory {
+class Category {
   final int id;
   final String sport;
 
-  CateGory({
+  Category({
     required this.id,
     required this.sport,
   });
@@ -14,8 +14,8 @@ class CateGory {
     return data;
   }
 
-  factory CateGory.fromJson(Map<String, dynamic> json) {
-    return CateGory(
+  factory Category.fromJson(Map<String, dynamic> json) {
+    return Category(
       id: json['id'],
       sport: json['sport'],
     );

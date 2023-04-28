@@ -17,7 +17,7 @@ Future<void> fetchStadiumList_test() async {
     ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
     Logger().d(responseDTO.data);
     List<dynamic> mapList = responseDTO.data as List<dynamic>;
-    List<Stadium> postList = mapList.map((e) => Stadium.fromJson(e)).toList();
+    List<Stadium> postList = mapList.map((e) => Stadium.fromJsonForList(e)).toList();
     // postList.forEach((element) {Logger().d(element.name);});
     responseDTO.data = postList;
 }
@@ -32,7 +32,7 @@ Future<ResponseDTO> fetchAddStadium_test() async {
         Logger().d(response.data);
         ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
         Logger().d(responseDTO.data);
-        responseDTO.data = Stadium.fromJson(responseDTO.data);
+        responseDTO.data = Stadium.fromJsonForList(responseDTO.data);
         return responseDTO;
     } catch (e) {
         return ResponseDTO(status: 400, msg: "실패 : ${e}");

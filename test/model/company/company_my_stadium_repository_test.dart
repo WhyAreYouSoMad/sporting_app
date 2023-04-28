@@ -22,7 +22,7 @@ Future<void> fetchMyStadiumList_test() async {
     // responseDTO.data = MyStadiums.fromJson(response.data);
    Logger().d(responseDTO.data);
     List<dynamic> mapList = responseDTO.data as List<dynamic>;
-    List<Stadium> postList = mapList.map((e) => Stadium.fromJson(e)).toList();
+    List<Stadium> postList = mapList.map((e) => Stadium.fromJsonForList(e)).toList();
     responseDTO.data = postList;
 
 

@@ -1,21 +1,21 @@
-import 'package:sporting_app/model/stadium_detail/court_file.dart';
+import 'package:sporting_app/model/file/source_file.dart';
 
-class StadiumCourt {
+class Court {
   final int id;
   final String title;
   final String content;
   final int capacity;
   final int courtPrice;
-  final CourtFile courtFile;
+  final SourceFile sourceFile;
 
 
-  StadiumCourt({
+  Court({
     required this.id,
     required this.title,
     required this.content,
     required this.capacity,
     required this.courtPrice,
-    required this.courtFile,
+    required this.sourceFile,
   });
 
   Map<String, dynamic> toJson() {
@@ -25,19 +25,19 @@ class StadiumCourt {
     data['content'] = content;
     data['capacity'] = capacity;
     data['courtPrice'] = courtPrice;
-    data['courtFile'] = courtFile;
+    data['sourceFile'] = sourceFile;
     return data;
   }
 
 
-  factory StadiumCourt.fromJson(Map<String, dynamic> json) {
-    return StadiumCourt(
+  factory Court.fromJson(Map<String, dynamic> json) {
+    return Court(
       id: json['id'],
       title: json['title'],
       content: json['content'],
       capacity: json['capacity'],
       courtPrice: json['courtPrice'],
-      courtFile: CourtFile.fromJson(json['courtFile']),
+      sourceFile: SourceFile.fromJson(json['sourceFile']),
     );
   }
 }
