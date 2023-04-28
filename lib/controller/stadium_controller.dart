@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:sporting_app/dto/response_dto.dart';
+import 'package:sporting_app/dto/stadium/stadium_request.dart';
 import 'package:sporting_app/main.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
 import 'package:sporting_app/model/stadium/stadium_repository.dart';
@@ -38,8 +39,14 @@ class StadiumController {
 
   Future<void> saveStadium(String name, String address, String category) async {
     Logger().d("saveStadium 메소드 호출 됨");
-    Logger().d(name);
-    Logger().d(address);
-    Logger().d(category);
+    String jwt = ref.read(sessionProvider).jwt!;
+    SaveStadiumReqDTO saveStadiumReqDTO = SaveStadiumReqDTO(name: name, address: address, category: category);
+    ResponseDTO responseDTO = await StadiumRepository().fetchSaveStadium(jwt, saveStadiumReqDTO);
+    if (responseDTO.status == 200) {
+      Navigator.pop(mContext!);
+      ScaffoldMessenger.of(mContext!).showSnackBar(SnackBar(content: Text("등록되었습니다.")));
+    } else {
+      ScaffoldMessenger.of(mContext!).showSnackBar(SnackBar(content: Text("일시적인 오류로 접근이 불가능 합니다")));
+    }
   }
 }
