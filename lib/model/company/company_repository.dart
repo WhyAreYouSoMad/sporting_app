@@ -11,7 +11,7 @@ class CompanyRepository {
   CompanyRepository._single();
 
   Future<ResponseDTO> fetchCompanyDetail(String jwt) async {
-    Response response = await dio.get("/api/company/updateform",
+    Response response = await dio.get("/api/company/1",
         options: Options(headers: {"Authorization": "$jwt"}));
     ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
     responseDTO.data = User.fromJsonForCompany(responseDTO.data);
