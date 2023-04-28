@@ -26,6 +26,8 @@ class AuthUserRepository {
         ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
         responseDTO.token = deviceJwt;
         responseDTO.data = AuthUser.fromJson(responseDTO.data);
+        AuthUser authUser = responseDTO.data;
+        userRole = authUser.role;
 
         if(responseDTO.status == 200){
           sessionUser.loginSuccess(responseDTO.data, responseDTO.token!);

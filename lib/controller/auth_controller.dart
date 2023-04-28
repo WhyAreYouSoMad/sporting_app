@@ -7,6 +7,7 @@ import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/dto/auth/auth_request.dart';
 import 'package:sporting_app/main.dart';
 import 'package:sporting_app/model/auth/auth_repository.dart';
+import 'package:sporting_app/model/auth/auth_user.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 
 final authControllerProvider = Provider<AuthController>((ref) {
@@ -49,6 +50,9 @@ class AuthController {
 
       // 2. 로그인 상태 등록
       ref.read(sessionProvider).loginSuccess(responseDTO.data, responseDTO.token!);
+
+      AuthUser authUser = responseDTO.data;
+      userRole = authUser.role;
 
       // 토큰 유효성 확인
       AuthUserRepository().fetchJwtVerify();
