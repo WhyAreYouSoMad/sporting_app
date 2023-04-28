@@ -18,7 +18,7 @@ class StadiumRepository {
           options: Options(headers: {"Authorization": "$jwt"}));
       ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
       List<dynamic> mapList = responseDTO.data as List<dynamic>;
-      List<Stadium> postList = mapList.map((e) => Stadium.fromJson(e)).toList();
+      List<Stadium> postList = mapList.map((e) => Stadium.fromJsonForList(e)).toList();
       responseDTO.data = postList;
       return responseDTO;
     } catch (e) {
@@ -33,7 +33,7 @@ class StadiumRepository {
           options: Options(headers: {"Authorization": "$jwt"}),
           data: saveStadiumReqDTO);
       ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
-      responseDTO.data = Stadium.fromJson(responseDTO.data);
+      responseDTO.data = Stadium.fromJsonForList(responseDTO.data);
       return responseDTO;
     } catch (e) {
       return ResponseDTO(status: 400, msg: "실패 : ${e}");
@@ -49,7 +49,7 @@ class StadiumRepository {
       ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
       Logger().d(responseDTO.data);
       List<dynamic> mapList = responseDTO.data as List<dynamic>;
-      List<Stadium> stadiumList = mapList.map((e) => Stadium.fromJson(e)).toList();
+      List<Stadium> stadiumList = mapList.map((e) => Stadium.fromJsonForList(e)).toList();
       responseDTO.data = stadiumList;
       return responseDTO;
     } catch (e) {
