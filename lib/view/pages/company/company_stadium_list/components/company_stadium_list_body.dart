@@ -16,8 +16,10 @@ class CompanyStadiumListBody extends ConsumerWidget {
 
     List<MyStadiums> myStadiums = [];
 
+
     if(model != null) {
-      myStadiums = model!.myStadiums;
+      myStadiums = model.myStadiums;
+      // Logger().d(myStadiums);
     }
 
     return CustomScrollView(
@@ -30,9 +32,9 @@ class CompanyStadiumListBody extends ConsumerWidget {
                 padding: const EdgeInsets.all(5),
                 child: MyStadiumItem(
                   price: 2000,
-                  stadiumName: "사직 야구장",
+                  stadiumName: myStadiums[index].name,
                   location: "광안리해수욕장 도보 10분",
-                  stadiumPic: "assets/images/stadiums/baseballpark.jpg",
+                  stadiumPic: myStadiums[index].sourceFile.fileUrl,
                   hasEvent: false,
                   iscard: true,
                   hasSticky: false,

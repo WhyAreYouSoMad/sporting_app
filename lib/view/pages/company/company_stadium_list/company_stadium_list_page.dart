@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/model/my_stadiums/my_stadiums.dart';
 import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page_view_model.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/components/company_stadium_list_body.dart';
 
-class CompanyStadiumListPage extends StatelessWidget {
+class CompanyStadiumListPage extends ConsumerWidget {
   const CompanyStadiumListPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
+
+
     return Scaffold(
       appBar: AppBar(
         leading: MyButton(
