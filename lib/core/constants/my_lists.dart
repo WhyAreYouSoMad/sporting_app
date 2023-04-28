@@ -141,3 +141,15 @@ List<Area> ulsan = [
   Area(area: "동구"),
 
 ];
+
+const List<String> sportCategories = <String>[
+  '종목 선택',
+  '축구',
+  '테니스',
+  '야구',
+  '볼링',
+  '당구',
+  '골프',
+  '탁구',
+  '농구',
+];

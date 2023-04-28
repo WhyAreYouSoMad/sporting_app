@@ -35,4 +35,11 @@ class StadiumController {
       ),
     );
   }
+
+  Future<void> saveStadium(String name, String address, String category) async {
+    Logger().d("saveStadium 메소드 호출 됨");
+    Logger().d(name);
+    Logger().d(address);
+    Logger().d(category);
+  }
 }

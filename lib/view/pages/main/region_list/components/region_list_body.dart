@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sporting_app/core/constants/my_area.dart';
+import 'package:sporting_app/core/constants/my_lists.dart';
 
 class RegionListBody extends StatefulWidget {
   const RegionListBody({Key? key}) : super(key: key);
