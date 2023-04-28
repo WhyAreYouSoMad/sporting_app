@@ -1,10 +1,20 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_detail/components/stadium_detail_court_item_button.dart';
 
 class StadiumDetailCourtItem extends StatelessWidget {
 
-  const StadiumDetailCourtItem({Key? key}) : super(key: key);
+  final String courtTitle;
+  final String courtContent;
+  final int courtPrice;
+  final String courtImage;
+  const StadiumDetailCourtItem({
+    required this.courtPrice,
+    required this.courtContent,
+    required this.courtImage,
+    required this.courtTitle,
+    Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +24,19 @@ class StadiumDetailCourtItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset("assets/images/courts/as1.jpg"),
+          CachedNetworkImage(imageUrl: courtImage),
+          // Image.asset(courtImage),
           const SizedBox(height: 10),
-          const Text(
-            "1번 코트",
+           Text(
+           courtTitle,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
           const SizedBox(height: 5),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "넓고 깨끗한 코트",
+                courtContent,
                 style:
                     TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
               ),
@@ -37,7 +48,7 @@ class StadiumDetailCourtItem extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 5),
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -48,7 +59,7 @@ class StadiumDetailCourtItem extends StatelessWidget {
                     color: kTextColor),
               ),
               Text(
-                "2,000,000 원",
+                courtPrice.toString(),
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
