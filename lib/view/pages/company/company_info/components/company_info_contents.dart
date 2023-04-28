@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sporting_app/controller/company_controller.dart';
+import 'package:sporting_app/controller/company_stadium_list_controller.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
@@ -78,9 +79,7 @@ class CompanyInfoContents extends ConsumerWidget {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => CompanyStadiumListPage(),
-                ),);
+                ref.read(myStadiumListControllerProvider).getMyStadiumListController();
               },
               child: Container(
                 padding: const EdgeInsets.only(bottom: 5),

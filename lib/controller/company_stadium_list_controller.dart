@@ -1,8 +1,7 @@
-import 'dart:html';
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/main.dart';
 import 'package:sporting_app/model/my_stadiums/my_stadiums.dart';
@@ -27,10 +26,10 @@ class MyStadiumListController {
     
     ResponseDTO responseDTO =
         await MyStadiumsRepository().fetchMyStadiums(jwt);
-    
-    List<MyStadiums> MyStadiumsDTO = responseDTO.data;
 
     if (responseDTO.status == 200) {
+      List<MyStadiums> MyStadiumsDTO = responseDTO.data;
+
       ref
           .read(companyStadiumListPageProvider.notifier)
           .notifyInit(MyStadiumsDTO);
@@ -39,5 +38,6 @@ class MyStadiumListController {
           MaterialPageRoute(
               builder: (context) => CompanyStadiumListPage()));
     }
+    Logger().d(responseDTO.status);
   }
 }
