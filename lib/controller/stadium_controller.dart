@@ -8,6 +8,8 @@ import 'package:sporting_app/main.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
 import 'package:sporting_app/model/stadium/stadium_repository.dart';
 import 'package:sporting_app/provider/session_provider.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page_view_model.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page_view_model.dart';
 
@@ -48,5 +50,25 @@ class StadiumController {
     } else {
       ScaffoldMessenger.of(mContext!).showSnackBar(SnackBar(content: Text("일시적인 오류로 접근이 불가능 합니다")));
     }
+  }
+
+  Future<void> getMyStadiumList() async {
+    String jwt = ref.read(sessionProvider).jwt!;
+
+    ResponseDTO responseDTO =
+    await StadiumRepository().fetchMyStadiums(jwt);
+
+    if (responseDTO.status == 200) {
+      List<Stadium> myStadiumsDTO = responseDTO.data;
+
+      ref
+          .read(companyStadiumListPageProvider.notifier)
+          .notifyInit(myStadiumsDTO);
+      Navigator.push(
+          mContext!,
+          MaterialPageRoute(
+              builder: (context) => const CompanyStadiumListPage()));
+    }
+    Logger().d(responseDTO.status);
   }
 }
