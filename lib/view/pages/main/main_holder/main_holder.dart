@@ -8,7 +8,6 @@ import 'package:sporting_app/view/pages/main/main_holder/components/main_holder_
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:sporting_app/view/pages/main/main_page/main_page.dart';
 import 'package:sporting_app/view/pages/main/notice/notice.dart';
-import 'package:sporting_app/view/pages/main/player_info/player_info_page.dart';
 import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
 import 'package:sporting_app/view/pages/player/player_info/player_info_page.dart';
 import 'package:validators/validators.dart';

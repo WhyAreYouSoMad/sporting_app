@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/view/components/my_image_container.dart';
 import 'package:sporting_app/view/components/my_rating_star.dart';
