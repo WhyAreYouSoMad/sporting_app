@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/controller/company_controller.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
-import 'package:sporting_app/view/pages/company/company_info_update/company_info_update_page.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
 
 class CompanyInfoContents extends ConsumerWidget {
@@ -42,7 +42,7 @@ class CompanyInfoContents extends ConsumerWidget {
                 title: ref.watch(sessionProvider).user!.nickname,
                 subtitle: "내정보 관리 >",
                 funSubtitle: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => CompanyInfoUpdatePage()));
+                  ref.read(companyControllerProvider).getCompanyDetail();
                 },
               ),
             ),

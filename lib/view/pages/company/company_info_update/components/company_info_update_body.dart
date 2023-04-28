@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/model/user/user.dart';
 import 'package:sporting_app/view/components/my_button.dart';
+import 'package:sporting_app/view/pages/company/company_info_update/company_info_update_page_view_model.dart';
 import 'package:sporting_app/view/pages/company/company_info_update/components/company_info_update_form.dart';
 import 'package:sporting_app/view/pages/company/company_info_update/components/company_info_update_header.dart';
 
-class CompanyInfoUpdateBody extends StatelessWidget {
+class CompanyInfoUpdateBody extends ConsumerWidget {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nickname = TextEditingController();
   final TextEditingController _tel = TextEditingController();
@@ -12,7 +15,15 @@ class CompanyInfoUpdateBody extends StatelessWidget {
   CompanyInfoUpdateBody({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    CompanyInfoUpdatePageModel? model = ref.watch(companyInfoUpdatePageProvider);
+    if (model != null) {
+      User user = model.user;
+      _nickname.text = user.nickname;
+      if (user.companyInfo?.tel != null) {
+        _tel.text = user.companyInfo!.tel;
+      }
+    }
     return Form(
       key: _formKey,
       child: ListView(

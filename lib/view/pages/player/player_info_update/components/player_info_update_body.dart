@@ -23,8 +23,10 @@ class PlayerInfoUpdateBody extends ConsumerWidget {
     if (model != null) {
       User user = model.user;
       _nickname.text = user.nickname;
-      _tel.text = user.playerInfo.tel;
-      _address.text = user.playerInfo.address;
+      if (user.playerInfo?.tel != null && user.playerInfo?.address != null) {
+        _tel.text = user.playerInfo!.tel;
+        _address.text = user.playerInfo!.address;
+      }
     }
     return Form(
       key: _formKey,

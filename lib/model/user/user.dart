@@ -1,4 +1,5 @@
 
+import 'package:sporting_app/model/company/company_info.dart';
 import 'package:sporting_app/model/player/player_favorite_sport.dart';
 import 'package:sporting_app/model/player/player_info.dart';
 
@@ -6,16 +7,18 @@ class User {
   final int id;
   final String nickname;
   final String email;
-  final PlayerInfo playerInfo;
-  final List<PlayerFavoriteSport> playerFavoriteSport;
+  final PlayerInfo? playerInfo;
+  final List<PlayerFavoriteSport>? playerFavoriteSport;
+  final CompanyInfo? companyInfo;
 
 
   User({
     required this.id,
     required this.nickname,
     required this.email,
-    required this.playerInfo,
-    required this.playerFavoriteSport,
+    this.playerInfo,
+    this.playerFavoriteSport,
+    this.companyInfo,
   });
 
   // 통신을 위해서 json 처럼 생긴 문자열 {"id":1} => Dart 오브젝트
@@ -39,6 +42,15 @@ class User {
       playerFavoriteSport: (json['playerFavoriteSport'] as List<dynamic>)
           .map((item) => PlayerFavoriteSport.fromJson(item))
           .toList(),
+    );
+  }
+
+  factory User.fromJsonForCompany(Map<String, dynamic> json) {
+    return User(
+      id: json['id'],
+      nickname: json['nickname'],
+      email: json['email'],
+      companyInfo: CompanyInfo.fromJson(json['companyInfo']),
     );
   }
 }
