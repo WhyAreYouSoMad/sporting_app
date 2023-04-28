@@ -20,6 +20,7 @@ class AuthController {
   AuthController(this.ref);
 
   Future<void> logout() async{
+    Logger().d("Conroller logout 메소드 호출됨");
     try{
       await ref.read(sessionProvider).logoutSuccess();
       Navigator.pushNamedAndRemoveUntil(mContext!, MyRoute.loginPage, (route) => false);
@@ -48,6 +49,9 @@ class AuthController {
 
       // 2. 로그인 상태 등록
       ref.read(sessionProvider).loginSuccess(responseDTO.data, responseDTO.token!);
+
+      // 토큰 유효성 확인
+      AuthUserRepository().fetchJwtVerify();
 
       // 3. 화면 이동
       Navigator.popAndPushNamed(mContext!, MyRoute.mainPage);
