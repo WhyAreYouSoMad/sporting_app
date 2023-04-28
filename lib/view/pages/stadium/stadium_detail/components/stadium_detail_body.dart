@@ -21,7 +21,7 @@ class StadiumDetailBody extends ConsumerWidget {
         SliverToBoxAdapter(
           child: MyStadiumItem(
             stadiumName: stadiumDetail.name,
-            stadiumPic: stadiumDetail.stadiumFile.fileUrl,
+            stadiumPic: stadiumDetail.sourceFile.fileUrl,
             location: "부산 광역시 동래구 사직로 45",
             price: stadiumDetail.stadiumCourt[0].courtPrice.toInt(),
             hasSticky: false,

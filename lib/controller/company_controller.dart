@@ -22,7 +22,7 @@ class CompanyController {
   CompanyController(this.ref);
 
   Future<void> getCompanyDetail() async {
-    Logger().d("Conroller getCompanyDetail 메소드 호출됨");
+    Logger().d("Controller getCompanyDetail 메소드 호출됨");
     String jwt = ref.read(sessionProvider).jwt!;
     ResponseDTO responseDTO = await CompanyRepository().fetchCompanyDetail(jwt);
     Logger().d(responseDTO.status);
@@ -34,4 +34,6 @@ class CompanyController {
       ScaffoldMessenger.of(mContext!).showSnackBar(const SnackBar(content: Text("접근 실패")));
     }
   }
+
+
 }

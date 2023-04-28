@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:sporting_app/model/stadium/stadium_file.dart';
-import 'package:sporting_app/model/stadium_detail/court_file.dart';
+import 'package:sporting_app/model/file/source_file.dart';
 import 'package:sporting_app/model/stadium_detail/stadium_category.dart';
 import 'package:sporting_app/model/stadium_detail/stadium_court.dart';
 
@@ -12,7 +10,7 @@ class StadiumDetail {
   final double lon;
   final String address;
   final CateGory  category;
-  final StadiumFile stadiumFile;
+  final SourceFile sourceFile;
   final List<StadiumCourt> stadiumCourt;
 
 
@@ -24,7 +22,7 @@ class StadiumDetail {
     required this.lon,
     required this.address,
     required this.category,
-    required this.stadiumFile,
+    required this.sourceFile,
     required this.stadiumCourt,
   });
 
@@ -38,7 +36,7 @@ class StadiumDetail {
     data['lon'] = lon;
     data['address'] = address;
     data['cateGory'] = category;
-    data['stadiumFile'] = stadiumFile;
+    data['stadiumFile'] = sourceFile;
     data['stadiumCourt'] = stadiumCourt;
     return data;
   }
@@ -53,7 +51,7 @@ class StadiumDetail {
       lon: json['lon'],
       address: json['address'],
       category: CateGory.fromJson(json['category']),
-      stadiumFile: StadiumFile.fromJson(json['stadiumFile']),
+      sourceFile: SourceFile.fromJson(json['stadiumFile']),
       stadiumCourt: (json['stadiumCourt'] as List<dynamic>)
           .map((courtJson) => StadiumCourt.fromJson(courtJson))
           .toList(),

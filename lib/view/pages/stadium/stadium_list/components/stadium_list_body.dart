@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
 import 'package:sporting_app/model/stadium_detail/stadium_detail_controller.dart';
-import 'package:sporting_app/view/pages/stadium/stadium_detail/stadium_detail_page.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_list/components/stadium_list_header.dart';
 import 'package:sporting_app/view/components/my_stadium_item.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_list/components/stadium_list_sports_category_app_bar.dart';
@@ -33,10 +32,10 @@ class StadiumListBody extends ConsumerWidget {
               return Padding(
                 padding: const EdgeInsets.all(5),
                 child: MyStadiumItem(
-                  price: stadiums[index].courtPrice,
+                  price: 20000,
                   stadiumName: stadiums[index].name,
                   location: "광안리해수욕장 도보 10분",
-                  stadiumPic: stadiums[index].stadiumFile.fileUrl,
+                  stadiumPic: stadiums[index].sourceFile.fileUrl,
                   hasEvent: false,
                   iscard: true,
                   onTab: () {

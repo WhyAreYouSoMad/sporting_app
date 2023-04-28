@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sporting_app/controller/company_controller.dart';
-import 'package:sporting_app/controller/company_stadium_list_controller.dart';
+import 'package:sporting_app/controller/stadium_controller.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/components/my_list_tile.dart';
-import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
 
 class CompanyInfoContents extends ConsumerWidget {
   const CompanyInfoContents({Key? key}) : super(key: key);
@@ -80,7 +79,7 @@ class CompanyInfoContents extends ConsumerWidget {
             ),
             InkWell(
               onTap: () {
-                ref.read(myStadiumListControllerProvider).getMyStadiumListController();
+                ref.read(stadiumControllerProvider).getMyStadiumList();
               },
               child: Container(
                 padding: const EdgeInsets.only(bottom: 5),

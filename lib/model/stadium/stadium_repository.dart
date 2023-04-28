@@ -40,4 +40,20 @@ class StadiumRepository {
     }
   }
 
+  Future<ResponseDTO> fetchMyStadiums(String jwt) async {
+    try {
+      Logger().d("테스트1");
+      Response response = await dio.get("/api/company/stadiums?keyword=야구" ,
+          options: Options(headers: {"Authorization": "$jwt"}));
+      Logger().d("테스트2");
+      ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+      Logger().d(responseDTO.data);
+      List<dynamic> mapList = responseDTO.data as List<dynamic>;
+      List<Stadium> stadiumList = mapList.map((e) => Stadium.fromJson(e)).toList();
+      responseDTO.data = stadiumList;
+      return responseDTO;
+    } catch (e) {
+      return ResponseDTO(status: 400, msg: "실패 : ${e}");
+    }
+  }
 }

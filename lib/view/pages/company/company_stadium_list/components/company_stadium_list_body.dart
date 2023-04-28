@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:logger/logger.dart';
-import 'package:sporting_app/model/my_stadiums/my_stadiums.dart';
+import 'package:sporting_app/model/stadium/stadium.dart';
 import 'package:sporting_app/view/components/my_stadium_item.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_detail/company_stadium_detail_page.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page_view_model.dart';
@@ -14,27 +13,26 @@ class CompanyStadiumListBody extends ConsumerWidget {
 
     CompanyStadiumListPageModel? model = ref.watch(companyStadiumListPageProvider);
 
-    List<MyStadiums> myStadiums = [];
+    List<Stadium> stadiums = [];
 
 
     if(model != null) {
-      myStadiums = model.myStadiums;
-      // Logger().d(myStadiums);
+      stadiums = model.stadiums;
     }
 
     return CustomScrollView(
       slivers: [
         SliverList(
           delegate: SliverChildBuilderDelegate(
-            childCount: myStadiums.length,
+            childCount: stadiums.length,
             (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(5),
                 child: MyStadiumItem(
                   price: 2000,
-                  stadiumName: myStadiums[index].name,
+                  stadiumName: stadiums[index].name,
                   location: "광안리해수욕장 도보 10분",
-                  stadiumPic: myStadiums[index].sourceFile.fileUrl,
+                  stadiumPic: stadiums[index].sourceFile.fileUrl,
                   hasEvent: false,
                   iscard: true,
                   hasSticky: false,
