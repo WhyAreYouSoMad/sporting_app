@@ -1,18 +1,19 @@
 
+import 'package:sporting_app/model/my_stadiums/my_stadiums_sourcefile.dart';
 import 'package:sporting_app/model/stadium/stadium_file.dart';
 
 class MyStadiums {
   final int id;
   final String sport;
   final String name;
-  final StadiumFile stadiumFile;
+  final SourceFile sourceFile;
 
 
   MyStadiums({
     required this.id,
     required this.sport,
     required this.name,
-    required this.stadiumFile,
+    required this.sourceFile,
 });
 
   Map<String, dynamic> toJson() {
@@ -20,7 +21,7 @@ class MyStadiums {
     data['id'] = id;
     data['sport'] = sport;
     data['name'] = name;
-    data['stadiumFile'] = stadiumFile;
+    data['sourceFile'] = sourceFile;
     return data;
   }
 
@@ -29,7 +30,7 @@ class MyStadiums {
       id: json['id'],
       sport: json['sport'],
       name: json['name'],
-      stadiumFile: StadiumFile.fromJson(json['stadiumFile']),
+      sourceFile: SourceFile.fromJson(json['sourceFile']),
 
     );
   }
