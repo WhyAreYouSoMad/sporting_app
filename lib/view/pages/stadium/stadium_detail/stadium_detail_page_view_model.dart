@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sporting_app/model/stadium_detail/stadium_detail.dart';
+import 'package:sporting_app/model/stadium/stadium.dart';
 
 final stadiumDetailPageProvider = StateNotifierProvider<StadiumDetailPageViewModel, StadiumDetailPageModel?>((ref) {
   return StadiumDetailPageViewModel(null);
@@ -7,10 +7,10 @@ final stadiumDetailPageProvider = StateNotifierProvider<StadiumDetailPageViewMod
 
 
 class StadiumDetailPageModel {
-  StadiumDetail stadiumDetail;
+  Stadium stadium;
 
   StadiumDetailPageModel({
-    required this.stadiumDetail
+    required this.stadium
 });
 
 }
@@ -18,7 +18,7 @@ class StadiumDetailPageModel {
 class StadiumDetailPageViewModel extends StateNotifier<StadiumDetailPageModel?> {
   StadiumDetailPageViewModel(super.state);
 
-  void readInit(StadiumDetail stadiumDetail) async {
-    state = StadiumDetailPageModel(stadiumDetail: stadiumDetail);
+  void readInit(Stadium stadium) async {
+    state = StadiumDetailPageModel(stadium: stadium);
   }
 }

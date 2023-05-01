@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sporting_app/model/stadium_detail/stadium_detail.dart';
+import 'package:sporting_app/model/stadium/stadium.dart';
 import 'package:sporting_app/view/components/my_sliver_divider.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_detail/components/stadium_detail_calendar.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_detail/components/stadium_detail_court_item.dart';
@@ -15,15 +15,15 @@ class StadiumDetailBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
 
     StadiumDetailPageModel? model = ref.watch(stadiumDetailPageProvider);
-    StadiumDetail stadiumDetail = model!.stadiumDetail;
+    Stadium stadium = model!.stadium;
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: MyStadiumItem(
-            stadiumName: stadiumDetail.name,
-            stadiumPic: stadiumDetail.sourceFile.fileUrl,
+            stadiumName: stadium.name,
+            stadiumPic: stadium.sourceFile.fileUrl,
             location: "부산 광역시 동래구 사직로 45",
-            price: stadiumDetail.stadiumCourt[0].courtPrice.toInt(),
+            price: stadium.courts?[0].price,
             hasSticky: false,
           ),
         ),
@@ -41,13 +41,13 @@ class StadiumDetailBody extends ConsumerWidget {
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
-            childCount: stadiumDetail.stadiumCourt.length,
+            childCount: stadium.courts?.length,
             (context, index) {
               return  StadiumDetailCourtItem(
-                courtContent: stadiumDetail.stadiumCourt[index].content,
-                courtTitle: stadiumDetail.stadiumCourt[index].title,
-                courtImage: stadiumDetail.stadiumCourt[index].sourceFile.fileUrl,
-                courtPrice: stadiumDetail.stadiumCourt[index].courtPrice,
+                courtContent: stadium.courts![index].content,
+                courtTitle: stadium.courts![index].title,
+                courtImage: stadium.courts![index].sourceFile.fileUrl,
+                courtPrice: stadium.courts![index].price,
               );
             },
           ),

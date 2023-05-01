@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
@@ -10,6 +9,8 @@ import 'package:sporting_app/model/stadium/stadium_repository.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page_view_model.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_detail/stadium_detail_page.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_detail/stadium_detail_page_view_model.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page_view_model.dart';
 
@@ -56,7 +57,7 @@ class StadiumController {
     String jwt = ref.read(sessionProvider).jwt!;
 
     ResponseDTO responseDTO =
-    await StadiumRepository().fetchMyStadiums(jwt);
+    await StadiumRepository().fetchGetMyStadiums(jwt);
 
     if (responseDTO.status == 200) {
       List<Stadium> myStadiumsDTO = responseDTO.data;
@@ -70,5 +71,18 @@ class StadiumController {
               builder: (context) => const CompanyStadiumListPage()));
     }
     Logger().d(responseDTO.status);
+  }
+
+  Future<void> getStadiumDetail(int stadiumId) async {
+    Logger().d("getStadiumDetail 메소드 호출됨");
+    String jwt = ref.read(sessionProvider).jwt!;
+    ResponseDTO responseDTO = await StadiumRepository().fetchStadiumDetail(jwt, stadiumId);
+    Logger().d(responseDTO.status);
+    if(responseDTO.status == 200) {
+      ref.read(stadiumDetailPageProvider.notifier).readInit(responseDTO.data);
+      Navigator.push(mContext!, MaterialPageRoute(builder: (_) => StadiumDetailPage()));
+    } else {
+      ScaffoldMessenger.of(mContext!).showSnackBar(SnackBar(content: Text("일시적인 오류로 접근이 불가능 합니다")));
+    }
   }
 }
