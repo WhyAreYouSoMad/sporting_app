@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/controller/comapny_stadium_update_controller.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
 import 'package:sporting_app/view/components/my_stadium_item.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_detail/company_stadium_detail_page.dart';
@@ -37,12 +38,7 @@ class CompanyStadiumListBody extends ConsumerWidget {
                   iscard: true,
                   hasSticky: false,
                   onTab: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CompanyStadiumDetailPage(),
-                      ),
-                    );
+                   ref.read(MyCompanyStadiumUpdateControllerProvider).getStadiumUpdate(stadiums[index].id);
                   },
                 ),
               );
