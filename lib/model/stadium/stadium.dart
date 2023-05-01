@@ -4,25 +4,32 @@ import 'package:sporting_app/model/file/source_file.dart';
 
 class Stadium {
   final int id;
-  final String? sport;
   final String name;
   final SourceFile sourceFile;
+  final String? sport;
+  final int? price;
+  final String? startTime;
+  final String? endTime;
   final double? lat;
   final double? lon;
   final String? address;
   final Category? category;
-  final List<Court>? stadiumCourt;
+  final List<Court>? courts;
+
 
   Stadium({
     required this.id,
-    this.sport,
     required this.name,
     required this.sourceFile,
+    this.sport,
+    this.price,
+    this.startTime,
+    this.endTime,
     this.lat,
     this.lon,
     this.address,
     this.category,
-    this.stadiumCourt,
+    this.courts,
   });
 
   // 통신을 위해서 json 처럼 생긴 문자열 {"id":1} => Dart 오브젝트
@@ -30,33 +37,27 @@ class Stadium {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
-    data['sport'] = sport;
     data['name'] = name;
     data['sourceFile'] = sourceFile;
     return data;
   }
 
-  factory Stadium.fromJsonForList(Map<String, dynamic> json) {
+  factory Stadium.fromJson(Map<String, dynamic> json) {
     return Stadium(
       id: json['id'],
-      sport: json['sport'],
       name: json['name'],
       sourceFile: SourceFile.fromJson(json['sourceFile']),
-    );
-  }
-
-  factory Stadium.fromJsonForDetail(Map<String, dynamic> json) {
-    return Stadium(
-      id: json['id'],
-      name: json['name'],
+      sport: json['sport'],
+      price: json['price'],
+      startTime: json['startTime'],
+      endTime: json['endTime'],
       lat: json['lat'],
       lon: json['lon'],
       address: json['address'],
-      category: Category.fromJson(json['category']),
-      sourceFile: SourceFile.fromJson(json['sourceFile']),
-      stadiumCourt: (json['stadiumCourt'] as List<dynamic>)
+      category: json['category'] != null ? Category.fromJson(json['category']) : null,
+      courts: json['courts'] != null ? (json['courts'] as List<dynamic>)
           .map((courtJson) => Court.fromJson(courtJson))
-          .toList(),
+          .toList() : null,
     );
   }
 

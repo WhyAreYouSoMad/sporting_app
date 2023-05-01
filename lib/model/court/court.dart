@@ -5,7 +5,7 @@ class Court {
   final String title;
   final String content;
   final int capacity;
-  final int courtPrice;
+  final int price;
   final SourceFile sourceFile;
 
 
@@ -14,7 +14,7 @@ class Court {
     required this.title,
     required this.content,
     required this.capacity,
-    required this.courtPrice,
+    required this.price,
     required this.sourceFile,
   });
 
@@ -24,7 +24,7 @@ class Court {
     data['title'] = title;
     data['content'] = content;
     data['capacity'] = capacity;
-    data['courtPrice'] = courtPrice;
+    data['price'] = price;
     data['sourceFile'] = sourceFile;
     return data;
   }
@@ -36,7 +36,7 @@ class Court {
       title: json['title'],
       content: json['content'],
       capacity: json['capacity'],
-      courtPrice: json['courtPrice'],
+      price: json['price'],
       sourceFile: SourceFile.fromJson(json['sourceFile']),
     );
   }
