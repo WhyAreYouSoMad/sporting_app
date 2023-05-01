@@ -25,7 +25,7 @@ Future<void> fetchJoin_test() async {
 
 Future<void> fetchLogin_test() async {
   LoginReqDTO loginReqDTO =
-      LoginReqDTO(email: "ssar@nate.com", password: "1234");
+      LoginReqDTO(email: "cos@nate.com", password: "1234");
   // 1. 통신 시작
   Response response = await dio.post("/api/login", data: loginReqDTO.toJson());
 
