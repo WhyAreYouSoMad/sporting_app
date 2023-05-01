@@ -1,10 +1,13 @@
 
+import 'package:sporting_app/model/file/source_file.dart';
+
 class PlayerInfo {
   final int id;
   final String tel;
   final String gender;
   final String age;
   final String address;
+  final SourceFile sourceFile;
 
   PlayerInfo({
     required this.id,
@@ -12,6 +15,7 @@ class PlayerInfo {
     required this.gender,
     required this.age,
     required this.address,
+    required this.sourceFile,
   });
 
   // 통신을 위해서 json 처럼 생긴 문자열 {"id":1} => Dart 오브젝트
@@ -33,6 +37,7 @@ class PlayerInfo {
       gender: json['gender'],
       age: json['age'],
       address: json['address'],
+      sourceFile: SourceFile.fromJson(json['sourceFile']),
     );
   }
 }
