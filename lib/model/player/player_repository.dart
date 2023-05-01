@@ -11,7 +11,7 @@ class PlayerRepository {
   PlayerRepository._single();
 
   Future<ResponseDTO> fetchPlayerDetail(String jwt) async {
-    Response response = await dio.get("/api/user/updateform",
+    Response response = await dio.get("/api/user/3",
         options: Options(headers: {"Authorization": "$jwt"}));
     ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
     responseDTO.data = User.fromJsonForPlayer(responseDTO.data);

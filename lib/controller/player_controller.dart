@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/main.dart';
@@ -20,8 +21,11 @@ class PlayerController {
   PlayerController(this.ref);
 
   Future<void> getPlayerDetail() async {
+    Logger().d("getPlayerDetail 메소드 호출");
     String jwt = ref.read(sessionProvider).jwt!;
+    Logger().d("테스트1");
     ResponseDTO responseDTO = await PlayerRepository().fetchPlayerDetail(jwt);
+    Logger().d("테스트2");
     if (responseDTO.status == 200) {
       User playerDTO = responseDTO.data;
       ref.read(playerInfoUpdatePageProvider.notifier).notifyInit(playerDTO);
