@@ -2,8 +2,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
 
-final companyStadiumDetailPageProvider = StateNotifierProvider<companyStadiumDetailPageViewModel, CompanyStadiumDetailPageModel?>((ref) {
-  return companyStadiumDetailPageViewModel(null);
+final companyStadiumDetailPageProvider = StateNotifierProvider<CompanyStadiumDetailPageViewModel, CompanyStadiumDetailPageModel?>((ref) {
+  return CompanyStadiumDetailPageViewModel(null);
 });
 
 
@@ -15,8 +15,8 @@ class CompanyStadiumDetailPageModel {
   });
 }
 
-class companyStadiumDetailPageViewModel extends StateNotifier<CompanyStadiumDetailPageModel?> {
-  companyStadiumDetailPageViewModel(super.state);
+class CompanyStadiumDetailPageViewModel extends StateNotifier<CompanyStadiumDetailPageModel?> {
+  CompanyStadiumDetailPageViewModel(super.state);
 
   void notifyInit(Stadium stadium) async {
     state = CompanyStadiumDetailPageModel(stadium: stadium);
