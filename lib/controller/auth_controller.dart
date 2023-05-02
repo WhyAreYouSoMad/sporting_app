@@ -25,6 +25,7 @@ class AuthController {
   // 로그아웃
   Future<void> logout() async{
     try{
+
       Logger().d("logout 메소드 호출됨");
 
       // 세션 유저 값 비우기
@@ -41,6 +42,7 @@ class AuthController {
 
   // 회원가입
   Future<void> join(String email, String password) async{
+
     Logger().d("join 메소드 호출됨");
 
     // 전달 받은 값 DTO에 담기
@@ -63,6 +65,7 @@ class AuthController {
 
   // 로그인
   Future<void> login(String email, String password) async {
+
     Logger().d("login 메소드 호출됨");
 
     // 전달 받은 값 DTO에 담기
@@ -71,6 +74,7 @@ class AuthController {
     // Repository 메소드 호출
     ResponseDTO responseDTO = await AuthUserRepository().fetchLogin(loginReqDTO);
 
+    // 통신 상태 값이 200일 경우
     if(responseDTO.status == 200){
 
       // 토큰을 휴대폰에 저장
