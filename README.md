@@ -59,6 +59,8 @@ TODO 유튜브 링크 들어갈 곳
 | :------------: | :-------------: |
 | 회원가입 | 로그인 |
 | ![회원가입 (1)](https://user-images.githubusercontent.com/118786401/235410401-2dc8e4aa-6044-478d-9c48-f94326645663.gif) | ![로그인 (1)](https://user-images.githubusercontent.com/118786401/235410412-9ee2a68d-bba0-4b51-9fb0-f3dedb265d13.gif) |
+| 회원 정보 수정 |  |
+| ![일반회원-수정하기](https://user-images.githubusercontent.com/118786401/235585788-17d8ad9c-6fe1-4996-b010-aba88ec7ecfd.gif) |  |
 
 ### 기업 회원 관련 기능
 - 이메일 회원가입 기능
