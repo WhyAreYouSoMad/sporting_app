@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 
-class StadiumDetailCourtItemButton extends StatelessWidget {
-  const StadiumDetailCourtItemButton({Key? key}) : super(key: key);
+class StadiumDetailCourtItemButton extends StatefulWidget {
+  final int index;
+
+  const StadiumDetailCourtItemButton({Key? key, required this.index}) : super(key: key);
+
+  @override
+  State<StadiumDetailCourtItemButton> createState() => _StadiumDetailCourtItemButtonState();
+}
+
+class _StadiumDetailCourtItemButtonState extends State<StadiumDetailCourtItemButton> {
+  bool _selected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +25,11 @@ class StadiumDetailCourtItemButton extends StatelessWidget {
           ),
           elevation: 0,
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                _selected == true ? _selected = false : _selected = true;
+              });
+            },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,33 +37,19 @@ class StadiumDetailCourtItemButton extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.0),
-                    color: Colors.orange,
+                    color: _selected == false ? kGrayColor : Colors.orange,
                   ),
                   width: 80,
                   height: 35,
                   // color: Colors.orange,
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "오전 10:00",
+                      "${9+widget.index}:00",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: kWhiteColor,
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 24,
-                  width: 80,
-                  child: const Center(
-                    child: Text(
-                      "남은 자리 2",
-                      style: TextStyle(
-                        color: Colors.orange,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),

@@ -48,6 +48,7 @@ dependencies:
   get: ^4.6.5
   google_maps_flutter: ^2.2.5
   geolocator: ^9.0.2
+  bootpay: ^4.6.1
 
 
 
