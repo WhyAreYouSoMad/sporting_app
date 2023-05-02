@@ -6,7 +6,7 @@ import 'package:sporting_app/model/player/player_info.dart';
 class User {
   final int id;
   final String nickname;
-  final String email;
+  final String? email;
   final PlayerInfo? playerInfo;
   final List<PlayerFavoriteSport>? playerFavoriteSport;
   final CompanyInfo? companyInfo;
@@ -38,10 +38,10 @@ class User {
       id: json['id'],
       nickname: json['nickname'],
       email: json['email'],
-      playerInfo: PlayerInfo.fromJson(json['playerInfo']),
-      playerFavoriteSport: (json['playerFavoriteSport'] as List<dynamic>)
+      playerInfo: json['playerInfo'] != null ? PlayerInfo.fromJson(json['playerInfo']) : null,
+      playerFavoriteSport: json['playerFavoriteSport'] != null ? (json['playerFavoriteSport'] as List<dynamic>)
           .map((item) => PlayerFavoriteSport.fromJson(item))
-          .toList(),
+          .toList() : null,
     );
   }
 
