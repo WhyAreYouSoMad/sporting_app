@@ -40,14 +40,11 @@ class StadiumRepository {
     }
   }
 
-  Future<ResponseDTO> fetchGetMyStadiums(String jwt) async {
+  Future<ResponseDTO> fetchMyStadiumList(String jwt) async {
     try {
-      Logger().d("테스트1");
-      Response response = await dio.get("/api/cmpany/stadiums?keyword=야구" ,
+      Response response = await dio.get("/api/company/stadiums?keyword=all" ,
           options: Options(headers: {"Authorization": "$jwt"}));
-      Logger().d("테스트2");
       ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
-      Logger().d(responseDTO.data);
       List<dynamic> mapList = responseDTO.data as List<dynamic>;
       List<Stadium> stadiumList = mapList.map((e) => Stadium.fromJson(e)).toList();
       responseDTO.data = stadiumList;
@@ -64,9 +61,26 @@ class StadiumRepository {
 
       ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
       responseDTO.data = Stadium.fromJson(responseDTO.data);
-      Logger().d("테스트2");
       return responseDTO;
     } catch (e) {
+      return ResponseDTO(status: 400, msg: "실패 : ${e}");
+    }
+  }
+
+  Future<ResponseDTO> fetchMyStadiumDetail(String jwt ,int stadiumId) async {
+
+    try{
+      // 통신
+      Response response = await dio.get("/api/company/stadium/$stadiumId",
+          options: Options(headers: {"Authorization": "$jwt"}));
+      // 파싱
+      ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+      responseDTO.data = Stadium.fromJson(responseDTO.data);
+      // 리턴
+      return responseDTO;
+
+    } catch (e) {
+      // 실패일 경우 상태 코드 400 리턴
       return ResponseDTO(status: 400, msg: "실패 : ${e}");
     }
   }

@@ -1,6 +1,5 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sporting_app/model/company/my_company_stadium_update/my_company_stadium_update.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
 
 final companyStadiumDetailPageProvider = StateNotifierProvider<companyStadiumDetailPageViewModel, CompanyStadiumDetailPageModel?>((ref) {
@@ -9,17 +8,17 @@ final companyStadiumDetailPageProvider = StateNotifierProvider<companyStadiumDet
 
 
 class CompanyStadiumDetailPageModel {
-  MyCompanyStadiumUpdate myCompanyStadiumUpdate;
+  Stadium stadium;
 
   CompanyStadiumDetailPageModel({
-    required this.myCompanyStadiumUpdate
+    required this.stadium
   });
 }
 
 class companyStadiumDetailPageViewModel extends StateNotifier<CompanyStadiumDetailPageModel?> {
   companyStadiumDetailPageViewModel(super.state);
 
-  void notifyInit(MyCompanyStadiumUpdate myCompanyStadiumUpdate) async {
-    state = CompanyStadiumDetailPageModel(myCompanyStadiumUpdate: myCompanyStadiumUpdate);
+  void notifyInit(Stadium stadium) async {
+    state = CompanyStadiumDetailPageModel(stadium: stadium);
   }
 }
