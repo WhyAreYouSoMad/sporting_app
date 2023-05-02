@@ -15,6 +15,7 @@ class Stadium {
   final String? address;
   final Category? category;
   final List<Court>? courts;
+  final String? status;
 
 
   Stadium({
@@ -30,6 +31,7 @@ class Stadium {
     this.address,
     this.category,
     this.courts,
+    this.status,
   });
 
   // 통신을 위해서 json 처럼 생긴 문자열 {"id":1} => Dart 오브젝트
@@ -58,6 +60,7 @@ class Stadium {
       courts: json['courts'] != null ? (json['courts'] as List<dynamic>)
           .map((courtJson) => Court.fromJson(courtJson))
           .toList() : null,
+      status: json['status'],
     );
   }
 

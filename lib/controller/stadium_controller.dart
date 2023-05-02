@@ -7,6 +7,8 @@ import 'package:sporting_app/main.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
 import 'package:sporting_app/model/stadium/stadium_repository.dart';
 import 'package:sporting_app/provider/session_provider.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_detail/company_stadium_detail_page.dart';
+import 'package:sporting_app/view/pages/company/company_stadium_detail/company_stadium_detail_page_view_model.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_list/company_stadium_list_page_view_model.dart';
 import 'package:sporting_app/view/pages/stadium/stadium_detail/stadium_detail_page.dart';
@@ -57,7 +59,7 @@ class StadiumController {
     String jwt = ref.read(sessionProvider).jwt!;
 
     ResponseDTO responseDTO =
-    await StadiumRepository().fetchGetMyStadiums(jwt);
+    await StadiumRepository().fetchMyStadiumList(jwt);
 
     if (responseDTO.status == 200) {
       List<Stadium> myStadiumsDTO = responseDTO.data;
@@ -81,6 +83,22 @@ class StadiumController {
     if(responseDTO.status == 200) {
       ref.read(stadiumDetailPageProvider.notifier).readInit(responseDTO.data);
       Navigator.push(mContext!, MaterialPageRoute(builder: (_) => StadiumDetailPage()));
+    } else {
+      ScaffoldMessenger.of(mContext!).showSnackBar(SnackBar(content: Text("일시적인 오류로 접근이 불가능 합니다")));
+    }
+  }
+
+
+  Future<void> getMyStadiumDetail(int stadiumId) async {
+    Logger().d("getStadiumUpdate 메소드 호출됨 : $stadiumId");
+    String jwt = ref.read(sessionProvider).jwt!;
+
+    ResponseDTO responseDTO = await StadiumRepository().fetchMyStadiumDetail(jwt, stadiumId);
+    Logger().d("컴퍼티스타이움 컨트롤러", responseDTO.data);
+    Logger().d(responseDTO.msg);
+    if(responseDTO.status == 200) {
+      ref.read(companyStadiumDetailPageProvider.notifier).notifyInit(responseDTO.data);
+      Navigator.push(mContext!, MaterialPageRoute(builder: (_) => CompanyStadiumDetailPage()));
     } else {
       ScaffoldMessenger.of(mContext!).showSnackBar(SnackBar(content: Text("일시적인 오류로 접근이 불가능 합니다")));
     }
