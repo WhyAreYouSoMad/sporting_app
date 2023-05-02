@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
+import 'package:sporting_app/dto/player/player_request.dart';
 import 'package:sporting_app/dto/response_dto.dart';
+import 'package:sporting_app/dto/source_file/source_file_request.dart';
 import 'package:sporting_app/main.dart';
+import 'package:sporting_app/model/auth/auth_user.dart';
 import 'package:sporting_app/model/player/player_repository.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/player_info_update_page_view_model.dart';
@@ -43,6 +46,38 @@ class PlayerController {
 
       // 실패 시 스낵바
       ScaffoldMessenger.of(mContext!).showSnackBar(const SnackBar(content: Text("접근 실패")));
+    }
+  }
+
+  // 일반 회원 정보 수정
+  Future<void> updatePlayer(String nickname, String tel, String password, String address, int profileId) async {
+    Logger().d("updatePlayer 메소드 호출됨");
+
+    // 전달 받은 값 DTO에 담기
+    SourceFileReqDto sourceFile = SourceFileReqDto(id: profileId, fileBase64: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wB//9k=...");
+    List<SportReqDto> sportList = [SportReqDto(sport: '축구'), SportReqDto(sport: '야구'), SportReqDto(sport: '볼링')];
+    PlayerUpdateReqDTO playerUpdateReqDTO = PlayerUpdateReqDTO(nickname: nickname, password: password, tel: tel, gender: '남자', age: 'AGE_30', address: address, sourceFile: sourceFile, sportList: sportList);
+
+    // 세션에 담긴 jwt 토큰 가져오기
+    String jwt = ref.read(sessionProvider).jwt!;
+
+    // Repository 메소드 호출
+    ResponseDTO responseDTO = await PlayerRepository().fetchUpdatePlayer(jwt, playerUpdateReqDTO);
+
+    // 통신 상태 값이 200일 경우
+    if (responseDTO.status == 200) {
+      // 세션의 유저 정보 변경
+      AuthUser? loginUser = ref.read(sessionProvider).user;
+      AuthUser updateUser = AuthUser(id: loginUser!.id, nickname: nickname, role: loginUser.role);
+      ref.read(sessionProvider).user = updateUser;
+
+      // 이전 페이지로 이동
+      Navigator.pop(mContext!);
+      ScaffoldMessenger.of(mContext!).showSnackBar(const SnackBar(content: Text("회원 정보 수정 완료")));
+    } else {
+
+      // 실패 시 스낵바
+      ScaffoldMessenger.of(mContext!).showSnackBar(const SnackBar(content: Text("회원 정보 수정 실패")));
     }
   }
 }
