@@ -32,9 +32,10 @@ class PlayerRepository {
   Future<ResponseDTO> fetchUpdatePlayer(String jwt, PlayerUpdateReqDTO playerUpdateReqDTO) async {
 
     // 서버와 통신
-    Response response = await dio.get("/api/user/1",
+    Response response = await dio.put("/api/user/update",
         options: Options(headers: {"Authorization": "$jwt"}),
         data: playerUpdateReqDTO.toJson());
+
 
     // response의 바디 부분 파싱
     ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
