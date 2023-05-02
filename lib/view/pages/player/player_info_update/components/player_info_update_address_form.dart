@@ -5,12 +5,15 @@ import 'package:remedi_kopo/remedi_kopo.dart';
 
 class PlayerInfoUpdateAddressForm extends StatelessWidget {
   final TextEditingController addressCon;
+  final addressValidator;
 
-  const PlayerInfoUpdateAddressForm({Key? key, required this.addressCon}) : super(key: key);
+  const PlayerInfoUpdateAddressForm(
+      {Key? key, required this.addressCon, required this.addressValidator,})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row (
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         const Text('주소', style: TextStyle(fontSize: 15)),
@@ -22,6 +25,7 @@ class PlayerInfoUpdateAddressForm extends StatelessWidget {
               _addressAPI(context); // 카카오 주소 API
             },
             child: TextFormField(
+              validator: addressValidator,
               enabled: false,
               controller: addressCon,
               style: const TextStyle(fontSize: 15),

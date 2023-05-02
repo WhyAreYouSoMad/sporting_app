@@ -1,10 +1,10 @@
 import 'package:validators/validators.dart';
 
-Function validateUsername() {
+Function validateNickName() {
   return (String? value) {
 
     if (value!.isEmpty) {
-      return "유저네임에 들어갈 수 없습니다.";
+      return "유저네임에 공백이 들어갈 수 없습니다.";
     } else if (value.length > 12) {
       return "유저네임의 길이를 초과하였습니다.";
     } else if (value.length < 3) {

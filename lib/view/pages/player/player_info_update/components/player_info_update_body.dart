@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/controller/player_controller.dart';
+import 'package:sporting_app/core/utils/my_validate_util.dart';
 import 'package:sporting_app/model/user/user.dart';
 import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/pages/player/player_info_update/components/player_info_update_address_form.dart';
@@ -20,8 +22,9 @@ class PlayerInfoUpdateBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     PlayerInfoUpdatePageModel? model = ref.watch(playerInfoUpdatePageProvider);
+    User? user;
     if (model != null) {
-      User user = model.user;
+      user = model.user;
       _nickname.text = user.nickname;
       if (user.playerInfo?.tel != null && user.playerInfo?.address != null) {
         _tel.text = user.playerInfo!.tel;
@@ -32,7 +35,8 @@ class PlayerInfoUpdateBody extends ConsumerWidget {
       key: _formKey,
       child: ListView(
         children: [
-          PlayerInfoUpdateHeader(nicknameCon: _nickname),
+          PlayerInfoUpdateHeader(
+              nicknameCon: _nickname, nicknameValidator: validateNickName()),
           const SizedBox(height: 20),
           const Divider(thickness: 10, height: 30),
           const SizedBox(height: 20),
@@ -52,14 +56,23 @@ class PlayerInfoUpdateBody extends ConsumerWidget {
                   telCon: _tel,
                   passwordCon: _password,
                   checkPasswordCon: _checkPassword,
+                  passwordValidator: validatePassword(),
                 ),
                 PlayerInfoUpdateAddressForm(
                   addressCon: _address,
+                  addressValidator: validateStadiumAddress(),
                 ),
                 const SizedBox(height: 90),
                 MyButton(
                   funButton: () {
-                    Navigator.pop(context);
+                    if (_formKey.currentState!.validate() && _password.text == _checkPassword.text) {
+                      ref.read(playerControllerProvider).updatePlayer(
+                          _nickname.text,
+                          _tel.text,
+                          _password.text,
+                          _address.text,
+                          user!.playerInfo!.sourceFile.id);
+                    }
                   },
                   text: '수정',
                   fontWeight: FontWeight.bold,

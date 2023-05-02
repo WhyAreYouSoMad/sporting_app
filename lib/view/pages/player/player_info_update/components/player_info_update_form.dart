@@ -4,12 +4,14 @@ class PlayerInfoUpdateForm extends StatelessWidget {
   final TextEditingController telCon;
   final TextEditingController passwordCon;
   final TextEditingController checkPasswordCon;
+  final passwordValidator;
 
   const PlayerInfoUpdateForm({
     Key? key,
     required this.telCon,
     required this.passwordCon,
     required this.checkPasswordCon,
+    required this.passwordValidator,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,7 @@ class PlayerInfoUpdateForm extends StatelessWidget {
     );
   }
 
-  Row _password() {
+  Widget _password() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
@@ -28,6 +30,7 @@ class PlayerInfoUpdateForm extends StatelessWidget {
         Expanded(
           child: TextFormField(
             controller: passwordCon,
+            validator: passwordValidator,
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.only(right: 10, left: 10),
             ),
@@ -47,6 +50,7 @@ class PlayerInfoUpdateForm extends StatelessWidget {
         Expanded(
           child: TextFormField(
             controller: checkPasswordCon,
+            validator: passwordValidator,
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.only(right: 10, left: 10),
             ),

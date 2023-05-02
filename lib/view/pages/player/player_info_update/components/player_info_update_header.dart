@@ -1,12 +1,20 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/view/pages/player/player_info_update/player_info_update_page_view_model.dart';
 
-class PlayerInfoUpdateHeader extends StatelessWidget {
+class PlayerInfoUpdateHeader extends ConsumerWidget {
   final TextEditingController nicknameCon;
+  final nicknameValidator;
 
-  const PlayerInfoUpdateHeader({Key? key, required this.nicknameCon}) : super(key: key);
+  const PlayerInfoUpdateHeader({
+    Key? key,
+    required this.nicknameCon,
+    required this.nicknameValidator,
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
         Padding(
@@ -18,8 +26,13 @@ class PlayerInfoUpdateHeader extends StatelessWidget {
               height: 100,
               color: Colors.green,
               child: Center(
-                  child: Image.asset("assets/images/icons/man.png",
-                      color: Colors.white, width: 50, height: 50)
+                child: CachedNetworkImage(
+                    imageUrl: ref
+                        .watch(playerInfoUpdatePageProvider)!
+                        .user
+                        .playerInfo!
+                        .sourceFile
+                        .fileUrl),
               ),
             ),
           ),
@@ -37,6 +50,7 @@ class PlayerInfoUpdateHeader extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: nicknameCon,
+                  validator: nicknameValidator,
                   decoration: const InputDecoration(
                     contentPadding: EdgeInsets.symmetric(horizontal: 10),
                   ),
