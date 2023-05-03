@@ -91,7 +91,7 @@ class CompanyInfoContents extends ConsumerWidget {
                   ),
                 ),
                 child: const MyListTile(
-                  image: "assets/images/icons/sns.png",
+                  image: "assets/images/icons/stadium.png",
                   title: "내 경기장 관리하기",
                 ),
               ),
@@ -110,7 +110,7 @@ class CompanyInfoContents extends ConsumerWidget {
                   ),
                 ),
                 child: const MyListTile(
-                  image: "assets/images/icons/sns.png",
+                  image: "assets/images/icons/enroll.png",
                   title: "경기장 등록하기",
                 ),
               ),
