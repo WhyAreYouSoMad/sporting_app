@@ -1,11 +1,11 @@
 import 'package:bootpay/bootpay.dart';
-import 'package:bootpay/model/extra.dart';
 import 'package:bootpay/model/item.dart';
 import 'package:bootpay/model/payload.dart';
-import 'package:bootpay/model/user.dart';
+import 'package:bootpay/model/user.dart' as boot;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+import 'package:sporting_app/model/payment/payment_repository.dart';
+import 'package:sporting_app/model/user/user.dart' as my;
 
 class TotalPayment extends StatelessWidget {
   // You can ask Get to find a Controller that is being used by another page and redirect you to it.
@@ -18,7 +18,19 @@ class TotalPayment extends StatelessWidget {
 
   Item item;
 
-  TotalPayment({super.key, required this.item});
+  my.User user;
+
+  String jwt;
+
+  int courtId;
+
+  TotalPayment({
+    super.key,
+    required this.item,
+    required this.user,
+    required this.jwt,
+    required this.courtId,
+  });
 
   @override
   Widget build(context) {
@@ -28,17 +40,13 @@ class TotalPayment extends StatelessWidget {
             child: Center(
                 child: TextButton(
                     onPressed: () => bootpayTest(context),
-                    child: const Text('통합결제 테스트', style: TextStyle(fontSize: 16.0))
-                )
-            )
-        )
-    );
+                    child: const Text('통합결제 테스트',
+                        style: TextStyle(fontSize: 16.0))))));
   }
 
   void bootpayTest(BuildContext context) {
-
     Payload payload = getPayload();
-    if(kIsWeb) {
+    if (kIsWeb) {
       payload.extra?.openType = "iframe";
     }
 
@@ -48,9 +56,11 @@ class TotalPayment extends StatelessWidget {
       showCloseButton: false,
       // closeButton: Icon(Icons.close, size: 35.0, color: Colors.black54),
       onCancel: (String data) {
+        PaymentRepository().fetchPaymentResult(jwt, data, courtId);
         print('------- onCancel: $data');
       },
       onError: (String data) {
+        PaymentRepository().fetchPaymentResult(jwt, data, courtId);
         print('------- onError: $data');
       },
       onClose: () {
@@ -59,9 +69,11 @@ class TotalPayment extends StatelessWidget {
         //TODO - 원하시는 라우터로 페이지 이동
       },
       onIssued: (String data) {
+        PaymentRepository().fetchPaymentResult(jwt, data, courtId);
         print('------- onIssued: $data');
       },
       onConfirm: (String data) {
+        PaymentRepository().fetchPaymentResult(jwt, data, courtId);
         print('------- onConfirm: $data');
         /**
             1. 바로 승인하고자 할 때
@@ -80,6 +92,7 @@ class TotalPayment extends StatelessWidget {
         return true;
       },
       onDone: (String data) {
+        PaymentRepository().fetchPaymentResult(jwt, data, courtId);
         print('------- onDone: $data');
       },
     );
@@ -90,43 +103,28 @@ class TotalPayment extends StatelessWidget {
     List<Item> itemList = [item];
 
     payload.webApplicationId = webApplicationId; // web application id
-    payload.androidApplicationId = androidApplicationId; // android application id
+    payload.androidApplicationId =
+        androidApplicationId; // android application id
     payload.iosApplicationId = iosApplicationId; // ios application id
 
     payload.pg = '나이스페이';
-    // payload.method = '카드';
-    // payload.methods = ['card', 'phone', 'vbank', 'bank', 'kakao'];
-    payload.orderName = "테스트 상품"; //결제할 상품명
+    payload.orderName = item.name; //결제할 상품명
     payload.price = item.price; //정기결제시 0 혹은 주석
 
+    payload.orderId = DateTime.now()
+        .millisecondsSinceEpoch
+        .toString(); //주문번호, 개발사에서 고유값으로 지정해야함
 
-    payload.orderId = DateTime.now().millisecondsSinceEpoch.toString(); //주문번호, 개발사에서 고유값으로 지정해야함
-
-    payload.metadata = {
-      "callbackParam1" : "value12",
-      "callbackParam2" : "value34",
-      "callbackParam3" : "value56",
-      "callbackParam4" : "value78",
-    }; // 전달할 파라미터, 결제 후 되돌려 주는 값
     payload.items = itemList; // 상품정보 배열
 
-    User user = User(); // 구매자 정보
-    user.username = "사용자 이름";
-    user.email = "user1234@gmail.com";
-    user.area = "서울";
-    user.phone = "010-4033-4678";
-    user.addr = '서울시 동작구 상도로 222';
-
-    Extra extra = Extra(); // 결제 옵션
-    extra.appScheme = 'bootpayFlutterExample';
-    extra.cardQuota = '3';
-    // extra.openType = 'popup';
-
-    // extra.carrier = "SKT,KT,LGT"; //본인인증 시 고정할 통신사명
-    // extra.ageLimit = 20; // 본인인증시 제한할 최소 나이 ex) 20 -> 20살 이상만 인증이 가능
+    boot.User user = boot.User(); // 구매자 정보
+    user.id = this.user.id.toString();
+    user.username = this.user.nickname;
+    user.email = this.user.email;
+    user.phone = this.user.playerInfo!.tel;
+    user.addr = this.user.playerInfo!.address;
 
     payload.user = user;
-    payload.extra = extra;
     return payload;
   }
 }
