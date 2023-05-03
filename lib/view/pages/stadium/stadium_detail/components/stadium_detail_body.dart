@@ -59,12 +59,7 @@ class StadiumDetailBody extends ConsumerWidget {
             childCount: stadium.courts?.length,
             (context, index) {
               return StadiumDetailCourtItem(
-                courtId: stadium.courts![index].id,
-                courtContent: stadium.courts![index].content,
-                courtTitle: stadium.courts![index].title,
-                courtImage: stadium.courts![index].sourceFile.fileUrl,
-                courtPrice: stadium.courts![index].price,
-                courtCapacity: stadium.courts![index].capacity,
+                court: stadium.courts![index],
               );
             },
           ),

@@ -10,7 +10,7 @@ class StadiumDetailPageModel {
   Stadium stadium;
 
   StadiumDetailPageModel({
-    required this.stadium
+    required this.stadium,
 });
 
 }
@@ -18,7 +18,7 @@ class StadiumDetailPageModel {
 class StadiumDetailPageViewModel extends StateNotifier<StadiumDetailPageModel?> {
   StadiumDetailPageViewModel(super.state);
 
-  void readInit(Stadium stadium) async {
+  void notifyInit(Stadium stadium) async {
     state = StadiumDetailPageModel(stadium: stadium);
   }
 }
