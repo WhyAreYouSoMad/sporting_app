@@ -9,7 +9,6 @@ class StadiumListHeader extends StatelessWidget {
     return SliverAppBar(
       backgroundColor: Colors.white,
       automaticallyImplyLeading: false,
-      expandedHeight: 70,
       pinned: true,
       floating: true,
       flexibleSpace: FlexibleSpaceBar(
@@ -21,7 +20,7 @@ class StadiumListHeader extends StatelessWidget {
                 text: "부산(북구)",
                 icon: Icons.location_on_outlined,
                 iconSize: 12,
-                height: 25,
+                height: 40,
                 rowAlign: MainAxisAlignment.center,
                 sizedBoxWidth: 5,
                 fontSize: 12,
@@ -31,7 +30,7 @@ class StadiumListHeader extends StatelessWidget {
               child: MyCardButton(
                 text: "2022-02-13",
                 icon: Icons.calendar_month,
-                height: 25,
+                height: 40,
                 rowAlign: MainAxisAlignment.center,
                 sizedBoxWidth: 5,
                 fontSize: 12,
