@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/core/utils/my_validate_util.dart';
 import 'package:sporting_app/model/user/user.dart';
 import 'package:sporting_app/view/components/my_button.dart';
 import 'package:sporting_app/view/pages/company/company_info_update/company_info_update_page_view_model.dart';
+import 'package:sporting_app/view/pages/company/company_info_update/components/company_info_update_address_form.dart';
 import 'package:sporting_app/view/pages/company/company_info_update/components/company_info_update_form.dart';
 import 'package:sporting_app/view/pages/company/company_info_update/components/company_info_update_header.dart';
 
@@ -12,16 +14,22 @@ class CompanyInfoUpdateBody extends ConsumerWidget {
   final TextEditingController _tel = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _checkPassword = TextEditingController();
+  final TextEditingController _address = TextEditingController();
+  final TextEditingController _companyNumber = TextEditingController();
+
   CompanyInfoUpdateBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    CompanyInfoUpdatePageModel? model = ref.watch(companyInfoUpdatePageProvider);
+    CompanyInfoUpdatePageModel? model =
+        ref.watch(companyInfoUpdatePageProvider);
     if (model != null) {
       User user = model.user;
       _nickname.text = user.nickname;
       if (user.companyInfo?.tel != null) {
         _tel.text = user.companyInfo!.tel;
+        _address.text = user.companyInfo!.businessAddress;
+        _companyNumber.text = user.companyInfo!.businessNumber;
       }
     }
     return Form(
@@ -45,14 +53,23 @@ class CompanyInfoUpdateBody extends ConsumerWidget {
                 ),
                 const SizedBox(height: 25),
                 const Row(
-                  children: [Text("사무실 위치"), SizedBox(width: 60), Text("해바라기시")],
+                  children: [
+                    Text("이메일"),
+                    SizedBox(width: 88),
+                    Text("a0211a@naver.com")
+                  ],
                 ),
-                const SizedBox(height: 25),
-                const Row(
-                  children: [Text("사업자번호"), SizedBox(width: 60), Text("123455745511")],
+                CompanyInfoUpdateAddressForm(
+                  addressCon: _address,
+                  addressValidator: validateStadiumAddress(),
                 ),
-                const SizedBox(height: 25),
-                CompanyInfoUpdateForm(telCon: _tel, passwordCon: _password, checkPasswordCon: _checkPassword),
+                CompanyInfoUpdateForm(
+                  companyNumberCon: _companyNumber,
+                  telCon: _tel,
+                  passwordCon: _password,
+                  checkPasswordCon: _checkPassword,
+                  passwordValidator: validatePassword(),
+                ),
                 const SizedBox(height: 50),
                 MyButton(
                   funButton: () {
@@ -69,7 +86,4 @@ class CompanyInfoUpdateBody extends ConsumerWidget {
       ),
     );
   }
-
-
 }
-
