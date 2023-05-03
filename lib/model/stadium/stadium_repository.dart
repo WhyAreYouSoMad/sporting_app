@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:logger/logger.dart';
 import 'package:sporting_app/core/constants/my_dio.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/dto/stadium/stadium_request.dart';
@@ -59,15 +60,20 @@ class StadiumRepository {
 
   Future<ResponseDTO> fetchSaveStadium(String jwt, SaveStadiumReqDTO saveStadiumReqDTO) async {
     try {
+      Logger().d("fetchSaveStadium 메소드 호출 됨");
 
       // 서버와 통신
       Response response = await dio.post("/api/company/stadiums",
           options: Options(headers: {"Authorization": "$jwt"}),
           data: saveStadiumReqDTO);
 
+      Logger().d(response.data);
+
       // response의 바디 부분 파싱
       ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
       responseDTO.data = Stadium.fromJson(responseDTO.data);
+
+      Logger().d("테스트2");
 
       // 공통 DTO 리턴
       return responseDTO;

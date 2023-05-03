@@ -27,7 +27,7 @@ class CompanyStadiumDetailPage extends StatelessWidget {
           ),
         ),
       ),
-      body: const CompanyStadiumDetailBody(),
+      body: CompanyStadiumDetailBody(),
     );
   }
 }
