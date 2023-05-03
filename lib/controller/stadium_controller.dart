@@ -70,7 +70,7 @@ class StadiumController {
     // 통신 상태 값이 200일 경우
     if (responseDTO.status == 200) {
       // ViewModel 메소드 호출
-      ref.read(stadiumDetailPageProvider.notifier).readInit(responseDTO.data);
+      ref.read(stadiumDetailPageProvider.notifier).notifyInit(responseDTO.data);
 
       // 경기장 상세 페이지로 이동
       Navigator.push(
