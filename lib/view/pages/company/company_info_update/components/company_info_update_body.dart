@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sporting_app/controller/company_controller.dart';
 import 'package:sporting_app/core/utils/my_validate_util.dart';
 import 'package:sporting_app/model/user/user.dart';
 import 'package:sporting_app/view/components/my_button.dart';
@@ -23,8 +24,9 @@ class CompanyInfoUpdateBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     CompanyInfoUpdatePageModel? model =
         ref.watch(companyInfoUpdatePageProvider);
+    User? user;
     if (model != null) {
-      User user = model.user;
+      user = model.user;
       _nickname.text = user.nickname;
       if (user.companyInfo?.tel != null) {
         _tel.text = user.companyInfo!.tel;
@@ -73,7 +75,16 @@ class CompanyInfoUpdateBody extends ConsumerWidget {
                 const SizedBox(height: 50),
                 MyButton(
                   funButton: () {
-                    Navigator.pop(context);
+                    if (_formKey.currentState!.validate() && _password.text == _checkPassword.text) {
+                      ref.read(companyControllerProvider).updateCompany(
+                          _nickname.text,
+                          _tel.text,
+                          _password.text,
+                          _address.text,
+                          _companyNumber.text,
+                          user!.companyInfo!.sourceFile.id,
+                          );
+                    }
                   },
                   text: '수정',
                   fontWeight: FontWeight.bold,
