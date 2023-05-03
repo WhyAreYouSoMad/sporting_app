@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:sporting_app/core/constants/my_dio.dart';
+import 'package:sporting_app/dto/company/company_request.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/model/user/user.dart';
 
@@ -27,4 +28,20 @@ class CompanyRepository {
     return responseDTO;
   }
 
+  // 기업 회원 정보 수정
+  Future<ResponseDTO> fetchUpdateCompany(String jwt, CompanyUpdateReqDTO companyUpdateReqDTO) async {
+
+    // 서버와 통신
+    Response response = await dio.put("/api/company/update",
+        options: Options(headers: {"Authorization": "$jwt"}),
+        data: companyUpdateReqDTO.toJson());
+
+
+    // response의 바디 부분 파싱
+    ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+    responseDTO.data = User.fromJsonForCompany(responseDTO.data);
+
+    // 공통 DTO 리턴
+    return responseDTO;
+  }
 }
