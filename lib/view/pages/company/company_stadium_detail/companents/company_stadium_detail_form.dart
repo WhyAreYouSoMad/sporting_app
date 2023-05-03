@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
-import 'package:sporting_app/core/utils/my_number_editing_controller.dart';
 import 'package:sporting_app/view/components/my_dropdown_button_form_field.dart';
 
 class CompanyStadiumDetailForm extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
-  final _startTime = MyNumberEditingController();
+  final String address;
 
-  CompanyStadiumDetailForm({Key? key}) : super(key: key);
+  CompanyStadiumDetailForm({Key? key, required this.address}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,40 +15,40 @@ class CompanyStadiumDetailForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             '경기장 정보',
             style: TextStyle(color: kTextColor, fontSize: 25),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             children: [
-              Text(
+              const Text(
                 '경기장 위치',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(width: 20),
+              const SizedBox(width: 20),
               SizedBox(
                 width: 250,
                 child: Text(
-                  '부산광역시 광진구 야호동1길 13',
-                  style: TextStyle(fontSize: 15),
+                  address,
+                  style: const TextStyle(fontSize: 15),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             children: [
-              Text(
+              const Text(
                 '영업 시간',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(width: 37),
+              const SizedBox(width: 37),
               SizedBox(
                 width: 100,
                 height: 60,
-                child: MyDropdownButtonFormField(items: [
+                child: MyDropdownButtonFormField(items: const [
                   '1시',
                   '2시',
                   '3시',
@@ -74,13 +73,13 @@ class CompanyStadiumDetailForm extends StatelessWidget {
                   '22시',
                   '23시',
                   '24시'
-                ], initValue: '1시'),
+                ], initValue: '8시'),
               ),
-              SizedBox(width: 37),
+              const SizedBox(width: 37),
               SizedBox(
                 width: 100,
                 height: 60,
-                child: MyDropdownButtonFormField(items: [
+                child: MyDropdownButtonFormField(items: const [
                   '1시',
                   '2시',
                   '3시',
@@ -105,37 +104,37 @@ class CompanyStadiumDetailForm extends StatelessWidget {
                   '22시',
                   '23시',
                   '24시'
-                ], initValue: '21시'),
+                ], initValue: '22시'),
               )
             ],
           ),
           Row(
             children: [
-              Text(
+              const Text(
                 '영업 상태',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(width: 37),
+              const SizedBox(width: 37),
               SizedBox(
                 width: 236,
                 height: 60,
                 child: MyDropdownButtonFormField(
-                    items: ['영업중', '휴업중'], initValue: '영업중'),
+                    items: const ['영업중', '휴업중'], initValue: '영업중'),
               ),
             ],
           ),
           Row(
             children: [
-              Text(
+              const Text(
                 '경기 종목',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(width: 37),
+              const SizedBox(width: 37),
               SizedBox(
                 width: 236,
                 height: 60,
                 child: MyDropdownButtonFormField(
-                    items: ['축구', '야구', '농구', '골프', '테니스', '탁구', '골프', '볼링'],
+                    items: const ['축구', '야구', '농구', '골프', '테니스', '탁구', '골프', '볼링'],
                     initValue: '야구'),
               ),
             ],
