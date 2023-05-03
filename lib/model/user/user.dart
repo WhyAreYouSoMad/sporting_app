@@ -50,7 +50,7 @@ class User {
       id: json['id'],
       nickname: json['nickname'],
       email: json['email'],
-      companyInfo: CompanyInfo.fromJson(json['companyInfo']),
+      companyInfo: json['companyInfo'] != null ? CompanyInfo.fromJson(json['companyInfo']) : null,
     );
   }
 }
