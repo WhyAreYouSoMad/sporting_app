@@ -45,6 +45,7 @@ class CompanyInfoUpdateForm extends StatelessWidget {
           child: TextFormField(
             controller: passwordCon,
             validator: passwordValidator,
+            obscureText: true,
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.only(right: 10, left: 10),
             ),
@@ -65,6 +66,7 @@ class CompanyInfoUpdateForm extends StatelessWidget {
           child: TextFormField(
             controller: checkPasswordCon,
             validator: passwordValidator,
+            obscureText: true,
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.only(right: 10, left: 10),
             ),

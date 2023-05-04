@@ -1,9 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CompanyInfoUpdateHeader extends StatelessWidget {
   final TextEditingController nicknameCon;
+  final String image;
 
-  const CompanyInfoUpdateHeader({Key? key, required this.nicknameCon}) : super(key: key);
+  const CompanyInfoUpdateHeader(
+      {Key? key, required this.nicknameCon, required this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +22,7 @@ class CompanyInfoUpdateHeader extends StatelessWidget {
               height: 100,
               color: Colors.green,
               child: Center(
-                  child: Image.asset("assets/images/icons/man.png",
-                      color: Colors.white, width: 50, height: 50)
+                child: CachedNetworkImage(imageUrl: image),
               ),
             ),
           ),

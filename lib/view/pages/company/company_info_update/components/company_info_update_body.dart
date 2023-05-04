@@ -38,7 +38,7 @@ class CompanyInfoUpdateBody extends ConsumerWidget {
       key: _formKey,
       child: ListView(
         children: [
-          CompanyInfoUpdateHeader(nicknameCon: _nickname),
+          CompanyInfoUpdateHeader(nicknameCon: _nickname, image: user!.companyInfo!.sourceFile.fileUrl),
           const SizedBox(height: 20),
           const Divider(thickness: 10, height: 30),
           const SizedBox(height: 20),
