@@ -30,7 +30,7 @@ class CompanyStadiumListBody extends ConsumerWidget {
                 padding: const EdgeInsets.all(5),
                 child: MyStadiumItem(
                   price: 2000,
-                  stadiumName: stadiums[index].name,
+                  stadiumName: stadiums[index].name!,
                   location: "광안리해수욕장 도보 10분",
                   stadiumPic: stadiums[index].sourceFile.fileUrl,
                   hasEvent: false,

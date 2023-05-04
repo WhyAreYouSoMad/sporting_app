@@ -4,7 +4,7 @@ import 'package:sporting_app/model/file/source_file.dart';
 
 class Stadium {
   final int id;
-  final String name;
+  final String? name;
   final SourceFile sourceFile;
   final String? sport;
   final int? price;

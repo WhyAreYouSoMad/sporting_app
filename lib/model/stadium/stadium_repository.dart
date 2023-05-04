@@ -4,6 +4,7 @@ import 'package:sporting_app/core/constants/my_dio.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/dto/stadium/stadium_request.dart';
 import 'package:sporting_app/model/stadium/stadium.dart';
+import 'package:sporting_app/model/stadium/stadium_company_update/stadium_comapny_update.dart';
 
 class StadiumRepository {
 
@@ -126,4 +127,20 @@ class StadiumRepository {
       return ResponseDTO(status: 400, msg: "실패 : ${e}");
     }
   }
+
+  Future<ResponseDTO> fetchCompanyStadiumUpdate(String jwt, CompanyUpdateStadium companyUpdateStadium) async {
+    
+    Response response = await dio.put("/api/company/stadiums",
+    options: Options(headers: {"Authorization": "$jwt"}),
+      data: companyUpdateStadium.toJson());
+    
+    ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+    responseDTO.data = Stadium.fromJson(responseDTO.data);
+
+    return responseDTO;
+
+    
+  }
+  
+  
 }
