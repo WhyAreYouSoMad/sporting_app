@@ -10,8 +10,8 @@ String _companyToken =
     'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqd3RzdHVkeSIsInJvbGUiOiJDT01QQU5ZIiwibmlja25hbWUiOiLstpXqtazrpbwg7J6Y7ZWY64qUIOyngOyXsOydtCIsImlkIjo0LCJleHAiOjE2ODMxMDk0NjZ9.bWEADia3PlYJyZPNVHe8gXQZjTKY7_Ca9lpoDsSPPvg3CuHHgPEIHjgyrx6enMl-BwfRd-rh_Vy6AhkCvWMmnQ';
 
 void main() async {
-  await fetchCompanyDetail_test();
-  // await fetchUpdatePlayer_test();
+  // await fetchCompanyDetail_test();
+  await fetchUpdatePlayer_test();
 }
 
 Future<void> fetchCompanyDetail_test() async {
