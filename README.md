@@ -108,7 +108,7 @@ TODO 유튜브 링크 들어갈 곳
 | 기업 회원 삭제 | 메일링 기능 |
 | ![KakaoTalk_20230504_125252112_01](https://user-images.githubusercontent.com/118786401/236116199-63566051-04d9-45b0-9a92-70e77cc1217d.gif) | ![KakaoTalk_20230504_140206107](https://user-images.githubusercontent.com/118786401/236116970-d4045d3b-4952-4cda-a021-a7ccf9673cf0.gif) |
 | 통계 |
-| ![KakaoTalk_20230504_140206107](https://user-images.githubusercontent.com/118786401/236116404-1a3a336c-06f2-42dd-b6d4-3b388502d3f2.gif) |
+| ![KakaoTalk_20230504_125252112_02](https://user-images.githubusercontent.com/118786401/236117333-a5411b7e-62a5-40de-a446-89a9e66436e3.gif) |
 
 ### 기타 기능
 - 이달의 선수 보기 기능
