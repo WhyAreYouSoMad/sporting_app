@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/view/pages/main/map/map_page.dart';
 import 'package:sporting_app/view/pages/main/region_list/components/region_list_favor_button.dart';
 
 class RegionListHeader extends StatelessWidget {
@@ -9,7 +10,7 @@ class RegionListHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _buildChooseHeader(),
+        _buildChooseHeader(context),
         const Divider(thickness: 1, color: kBoarderColor),
         const SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -26,7 +27,7 @@ class RegionListHeader extends StatelessWidget {
     );
   }
 
-  Row _buildChooseHeader() {
+  Row _buildChooseHeader(BuildContext context) {
     return Row(
       children: [
         Expanded(
@@ -35,7 +36,7 @@ class RegionListHeader extends StatelessWidget {
             color: Colors.white,
             child: InkWell(
               onTap: () {},
-              child: const Center(
+              child: Center(
                 child: Text(
                   "지역별",
                   style: TextStyle(
@@ -52,8 +53,10 @@ class RegionListHeader extends StatelessWidget {
             elevation: 0,
             color: Colors.white,
             child: InkWell(
-              onTap: () {},
-              child: const Center(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) => MapPage()));
+              },
+              child: Center(
                 child: Text(
                   "지도 검색",
                   style: TextStyle(

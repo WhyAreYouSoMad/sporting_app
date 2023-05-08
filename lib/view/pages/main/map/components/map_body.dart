@@ -1,7 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:sporting_app/view/components/my_rating_star.dart';
 import 'package:sporting_app/view/pages/main/map/components/map_itme_box.dart';
 
 class MapBody extends StatefulWidget {
@@ -15,8 +15,13 @@ class _MapBodyState extends State<MapBody> {
   static final LatLng sportingLatLng = LatLng(35.194029, 129.061236);
   static final CameraPosition initialPosition =
   CameraPosition(target: sportingLatLng, zoom: 15);
+  static final Marker marker = Marker(
+      markerId: MarkerId('marker'),
+      position: sportingLatLng,
+  );
 
   late GoogleMapController _mapController;
+
 
 
   @override
@@ -28,6 +33,7 @@ class _MapBodyState extends State<MapBody> {
           zoomControlsEnabled: false,
           myLocationEnabled: true,
           myLocationButtonEnabled: false,
+          markers: Set.from([marker]),
           onMapCreated: (GoogleMapController controller) {
             _mapController = controller;
           },
@@ -74,7 +80,7 @@ class _MapBodyState extends State<MapBody> {
             ),
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: dataList.map((data) => MapItemBox(data)).toList(),
+              children: dataList.map((data) => MapItemBox(data, context)).toList(),
             ),
           ),
         ),

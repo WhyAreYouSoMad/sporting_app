@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_lists.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page.dart';
 
 class RegionListBody extends StatefulWidget {
   const RegionListBody({Key? key}) : super(key: key);
@@ -94,7 +95,9 @@ class _RegionListBodyState extends State<RegionListBody> {
 
   InkWell _gu(int index, List<Area> areas) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "야구")));
+      },
       child: Padding(
         padding: const EdgeInsets.only(left: 40),
         child: Container(

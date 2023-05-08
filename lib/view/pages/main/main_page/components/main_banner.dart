@@ -37,7 +37,7 @@ class _MainBannerState extends State<MainBanner> {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
         child: SizedBox(
           height: 130,
           child: PageView.builder(

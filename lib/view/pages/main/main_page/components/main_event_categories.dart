@@ -4,6 +4,7 @@ import 'package:sporting_app/view/pages/dummy/honor/honorary_page.dart';
 import 'package:sporting_app/view/pages/dummy/honor_player/honor_player_page.dart';
 import 'package:sporting_app/view/pages/dummy/honor_stadium/honor_stadium_page.dart';
 import 'package:sporting_app/view/pages/dummy/recruitment/recruitment_page.dart';
+import 'package:sporting_app/view/pages/youtube/youtube_page.dart';
 
 class MainEventCategories extends StatelessWidget {
   const MainEventCategories({Key? key}) : super(key: key);
@@ -42,7 +43,7 @@ class MainEventCategories extends StatelessWidget {
             "슈퍼플레이",
             () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => HonorPlayerPage()));
+                  MaterialPageRoute(builder: (_) => MyYouTube()));
             },
           ),
         ],
