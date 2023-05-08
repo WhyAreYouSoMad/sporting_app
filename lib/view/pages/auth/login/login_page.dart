@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/back_grounds/login.png'),
+          image: AssetImage('assets/images/back_grounds/vv.jpg'),
           fit: BoxFit.cover,
         ),
       ),

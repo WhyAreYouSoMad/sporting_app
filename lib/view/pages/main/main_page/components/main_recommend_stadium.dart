@@ -36,7 +36,7 @@ class MainRecommendStadiumList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 180,
+      height: 200,
       width: double.infinity,
       child: ListView(
         shrinkWrap: true,

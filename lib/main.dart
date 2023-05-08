@@ -38,6 +38,11 @@ class MyApp extends ConsumerWidget {
           color: Colors.transparent,
           elevation: 0,
         ),
+        textTheme: const TextTheme(
+          bodyText2: TextStyle(
+            fontFamily: 'NotoSans',
+          )
+        )
       ),
     );
   }

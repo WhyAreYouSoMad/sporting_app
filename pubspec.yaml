@@ -52,6 +52,8 @@ dependencies:
 
 
 
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -87,6 +89,12 @@ flutter:
     - assets/
     - assets/images/notice/
     - assets/images/dummy/
+
+
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: assets/fonts/NotoSansKR-Medium.otf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

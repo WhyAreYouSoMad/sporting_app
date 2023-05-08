@@ -23,6 +23,8 @@ class MyTextFormField extends StatelessWidget {
       validator: funValidator,
       obscureText: obscureText,
       decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.grey[100],
         hintText: hint,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadious),
