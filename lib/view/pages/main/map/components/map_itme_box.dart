@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/view/components/my_rating_star.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page.dart';
 
 List<Map<String, dynamic>> dataList = [
   {
@@ -36,7 +37,7 @@ List<Map<String, dynamic>> dataList = [
 
 
 
-Padding MapItemBox(Map<String, dynamic> data) {
+Padding MapItemBox(Map<String, dynamic> data, BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(
       top: 5,
@@ -55,7 +56,9 @@ Padding MapItemBox(Map<String, dynamic> data) {
       width: 250,
       child: Card(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "야구")));
+          },
           child: Column(
             children: [
               Text(

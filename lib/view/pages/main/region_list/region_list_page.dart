@@ -9,10 +9,11 @@ class RegionListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 105,
         backgroundColor: Colors.white,
         shadowColor: Colors.grey,
-        title: const RegionListHeader(),
+        title: RegionListHeader(),
         elevation: 4,
       ),
       body: RegionListBody(),

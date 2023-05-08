@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
 import 'package:sporting_app/view/components/my_rating_star.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_detail/stadium_detail_page.dart';
 
 class MainRecommendStadium extends StatelessWidget {
   const MainRecommendStadium({Key? key}) : super(key: key);
@@ -104,7 +105,9 @@ class MainRecommendStadiumTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+
+        },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

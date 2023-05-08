@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page.dart';
 
 class RegionListFavorButton extends StatelessWidget {
   final IconData icon;
@@ -17,7 +18,9 @@ class RegionListFavorButton extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "야구")));
+        },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
           child: Row(

@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sporting_app/core/constants/my_colors.dart';
+import 'package:sporting_app/core/constants/my_dio.dart';
+import 'package:sporting_app/view/pages/company/company_info/company_info_page.dart';
+import 'package:sporting_app/view/pages/dummy/recruitment/recruitment_page.dart';
+import 'package:sporting_app/view/pages/main/map/map_page.dart';
+import 'package:sporting_app/view/pages/main/region_list/region_list_page.dart';
+import 'package:sporting_app/view/pages/player/player_info/player_info_page.dart';
+import 'package:sporting_app/view/pages/stadium/stadium_list/stadium_list_page.dart';
+import 'package:validators/validators.dart';
 
 class MainHolderMenu extends StatelessWidget {
   const MainHolderMenu({Key? key}) : super(key: key);
@@ -40,30 +48,30 @@ class MainHolderMenu extends StatelessWidget {
                 Divider(thickness: 1, color: kBlackColor),
                 Row(
                   children: [
-                    _sport(),
+                    _sport(context),
                     SizedBox(width: 60),
-                    _sport2(),
+                    _sport2(context),
                   ],
                 ),
                 Row(
                   children: [
-                    _sport3(),
+                    _sport3(context),
                     SizedBox(width: 60),
-                    _sport4(),
+                    _sport4(context),
                   ],
                 ),
                 Row(
                   children: [
-                    _sport5(),
+                    _sport5(context),
                     SizedBox(width: 60),
-                    _sport6(),
+                    _sport6(context),
                   ],
                 ),
                 Row(
                   children: [
-                    _sport7(),
+                    _sport7(context),
                     SizedBox(width: 60),
-                    _sport8(),
+                    _sport8(context),
                   ],
                 ),
                 SizedBox(height: 30),
@@ -87,17 +95,17 @@ class MainHolderMenu extends StatelessWidget {
                 Divider(thickness: 1, color: kBlackColor),
                 Row(
                   children: [
-                    _map(),
+                    _map(context),
                     SizedBox(width: 60),
-                    _area(),
+                    _area(context),
                   ],
 
                 ),
                 Row(
                   children: [
-                    _mypage(),
+                    _mypage(context),
                     SizedBox(width: 60),
-                    _recommendation(),
+                    _recommendation(context),
                   ],
                 )
               ],
@@ -108,10 +116,12 @@ class MainHolderMenu extends StatelessWidget {
     );
   }
 
-  Expanded _recommendation() {
+  Expanded _recommendation(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => RecruitmentPage()));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -133,10 +143,12 @@ class MainHolderMenu extends StatelessWidget {
     );
   }
 
-  Expanded _map() {
+  Expanded _map(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => MapPage()));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -158,10 +170,12 @@ class MainHolderMenu extends StatelessWidget {
     );
   }
 
-  Expanded _area() {
+  Expanded _area(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => RegionListPage()));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -182,10 +196,14 @@ class MainHolderMenu extends StatelessWidget {
     );
   }
 
-  Expanded _mypage() {
+  Expanded _mypage(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+            return equals(userRole, 'COMPANY') ? CompanyInfoPage() : PlayerInfoPage();
+          } ));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -206,10 +224,12 @@ class MainHolderMenu extends StatelessWidget {
     );
   }
 
-  Expanded _sport() {
+  Expanded _sport(BuildContext context) {
     return Expanded(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "농구")));
+                      },
                       child: Column(
                         children: [
                           SizedBox(height: 10),
@@ -229,10 +249,12 @@ class MainHolderMenu extends StatelessWidget {
                     ),
                   );
   }
-  Expanded _sport2() {
+  Expanded _sport2(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "야구")));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -252,10 +274,12 @@ class MainHolderMenu extends StatelessWidget {
       ),
     );
   }
-  Expanded _sport3() {
+  Expanded _sport3(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "축구")));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -275,10 +299,12 @@ class MainHolderMenu extends StatelessWidget {
       ),
     );
   }
-  Expanded _sport4() {
+  Expanded _sport4(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "테니스")));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -298,10 +324,12 @@ class MainHolderMenu extends StatelessWidget {
       ),
     );
   }
-  Expanded _sport5() {
+  Expanded _sport5(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "탁구")));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -321,10 +349,12 @@ class MainHolderMenu extends StatelessWidget {
       ),
     );
   }
-  Expanded _sport6() {
+  Expanded _sport6(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "당구")));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -344,10 +374,12 @@ class MainHolderMenu extends StatelessWidget {
       ),
     );
   }
-  Expanded _sport7() {
+  Expanded _sport7(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "볼링")));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -367,10 +399,12 @@ class MainHolderMenu extends StatelessWidget {
       ),
     );
   }
-  Expanded _sport8() {
+  Expanded _sport8(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => StadiumListPage(sportName: "골프")));
+        },
         child: Column(
           children: [
             SizedBox(height: 10),
