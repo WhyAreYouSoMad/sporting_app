@@ -9,6 +9,7 @@ class LoginLogo extends StatelessWidget {
       'assets/images/logo/sporting.png',
       width: 400,
       height: 400,
+      color: Colors.white,
     );
   }
 }
