@@ -35,7 +35,7 @@ class CompanyStadiumDetailBody extends ConsumerWidget {
                 MyStadiumItem(
                   location: stadium.address!,
                   stadiumPic: stadium.sourceFile.fileUrl,
-                  stadiumName: stadium.name,
+                  stadiumName: stadium.name!,
                   hasRating: false,
                   hasUnderBlock: false,
                   stadiumNameTextSize: 25,

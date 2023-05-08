@@ -20,7 +20,7 @@ void main() async {
 }
 
 Future<void> fetchCompanyDetail_test() async {
-  String jwt = _token;
+  // String jwt = _token;
   Response response = await dio.get("/api/company/2",
       options: Options(headers: {"Authorization": "$jwt"}));
   ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
@@ -30,7 +30,7 @@ Future<void> fetchCompanyDetail_test() async {
 
 Future<void> fetchCompanyStadiumUpdate_test() async {
 
-  String jwt = _token;
+  // String jwt = _token;
 
   StadiumCompanySourceFile sourceFile = StadiumCompanySourceFile(
       id: 11,
