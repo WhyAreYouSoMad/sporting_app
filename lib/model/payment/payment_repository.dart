@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 import 'package:sporting_app/core/constants/my_dio.dart';
+import 'package:sporting_app/dto/response_dto.dart';
 
 class PaymentRepository {
 

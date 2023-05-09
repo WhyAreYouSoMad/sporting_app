@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 import 'package:sporting_app/core/constants/my_routes.dart';
 import 'package:sporting_app/model/auth/auth_repository.dart';
 import 'package:sporting_app/provider/session_provider.dart';
@@ -10,6 +11,10 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   SessionUser sessionUser = await AuthUserRepository().fetchJwtVerify();
+
+  KakaoSdk.init(
+    nativeAppKey: '0e844976288d2fd4a76d9f86d972e6aa',
+  );
 
   runApp(
     ProviderScope(
