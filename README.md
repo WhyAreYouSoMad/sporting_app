@@ -35,7 +35,7 @@ TODO 유튜브 링크 들어갈 곳
 ## 사용한 라이브러리
 -  cupertino_icons: ^1.0.2
 -  curved_navigation_bar: ^1.0.3
--  dio: ^5.1.1
+-  dio: ^4.0.6
 -  cached_network_image: ^3.2.3
 -  flutter_riverpod: ^2.3.4
 -  validators: ^3.0.0
@@ -47,6 +47,9 @@ TODO 유튜브 링크 들어갈 곳
 -  get: ^4.6.5
 -  google_maps_flutter: ^2.2.5
 -  geolocator: ^9.0.2
+-  bootpay: ^4.6.1
+-  kakao_flutter_sdk_user: ^1.4.1
+-  youtube_player_flutter: ^8.1.2
 
 ## 기능 설명
 **스포르팅**은 전국의 경기장을 예약 및 결제할 수 있고, 업주로서 경기장을 등록하는 기능을 제공하는 어플리케이션입니다.
@@ -55,13 +58,14 @@ TODO 유튜브 링크 들어갈 곳
 - 이메일 회원가입 기능
 - 이메일 로그인 기능
 - 내 정보 수정 기능
+- OAuoth 로그인 기능
 
 |||
 | :------------: | :-------------: |
 | 회원가입 | 로그인 |
 | ![회원가입 (1)](https://user-images.githubusercontent.com/118786401/235410401-2dc8e4aa-6044-478d-9c48-f94326645663.gif) | ![로그인 (1)](https://user-images.githubusercontent.com/118786401/235410412-9ee2a68d-bba0-4b51-9fb0-f3dedb265d13.gif) |
-| 회원 정보 수정 |  |
-| ![일반회원-수정하기](https://user-images.githubusercontent.com/118786401/235585788-17d8ad9c-6fe1-4996-b010-aba88ec7ecfd.gif) |  |
+| 회원 정보 수정 | OAuth 로그인 |
+| ![일반회원-수정하기](https://user-images.githubusercontent.com/118786401/235585788-17d8ad9c-6fe1-4996-b010-aba88ec7ecfd.gif) | ![내카카오오오스](https://user-images.githubusercontent.com/118786401/236964986-294caa6d-97c8-4815-8527-ad45cd99ca51.gif) |
 
 ### 기업 회원 관련 기능
 - 이메일 회원가입 기능
@@ -72,8 +76,8 @@ TODO 유튜브 링크 들어갈 곳
 | :------------: | :-------------: |
 | 회원가입 | 로그인 |
 | ![회원가입 (1)](https://user-images.githubusercontent.com/118786401/235410401-2dc8e4aa-6044-478d-9c48-f94326645663.gif) | ![로그인 (1)](https://user-images.githubusercontent.com/118786401/235410412-9ee2a68d-bba0-4b51-9fb0-f3dedb265d13.gif) |
-| 회원 정보 수정 |  |
-| ![기업회원정보수정](https://user-images.githubusercontent.com/118786401/236104041-2efc5932-054a-4239-8b17-ad2ae2fd0da1.gif) |  |
+| 회원 정보 수정 | OAuth 로그인 |
+| ![기업회원정보수정](https://user-images.githubusercontent.com/118786401/236104041-2efc5932-054a-4239-8b17-ad2ae2fd0da1.gif) | ![내카카오오오스](https://user-images.githubusercontent.com/118786401/236964986-294caa6d-97c8-4815-8527-ad45cd99ca51.gif) |
 
 ### 경기장 관련 기능
 - 경기장 목록보기
@@ -83,6 +87,7 @@ TODO 유튜브 링크 들어갈 곳
 - 내가 등록한 경기장 목록보기
 - 내가 등록한 경기장 상세보기
 - 내가 등록한 경기장 수정하기
+- 지도 API를 사용하여서 
 
 |||
 | :------------: | :-------------: |
@@ -90,8 +95,8 @@ TODO 유튜브 링크 들어갈 곳
 | ![경기장-리스트](https://user-images.githubusercontent.com/118786401/235410807-0d7a5bbd-2841-409e-bd3e-bfeeb35ef20a.gif) | ![경기장-상세-페이지](https://user-images.githubusercontent.com/118786401/235840487-f0380533-5ea4-4696-9c86-d3240b4d95d2.gif) |
 | 경기장 예약 결제 | 경기장 등록하기 |
 | <img src = "https://user-images.githubusercontent.com/118786401/235840568-b767bd79-0192-44d4-8281-3f6e5e9e2207.gif" width="360" height="694" /> | ![경기장-등록하기](https://user-images.githubusercontent.com/118786401/236105517-da445b1f-afda-4151-9eba-3e15c9c497ca.gif) |
-| 내가 등록한 경기장 목록보기 |  |
-| ![내-경기장-리스트](https://user-images.githubusercontent.com/118786401/235842177-51ae4197-a42e-457e-a521-29089e38a52c.gif) |  |
+| 내가 등록한 경기장 목록보기 | 주변 경기장 찾기 기능 |
+| ![내-경기장-리스트](https://user-images.githubusercontent.com/118786401/235842177-51ae4197-a42e-457e-a521-29089e38a52c.gif) | ![지도](https://user-images.githubusercontent.com/118786401/236969658-236cf7e0-2a05-4769-8955-cb3884456a46.gif) |
 
 ### 관리자 관련 기능
 - 경기장 및 코트 등록 승인, 비활성화 등 상태 변경 기능
@@ -119,8 +124,8 @@ TODO 유튜브 링크 들어갈 곳
 | :------------: | :-------------: |
 | 이달의 선수 보기 기능 | 이달의 경기장 보기 기능 |
 | ![명예의선수](https://user-images.githubusercontent.com/118786401/235411237-b8f0940c-3990-4f4f-9cb5-050116f2930f.gif) | ![이달의구장](https://user-images.githubusercontent.com/118786401/235411254-7c8348f2-a02e-4fd0-8c73-4d7176604ec1.gif) |
-| 회사 소개 |
-| ![회사소개](https://user-images.githubusercontent.com/118786401/236106104-3de05c82-4c84-4754-b382-98037757bda5.gif) |
+| 회사 소개 | 이달의 플레이 |
+| ![회사소개](https://user-images.githubusercontent.com/118786401/236106104-3de05c82-4c84-4754-b382-98037757bda5.gif) | ![어플_유튜브](https://user-images.githubusercontent.com/118786401/236968469-aa2b14ba-812f-4606-a564-39db9c9efb66.gif) |
 
 ## 테이블 설계
 ![DB설계](https://user-images.githubusercontent.com/118786401/235402286-40c1a4a8-8624-4600-b9d9-5d12499ea795.png)
@@ -133,16 +138,18 @@ https://nomadhuns.atlassian.net/jira/software/projects/GFP/boards/1/roadmap
 https://spark-mailbox-fe3.notion.site/K-Digital-Final-Project-7414fcb59b90426199456f580585a91e
 
 ## 테스트 코드 링크
-### BootPay(결제 기능)
-TODO Repository와 블로그 주소 올릴 곳
+### 카카오 OAuth
+https://github.com/NomadHuns/Flutter_Kakao_Aouth_Test
 
-### Form Widget
-TODO Repository와 블로그 주소 올릴 곳
+https://www.notion.so/Kakao-Aouth-5c3cf094f13c48db90e16655ded77742
+
+### Null Safety를 통하여 공통 모델 받기
+https://github.com/NomadHuns/flutter_null_safety_parse_test 
+
+https://www.notion.so/NullSafety-Model-72c2dfc0b87d43c58188e06c44eadaf3
 
 ## 보완할 점
-- OAuth를 통한 회원가입 및 로그인
 - 일반 회원 및 기업 회원 통계
-- 지도 API를 사용하여서 주변 경기장 찾기 기능
 - 리뷰 관련 기능
 - 고객센터 문의 기능
 - 포인트 기능
