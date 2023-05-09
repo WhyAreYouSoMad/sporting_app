@@ -87,7 +87,8 @@ TODO 유튜브 링크 들어갈 곳
 - 내가 등록한 경기장 목록보기
 - 내가 등록한 경기장 상세보기
 - 내가 등록한 경기장 수정하기
-- 지도 API를 사용하여서 
+- 지도 API를 사용하여서 주변 경기장 찾기 기능
+- 지역별 경기장 찾기 기능
 
 |||
 | :------------: | :-------------: |
@@ -97,7 +98,8 @@ TODO 유튜브 링크 들어갈 곳
 | <img src = "https://user-images.githubusercontent.com/118786401/235840568-b767bd79-0192-44d4-8281-3f6e5e9e2207.gif" width="360" height="694" /> | ![경기장-등록하기](https://user-images.githubusercontent.com/118786401/236105517-da445b1f-afda-4151-9eba-3e15c9c497ca.gif) |
 | 내가 등록한 경기장 목록보기 | 주변 경기장 찾기 기능 |
 | ![내-경기장-리스트](https://user-images.githubusercontent.com/118786401/235842177-51ae4197-a42e-457e-a521-29089e38a52c.gif) | ![지도](https://user-images.githubusercontent.com/118786401/236969658-236cf7e0-2a05-4769-8955-cb3884456a46.gif) |
-
+| 지역별 경기장 | 
+| ![지역별-검색](https://user-images.githubusercontent.com/118786401/237002905-09e0ec29-1902-429a-8e0a-312090f4340e.gif) |
 ### 관리자 관련 기능
 - 경기장 및 코트 등록 승인, 비활성화 등 상태 변경 기능
 - 기업/일반 회원 비활성화 등 상태 변경 기능
@@ -119,6 +121,7 @@ TODO 유튜브 링크 들어갈 곳
 - 이달의 선수 보기 기능
 - 이달의 경기장 보기 기능
 - 회사 소개 기능
+- 공지 사항 기능
 
 |||
 | :------------: | :-------------: |
@@ -126,6 +129,8 @@ TODO 유튜브 링크 들어갈 곳
 | ![명예의선수](https://user-images.githubusercontent.com/118786401/235411237-b8f0940c-3990-4f4f-9cb5-050116f2930f.gif) | ![이달의구장](https://user-images.githubusercontent.com/118786401/235411254-7c8348f2-a02e-4fd0-8c73-4d7176604ec1.gif) |
 | 회사 소개 | 이달의 플레이 |
 | ![회사소개](https://user-images.githubusercontent.com/118786401/236106104-3de05c82-4c84-4754-b382-98037757bda5.gif) | ![어플_유튜브](https://user-images.githubusercontent.com/118786401/236968469-aa2b14ba-812f-4606-a564-39db9c9efb66.gif) |
+| 공지 사항 |
+| ![공지사항](https://user-images.githubusercontent.com/118786401/237002807-6b321e3c-3a18-4388-9e34-af048c93839e.gif) |
 
 ## 테이블 설계
 ![DB설계](https://user-images.githubusercontent.com/118786401/235402286-40c1a4a8-8624-4600-b9d9-5d12499ea795.png)
