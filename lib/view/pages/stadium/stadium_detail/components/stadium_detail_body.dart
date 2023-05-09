@@ -20,7 +20,7 @@ class StadiumDetailBody extends ConsumerWidget {
       slivers: [
         SliverToBoxAdapter(
           child: MyStadiumItem(
-            stadiumName: stadium.name,
+            stadiumName: stadium.name!,
             stadiumPic: stadium.sourceFile.fileUrl,
             location: stadium.address!,
             price: stadium.courts?[0].price,

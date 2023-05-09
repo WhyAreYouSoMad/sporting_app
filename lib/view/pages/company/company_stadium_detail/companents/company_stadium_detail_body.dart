@@ -35,7 +35,7 @@ class CompanyStadiumDetailBody extends ConsumerWidget {
                 MyStadiumItem(
                   location: stadium.address!,
                   stadiumPic: stadium.sourceFile.fileUrl,
-                  stadiumName: stadium.name,
+                  stadiumName: stadium.name!,
                   hasRating: false,
                   hasUnderBlock: false,
                   stadiumNameTextSize: 25,
@@ -67,13 +67,25 @@ class CompanyStadiumDetailBody extends ConsumerWidget {
           ),
         ),
         SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            child: MyButton(
-              funButton: () {},
-              text: '코트 추가',
-              fontWeight: FontWeight.bold,
-            ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: MyButton(
+                  funButton: () {},
+                  text: '코트 추가',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 20, left: 20, bottom: 20),
+                child: MyButton(
+                  funButton: () {},
+                  text: '수정 하기',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         )
       ],

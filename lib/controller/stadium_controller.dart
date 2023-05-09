@@ -4,6 +4,10 @@ import 'package:logger/logger.dart';
 import 'package:sporting_app/dto/response_dto.dart';
 import 'package:sporting_app/dto/stadium/stadium_request.dart';
 import 'package:sporting_app/main.dart';
+import 'package:sporting_app/model/auth/auth_user.dart';
+import 'package:sporting_app/model/stadium/stadium_company_update/stadium_comapny_update.dart';
+import 'package:sporting_app/model/stadium/stadium_company_update/stadium_company_courts.dart';
+import 'package:sporting_app/model/stadium/stadium_company_update/stadium_company_source_file.dart';
 import 'package:sporting_app/model/stadium/stadium_repository.dart';
 import 'package:sporting_app/provider/session_provider.dart';
 import 'package:sporting_app/view/pages/company/company_stadium_detail/company_stadium_detail_page.dart';
@@ -169,5 +173,54 @@ class StadiumController {
       ScaffoldMessenger.of(mContext!)
           .showSnackBar(SnackBar(content: Text("일시적인 오류로 접근이 불가능 합니다")));
     }
+  }
+
+
+  Future<void> updateStadium(
+      String status,
+      String startTime,
+      String endTime,
+      String sport,
+      int id,
+      String title,
+      String content,
+      int capacity,
+      int courtPrice,
+      String address) async {
+    Logger().d("update호출?");
+
+    StadiumCompanySourceFile sourceFile = StadiumCompanySourceFile(
+        id: id,
+        fileBase64: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wB//9k=...");
+
+    List<StadiumCompanyCourts> courts = [
+      StadiumCompanyCourts(
+          id: id,
+          title: title,
+          content: content,
+          capacity: capacity,
+          courtPrice: courtPrice,
+          sourceFile: sourceFile)
+
+    ];
+
+    CompanyUpdateStadium companyUpdateStadium = CompanyUpdateStadium(
+        id: id,
+        address: address,
+        status: status,
+        startTime: startTime,
+        endTime: endTime,
+        sport: sport,
+        sourceFile: sourceFile,
+        courts: courts);
+
+    String jwt = ref.read(sessionProvider).jwt!;
+
+    ResponseDTO responseDTO = await StadiumRepository().fetchCompanyStadiumUpdate(jwt, companyUpdateStadium);
+
+    // if (responseDTO.status == 200) {
+    //   ref.read(provider)
+    // }
+
   }
 }
