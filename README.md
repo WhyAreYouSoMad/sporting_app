@@ -145,6 +145,8 @@ https://nomadhuns.atlassian.net/jira/software/projects/GFP/boards/1/roadmap
 
 ## 블로깅 링크
 https://spark-mailbox-fe3.notion.site/K-Digital-Final-Project-7414fcb59b90426199456f580585a91e
+https://blog.naver.com/wlwldi5482
+
 
 ## 테스트 코드 링크
 ### 카카오 OAuth
