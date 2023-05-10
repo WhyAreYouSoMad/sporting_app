@@ -13,9 +13,13 @@ TODO 유튜브 링크 들어갈 곳
 
 ## 기술 스택
 ### Back-End
-|<img src = "https://blog.kakaocdn.net/dn/cKtAuQ/btrAIO5fzCU/NVWnU8UlhL93kq81Ve87uK/img.png" width="150" height="150" />|
-|:--:|
-|SpringBoot|
+|<img src = "https://blog.kakaocdn.net/dn/cKtAuQ/btrAIO5fzCU/NVWnU8UlhL93kq81Ve87uK/img.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237043703-20b79833-64fb-45f3-a8fa-5c89c116f2b9.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237041368-3cf21fef-807d-467c-9d64-659c5ef5a509.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237040483-72812c2e-ce53-4d09-8295-4e31c63bb139.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237043987-1054dae4-6586-4973-9bb5-22569fc2e6ef.png" width="150" height="150" />|
+|:--:|:--:|:--:|:--:|:--:| 
+|SpringBoot|Java|SpringBootSecurity|Jpa|Jwt|
+
+|<img src = "https://user-images.githubusercontent.com/122352251/237037161-4974e0aa-3c05-4b90-9960-a02ab2d7c100.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237044332-af860ac9-2e18-4599-8d7c-b0114e3000af.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237044459-985f38e5-1fff-420b-8779-2d0c7abd19e0.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237044745-76511b18-0673-4d70-a90b-ef3219a6b665.png" width="150" height="150" />|<img src = "https://user-images.githubusercontent.com/122352251/237044893-dadef4f7-a166-4680-a0a4-8b5a56b016d2.png" width="150" height="150" />|
+|:--:|:--:|:--:|:--:|:--:|
+|VScode|Base64|AmazonS3|Jnuit5|Restdocs|
 
 ### Front-End
 |<img src = "https://user-images.githubusercontent.com/118786401/235388856-a9918dac-e5ed-4cb3-86cc-6bf65ba00e85.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/cj5mLL/btrAJSMQt43/yfpTni01hZgrvKHmUdVjk1/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/eG2w1k/btrAD5NJ1dy/YwmkEkygLgmKevkYNgWiPk/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/dJtW2R/btrAIfhLlRL/cTJDpEZlRWh9m9QczAkGqK/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/biJtm8/btrAGfWUCEm/wLv8P9GuJP55PI0AWxOyS1/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/m3Phc/btrAGgBsKbm/FNYpkhIrVweUUEH4h5tsWK/img.png" width="150" height="150" />|
