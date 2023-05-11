@@ -4,6 +4,9 @@
 ## 시연 영상
 [![파이널_시연영상](http://img.youtube.com/vi/IId4x-dPgvY/0.jpg)](https://youtu.be/IId4x-dPgvY?t=0s)
 
+## 발표 PPT
+[2차_미니프로젝트_발표PPT](2조_파이널프로젝트_PPT_PDF판.pdf)
+
 ## 프로젝트 2조
 - 김태훈(팀장)
 - 전국일(Front-End)
