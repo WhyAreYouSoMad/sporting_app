@@ -2,7 +2,7 @@
 ![로고](https://user-images.githubusercontent.com/118786401/235388216-78fb76d0-b9ec-4dad-ab40-c12c2a86176b.png)
 
 ## 시연 영상
-TODO 유튜브 링크 들어갈 곳
+[![파이널_시연영상](http://img.youtube.com/vi/IId4x-dPgvY/0.jpg)](https://youtu.be/IId4x-dPgvY?t=0s)
 
 ## 프로젝트 2조
 - 김태훈(팀장)
@@ -56,7 +56,7 @@ TODO 유튜브 링크 들어갈 곳
 -  youtube_player_flutter: ^8.1.2
 
 ## 기능 설명
-**스포르팅**은 전국의 경기장을 예약 및 결제할 수 있고, 업주로서 경기장을 등록하는 기능을 제공하는 어플리케이션입니다.
+**스포르팅**은 전국의 경기장을 예약 및 결제할 수 있고, 기업이 경기장을 등록하는 기능을 제공하는 어플리케이션입니다.
 
 ### 일반 회원 관련 기능
 - 이메일 회원가입 기능
@@ -144,7 +144,7 @@ https://nomadhuns.atlassian.net/jira/software/projects/GFP/boards/1/roadmap
 역할분담, 계획수립 등 지라를 유용하게 사용하였다.
 
 ## 블로깅 링크
-https://spark-mailbox-fe3.notion.site/K-Digital-Final-Project-7414fcb59b90426199456f580585a91e
+https://spark-mailbox-fe3.notion.site/K-Digital-Final-Project-7414fcb59b90426199456f580585a91e  
 https://blog.naver.com/wlwldi5482
 
 
